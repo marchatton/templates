@@ -19,24 +19,6 @@ Plugin metadata
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/LICENSE - upstream license
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/README.md - upstream component list
 
-Agents
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/design/design-iterator.md - iterative UI passes
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/agent-native-reviewer.md - action/context parity
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/architecture-strategist.md - architecture review
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/code-simplicity-reviewer.md - simplicity pass
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/data-integrity-guardian.md - migration safety
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/data-migration-expert.md - mapping checks
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/deployment-verification-agent.md - go/no-go checks
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/julik-frontend-races-reviewer.md - JS races
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md - TS conventions
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/pattern-recognition-specialist.md - anti-pattern scan
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/performance-oracle.md - perf analysis
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/security-sentinel.md - security audit
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md - repro workflow
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/every-style-editor.md - copy polish
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/pr-comment-resolver.md - PR followup
-- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md - spec gaps
-
 Commands
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/agent-native-audit.md - agent-native audit
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/changelog.md - release notes
@@ -86,6 +68,24 @@ Commands (non-web or external)
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/lfg.md - ralph-wiggum dependency
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/release-docs.md - docs release
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/xcode-test.md - iOS only
+
+Agents (kept in inspiration only)
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/design/design-iterator.md - iterative UI passes
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/agent-native-reviewer.md - action/context parity
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/architecture-strategist.md - architecture review
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/code-simplicity-reviewer.md - simplicity pass
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/data-integrity-guardian.md - migration safety
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/data-migration-expert.md - mapping checks
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/deployment-verification-agent.md - go/no-go checks
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/julik-frontend-races-reviewer.md - JS races
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md - TS conventions
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/pattern-recognition-specialist.md - anti-pattern scan
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/performance-oracle.md - perf analysis
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/review/security-sentinel.md - security audit
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md - repro workflow
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/every-style-editor.md - copy polish
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/pr-comment-resolver.md - PR followup
+- inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md - spec gaps
 
 Agents (excluded)
 - inspiration/compound-engineering-plugin/plugins/compound-engineering/agents/design/design-implementation-reviewer.md - UI parity checks

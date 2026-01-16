@@ -17,6 +17,9 @@ Repo mix: curated + custom skills.
 
 ## Naming + structure
 - name: lowercase/digits/hyphens, <64 chars, verb-led; folder matches name.
+- Single-level categories only: `skills/<category>/<skill-name>/`. No nested category dirs.
+- Framework-specific skills: encode framework in folder name (react-, next-, cloudflare-). No second-level dirs.
+- Plan is a workflow step; no `skills/plan/` category.
 - Multi-variant skills: core workflow in SKILL.md; variant details in `references/*` linked once.
 - If reference >100 lines, add TOC.
 
@@ -42,11 +45,13 @@ Repo mix: curated + custom skills.
 - Sub-agents optional; use only with clear ROI.
 
 ## Skill taxonomy (dirs)
-- Framing
-- Shaping
-- Development
-- Packaging + promotion
-- Utilities (generic helpers)
+- Explore
+- Shape
+- Work
+- Review
+- Release
+- Compound
+- Utilities
 
 ## References
 - Skill creator spec: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
