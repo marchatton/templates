@@ -1,0 +1,408 @@
+{
+  "project": "Canonical Templates Repo",
+  "branchName": "ralph/canonical-templates-repo",
+  "description": "Canonical templates repo for LLM-assisted product engineering with verify-first workflow and vendor syncing.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add canonical guardrails",
+      "description": "As a maintainer, I want AGENTS.md guardrails in the repo root and .agents so that all clients follow the same rules.",
+      "acceptanceCriteria": [
+        "Root AGENTS.md includes taxonomy, pnpm rule, no subagents, skill constraints, verify-first, and compounding rules",
+        ".agents/AGENTS.md exists and mirrors the canonical guardrails",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Add core docs templates",
+      "description": "As a product engineer, I want base templates for PRDs and plans so that outputs are consistent across projects.",
+      "acceptanceCriteria": [
+        "docs/templates/prd.md exists with required PRD sections",
+        "docs/templates/breadboard.md, spike-plan.md, pack.md, and release-checklist.md exist",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Add learnings templates",
+      "description": "As a team, I want learnings templates so that compounding is structured and append-only.",
+      "acceptanceCriteria": [
+        "docs/templates/learnings.md includes stage headings and append-only guidance",
+        "docs/templates/learning-entry.md includes date, stage, summary, root cause, fix, prevention, verification, and links",
+        "Typecheck passes"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Add JSON PRD schema",
+      "description": "As a tooling user, I want a JSON PRD schema so that PRD outputs are validated consistently.",
+      "acceptanceCriteria": [
+        "docs/templates/json-prd.schema.json exists",
+        "Schema requires project, branchName, description, and userStories fields",
+        "Typecheck passes"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Add Oracle and Ralph guides",
+      "description": "As a user, I want guides for Oracle and Ralph so that I can run the tools correctly.",
+      "acceptanceCriteria": [
+        "docs/guides/oracle.md documents Node 22 requirement and wrapper usage",
+        "docs/guides/ralph.md documents .ralph/, .agents/tasks/prd-<slug>.json, and iteration loop",
+        "Typecheck passes"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Scaffold .agents structure",
+      "description": "As a maintainer, I want the .agents directory structure in place so that skills and commands are organized by taxonomy.",
+      "acceptanceCriteria": [
+        ".agents/commands exists",
+        ".agents/skills/{explore,shape,develop,review,release,compound,utilities} exist",
+        ".agents/hooks/README.md exists with note that hooks are examples only",
+        "Typecheck passes"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Add Ralph config defaults",
+      "description": "As a maintainer, I want a Ralph config template so that continuous coding runs with consistent defaults.",
+      "acceptanceCriteria": [
+        ".agents/ralph/config.sh exists with AGENT_CMD default and override notes",
+        ".agents/ralph/prompts/ exists (empty ok)",
+        "Typecheck passes"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Define vendor sync mappings",
+      "description": "As a maintainer, I want explicit vendor mappings so that synced commands and skills are deterministic.",
+      "acceptanceCriteria": [
+        ".agents/vendors.json exists",
+        "Mappings include agent-scripts and compound-engineering-plugin sync entries (including agent-browser and skill-creator)",
+        "Typecheck passes"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Implement vendor_update.sh",
+      "description": "As a maintainer, I want a vendor update script so that inspiration repos are cloned and kept current.",
+      "acceptanceCriteria": [
+        "scripts/vendor_update.sh clones missing vendors into inspiration/ and pulls latest",
+        "Script documents the vendor repo list it manages",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Implement vendor_sync.sh",
+      "description": "As a maintainer, I want a vendor sync script so that enabled items are surfaced into .agents.",
+      "acceptanceCriteria": [
+        "scripts/vendor_sync.sh reads .agents/vendors.json and creates symlinks under .agents",
+        "Script refuses to overwrite non-symlinked local forks and prints guidance",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "Implement agents_refresh.sh",
+      "description": "As a maintainer, I want a refresh script so that vendors, cheatsheet, and verification run in one step.",
+      "acceptanceCriteria": [
+        "scripts/agents_refresh.sh runs vendor_update, vendor_sync, generate_cheatsheet, and verify_repo in order",
+        "Script prints a summary and exits non-zero on failure",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "Implement cheatsheet generator",
+      "description": "As a maintainer, I want an automated cheatsheet so that skills and commands are discoverable.",
+      "acceptanceCriteria": [
+        "scripts/generate_cheatsheet.ts scans .agents/commands and .agents/skills",
+        "cheatsheet.md includes commands, skills by category, hooks, pnpm ladder, and key output paths",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 12,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "Implement repo verification script",
+      "description": "As a maintainer, I want a verify script so that taxonomy and formatting rules are enforced.",
+      "acceptanceCriteria": [
+        "scripts/verify_repo.sh validates taxonomy, frontmatter rules, required commands, unique skill names, and learnings templates",
+        "Script prints manual smoke steps including vendor refresh",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 13,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-014",
+      "title": "Add wf-explore and wf-shape runbooks",
+      "description": "As a product engineer, I want Explore and Shape workflows so that strategy and PRDs are produced consistently.",
+      "acceptanceCriteria": [
+        ".agents/commands/wf-explore.md exists with purpose, inputs, outputs, steps, verification, and go/no-go",
+        ".agents/commands/wf-shape.md exists with purpose, inputs, outputs, steps, verification, and go/no-go",
+        "Typecheck passes"
+      ],
+      "priority": 14,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-015",
+      "title": "Add wf-develop and wf-review runbooks",
+      "description": "As a product engineer, I want Develop and Review workflows so that changes are verified and reviewed consistently.",
+      "acceptanceCriteria": [
+        ".agents/commands/wf-develop.md exists with pnpm ladder and dev-log output",
+        ".agents/commands/wf-review.md exists with pnpm verify and optional browser QA",
+        "Typecheck passes"
+      ],
+      "priority": 15,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-016",
+      "title": "Add wf-release and wf-ralph runbooks",
+      "description": "As a product engineer, I want Release and Ralph workflows so that shipping and continuous coding are consistent.",
+      "acceptanceCriteria": [
+        ".agents/commands/wf-release.md includes pnpm verify and compound default for non-trivial work",
+        ".agents/commands/wf-ralph.md asks for iteration count (default 10) and loops ralph build 1",
+        "Typecheck passes"
+      ],
+      "priority": 16,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-017",
+      "title": "Add verify and compound runbooks",
+      "description": "As a maintainer, I want verify and compound utilities so that verification and learnings are standardized.",
+      "acceptanceCriteria": [
+        ".agents/commands/verify.md defines pnpm ladder and docs/verify.md fallback with NO-GO guidance",
+        ".agents/commands/compound.md appends to docs/learnings.md with required fields",
+        "Typecheck passes"
+      ],
+      "priority": 17,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-018",
+      "title": "Add Oracle wrapper and skill",
+      "description": "As a user, I want an Oracle wrapper so that the CLI always runs the latest version.",
+      "acceptanceCriteria": [
+        "scripts/oracle.sh runs pnpm dlx @steipete/oracle@latest and warns on Node < 22",
+        ".agents/skills/utilities/oracle/SKILL.md exists and references the wrapper",
+        ".agents/commands/oracle.md exists as an optional runbook",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-019",
+      "title": "Create Explore skills",
+      "description": "As a product strategist, I want Explore skills so that opportunity selection is consistent.",
+      "acceptanceCriteria": [
+        ".agents/skills/explore/opportunity-solution-tree/SKILL.md exists",
+        "Placeholder skills exist for customer-segmentation, positioning, roadmap, and pricing-packaging",
+        "All SKILL.md files use name+description frontmatter and include Inputs, Outputs, Verification headings",
+        "Typecheck passes"
+      ],
+      "priority": 19,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-020",
+      "title": "Create Shape skills set 1",
+      "description": "As a product engineer, I want core Shape skills so that PRDs and breadboards are produced consistently.",
+      "acceptanceCriteria": [
+        "Skills exist for create-prd, breadboard, and spike-plan",
+        "Each SKILL.md includes Inputs, Outputs, Verification headings",
+        "Typecheck passes"
+      ],
+      "priority": 20,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-021",
+      "title": "Create Shape skills set 2",
+      "description": "As a product engineer, I want advanced Shape skills so that plans and JSON PRDs are standardized.",
+      "acceptanceCriteria": [
+        "Skills exist for deepen-plan, prd-review, and create-json-prd",
+        "create-json-prd requires a PRD and notes optional breadboard/spike/plan inputs",
+        "Typecheck passes"
+      ],
+      "priority": 21,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-022",
+      "title": "Create Develop skills set 1",
+      "description": "As an engineer, I want core Develop skills so that implementation and bug work are repeatable.",
+      "acceptanceCriteria": [
+        "Skills exist for work-execute, reproduce-bug, and report-bug",
+        "Each SKILL.md includes Inputs, Outputs, Verification headings",
+        "Typecheck passes"
+      ],
+      "priority": 22,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-023",
+      "title": "Create Develop skills set 2",
+      "description": "As an engineer, I want PR and todo resolution skills so that cleanup work is standardized.",
+      "acceptanceCriteria": [
+        "Skills exist for resolve-todos and resolve-pr-feedback",
+        "Each SKILL.md includes Inputs, Outputs, Verification headings",
+        "Typecheck passes"
+      ],
+      "priority": 23,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-024",
+      "title": "Create Review skills",
+      "description": "As a reviewer, I want Review skills so that audits and QA are consistent.",
+      "acceptanceCriteria": [
+        "Skills exist for pr-review, agent-native-architecture, and browser-qa",
+        "browser-qa references utilities/agent-browser",
+        "Typecheck passes"
+      ],
+      "priority": 24,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-025",
+      "title": "Create Release skills",
+      "description": "As a release owner, I want Release skills so that shipping is repeatable.",
+      "acceptanceCriteria": [
+        "Skills exist for release-checklist, changelog-draft, and post-release-verify",
+        "Each SKILL.md includes Inputs, Outputs, Verification headings",
+        "Typecheck passes"
+      ],
+      "priority": 25,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-026",
+      "title": "Create Compound skill",
+      "description": "As a team, I want a Compound skill so that learnings are captured in docs/learnings.md.",
+      "acceptanceCriteria": [
+        "Skill exists for compound-docs that appends to project docs/learnings.md",
+        "Skill includes required entry fields and verification notes",
+        "Typecheck passes"
+      ],
+      "priority": 26,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-027",
+      "title": "Create local utility skills",
+      "description": "As a maintainer, I want local utility skills so that common tasks are standardized.",
+      "acceptanceCriteria": [
+        "ask-questions-if-underspecified skill exists exactly as provided and marked explicit invoke only",
+        "create-cli, docs-list, and trash skills exist with required headings",
+        "Typecheck passes"
+      ],
+      "priority": 27,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-028",
+      "title": "Add git hook templates",
+      "description": "As a maintainer, I want hook templates so that quality checks can be enabled without installs.",
+      "acceptanceCriteria": [
+        "hooks/git/pre-commit and hooks/git/pre-push templates exist and degrade gracefully",
+        "Optional templates exist for prepare-commit-msg, commit-msg, and post-merge",
+        "Typecheck passes"
+      ],
+      "priority": 28,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-029",
+      "title": "Add hook installer script",
+      "description": "As a maintainer, I want an install script so that git hooks can be enabled consistently.",
+      "acceptanceCriteria": [
+        "scripts/install_git_hooks.sh installs templates into .git/hooks without running installs",
+        "Script prints clear output and handles missing targets gracefully",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 29,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-030",
+      "title": "Add Codex skills copy fallback",
+      "description": "As a user, I want a copy fallback so that Codex works even if symlink loading regresses.",
+      "acceptanceCriteria": [
+        "scripts/install_codex_skills_copy.sh copies .agents/skills into Codex home",
+        "Script includes usage instructions and safety checks",
+        "Typecheck passes",
+        "Tests pass"
+      ],
+      "priority": 30,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}

@@ -27,12 +27,12 @@ This templates repo contains:
 * **guardrails** (`AGENTS.md`)
 * **cheatsheet** (`cheatsheet.md`, generated)
 
-Upstream inspirations are mirrored under `inspiration/` and tracked via your changelog files:
+Upstream inspirations (non-npm) are mirrored under `inspiration/` (plain clones, gitignored) and tracked via your changelog files:
 
 * `compound-engineering-plugin`
 * `agent-scripts`
 
-Oracle is treated as a “marketplace tool” with an always-latest execution wrapper, sourced from `steipete/oracle`.
+Oracle is treated as a "marketplace tool" with an always-latest execution wrapper (no vendoring), sourced from `steipete/oracle`.
 
 ---
 
@@ -71,7 +71,7 @@ We want a boring, verifiable templates repo that:
 
 3. Marketplace-ready without constant manual syncing
 
-* upstream repos mirrored under `inspiration/`
+* upstream repos mirrored under `inspiration/` (plain clones; npm tools use wrappers)
 * “enabled” skills and commands exposed via symlinks into `.agents/` surface
 * one command to update vendors and refresh the surface
 
@@ -187,7 +187,7 @@ Rule of thumb: *"If you had to think about it, compound it."*
 ### 9) Verify behavior outside Node repos
 
 If no `package.json` detected, `verify` prints **NO-GO with guidance**:
-> "No pnpm detected. Define verification in project's verify.md or pass `--skip-verify` with reason."
+> "No pnpm detected. Define verification in project's docs/verify.md or pass `--skip-verify` with reason."
 
 This keeps verify-first intact without blocking non-Node work indefinitely.
 
@@ -221,8 +221,8 @@ PRD names are canonical. Upstream names map as follows:
 Use **scripted clones** (not submodules or subtrees):
 * `inspiration/` directories are plain cloned repos
 * `.gitignore` excludes `inspiration/*/`
-* `vendor_update.sh` runs `git pull` in each dir
-* Fresh clone requires running `./scripts/vendor_update.sh` once (document in README)
+* `vendor_update.sh` clones missing repos (repo list in script) and pulls latest
+* Fresh clone: run `./scripts/vendor_update.sh` to clone+pull vendors (document in README)
 
 ### 15) Symlinks in `.agents/` (confirmed)
 
@@ -267,11 +267,11 @@ When `docs/learnings.md` conflicts:
 
 ```
 landpr
-├── Check working tree clean (fail if uncommitted changes outside staged)
+├── Stage changed files (unless `--staged-only`)
+├── Check working tree clean (fail if unstaged/untracked remain)
 ├── Run `verify`
 │   ├── GO → continue
 │   └── NO-GO → refuse unless `--force "reason"` (reason is logged)
-├── Stage changed files (or `--staged-only` for explicit staging)
 ├── Generate commit message (conventional format, override with `--message`)
 ├── Commit
 ├── Push to current branch
@@ -302,11 +302,11 @@ templates/
       wf-release.md
       wf-ralph.md
 
-      # utility runbooks
+      # utility runbooks (some synced from agent-scripts)
       verify.md
-      landpr.md
-      handoff.md
-      pickup.md
+      landpr.md                          # synced (agent-scripts)
+      handoff.md                         # synced (agent-scripts)
+      pickup.md                          # synced (agent-scripts)
       compound.md
       oracle.md                          # optional wrapper command
 
@@ -398,7 +398,7 @@ templates/
   scripts/
     verify_repo.sh
     generate_cheatsheet.ts
-    vendor_update.sh                     # pulls latest vendor sources
+    vendor_update.sh                     # clones/pulls vendor sources
     vendor_sync.sh                       # exposes enabled vendor items into .agents surface
     agents_refresh.sh                    # update + sync + regenerate + verify
     install_git_hooks.sh
@@ -419,8 +419,8 @@ templates/
       ralph.md
 
   inspiration/
-    compound-engineering-plugin/         # submodule, pull latest on refresh
-    agent-scripts/                       # submodule, pull latest on refresh
+    compound-engineering-plugin/         # plain clone, gitignored; pull latest on refresh
+    agent-scripts/                       # plain clone, gitignored; pull latest on refresh
     # note: oracle is NOT vendored here — it's an npm package (@steipete/oracle)
 
   changelog/
@@ -474,16 +474,14 @@ You asked: “best approach to load Oracle so it always uses latest”.
 
 Oracle is a CLI workflow that can bundle context files and run with different backends. It documents running via `npx -y @steipete/oracle` and notes Node 22+.
 
-### v1 design: vendor the instructions, run the CLI as latest
+### v1 design: wrapper-only skill, run the CLI as latest
 
 We separate **skill instructions** from **executable**:
 
-1. Vendor the Oracle repo
+1. Keep the Oracle skill local (no vendor repo)
 
-* add `inspiration/oracle` as a submodule or mirror (steipete/oracle)
-* expose its skill content into canonical surface via `vendor_sync.sh`:
-
-  * `.agents/skills/utilities/oracle` → symlink from vendor skill folder (or copy if you prefer)
+* `.agents/skills/utilities/oracle` lives in this repo (no symlink)
+* optional: `.agents/commands/oracle.md` wrapper command
 
 2. Always run the CLI as latest
    Preferred:
@@ -497,11 +495,11 @@ We separate **skill instructions** from **executable**:
 
 * warns if Node < 22
 * runs `pnpm dlx @steipete/oracle@latest …`
-* supports a no-keys “copy/paste” flow (Oracle supports rendering and copy)
+* supports a no-keys "copy/paste" flow (Oracle supports rendering and copy)
 
 Result:
 
-* your oracle skill stays up to date via vendor refresh
+* oracle skill is maintained locally (no vendor sync)
 * execution always uses latest via `@latest`
 * no global install drift
 
@@ -537,9 +535,6 @@ Workflow commands (ours):
 Utility commands (ours):
 
 * `verify`
-* `landpr`
-* `handoff`
-* `pickup`
 * `compound`
 * `oracle` (optional wrapper command)
 
@@ -560,7 +555,7 @@ Imported from compound-engineering-plugin (exhaustive list from your changelog):
 * `heal-skill`
 * `test-browser`
 
-Imported from agent-scripts (exhaustive list from your changelog):
+Synced from agent-scripts (exhaustive list from your changelog):
 
 * `handoff`
 * `pickup`
@@ -616,7 +611,7 @@ From agent-scripts:
 * `markdown-converter`
 * `nano-banana-pro`
 * `openai-image-gen`
-* `oracle`
+* `oracle` (ignored from vendor; replaced by local wrapper)
 * `video-transcript-downloader`
 
 From compound-engineering-plugin:
@@ -901,7 +896,7 @@ Generated by:
 
 ### Vendor model
 
-Vendors are Git repos in `inspiration/`. We track decisions in `changelog/` (Sync vs Fork vs Ignore).
+Vendors are Git repos in `inspiration/` (plain clones, gitignored). We track decisions in `changelog/` (Sync vs Fork vs Ignore).
 
 * **Sync**: pull latest from upstream on refresh, symlink into `.agents/*` surface
 * **Fork**: copy into `.agents/*` and edit, we maintain
@@ -911,13 +906,13 @@ Vendors are Git repos in `inspiration/`. We track decisions in `changelog/` (Syn
 
 | Type | Example | How to consume |
 |------|---------|----------------|
-| **npm package** | `@steipete/oracle` | Thin wrapper skill, `pnpm dlx @pkg@latest` — no submodule |
+| **npm package** | `@steipete/oracle` | Thin wrapper skill, `pnpm dlx @pkg@latest` — no vendoring |
 | **Synced content** | `agent-browser`, `skill-creator` | Vendor in `inspiration/`, pull latest on refresh, symlink |
 | **Fork content** | One-off customizations | Copy into `.agents/`, we maintain |
 
 ### Refresh flow (manually triggered)
 
-* `scripts/vendor_update.sh` — pulls latest main for all `inspiration/` repos
+* `scripts/vendor_update.sh` — clones missing repos and pulls latest main for all `inspiration/` repos
 * `scripts/vendor_sync.sh` — symlinks enabled items into `.agents/` surface
 * `scripts/agents_refresh.sh` — runs update + sync + cheatsheet + verify
 
@@ -965,16 +960,17 @@ Current npm packages:
 ### Phase 2: port content (exhaustive)
 
 * implement workflow runbooks: `wf-explore`, `wf-shape`, `wf-develop`, `wf-review`, `wf-release`, `wf-ralph`
-* implement utility runbooks: `verify`, `landpr`, `handoff`, `pickup`, `compound`
+* implement utility runbooks: `verify`, `compound`, `oracle` (wrapper)
+* sync utility runbooks from agent-scripts: `handoff`, `pickup`, `landpr`
 * port all commands and skills listed in the changelog excerpts into canonical surface
 * add utilities: create-cli, docs-list, trash
 * include ask-questions-if-underspecified exactly as given
 
 ### Phase 3: marketplace refresh
 
-* add `inspiration/*` (submodules/mirrors)
+* add `inspiration/*` (plain clones, gitignored)
 * implement `vendor_update.sh`, `vendor_sync.sh`, `agents_refresh.sh`
-* add Oracle vendor repo and wire `scripts/oracle.sh`
+* wire `scripts/oracle.sh` (wrapper-only)
 
 ### Phase 4: hooks
 
