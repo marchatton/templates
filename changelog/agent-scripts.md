@@ -2,6 +2,10 @@
 
 Track what we pull from https://github.com/steipete/agent-scripts into `inspiration/agent-scripts/` for syncing or not.
 
+## Sync strategy
+
+**Synced content**: pull latest from upstream on `./scripts/agents_refresh.sh`. Human reviews diff before committing.
+
 Rules
 - Entries are paths relative to repo root.
 - New upstream items go in Unclassified first.
@@ -13,9 +17,9 @@ Rules
 The following items were ported to canonical locations:
 
 Commands (→ commands/)
-- docs/slash-commands/handoff.md → commands/c-handoff.md
-- docs/slash-commands/pickup.md → commands/c-pickup.md
-- docs/slash-commands/landpr.md → commands/c-landpr.md
+- docs/slash-commands/handoff.md → commands/handoff.md
+- docs/slash-commands/pickup.md → commands/pickup.md
+- docs/slash-commands/landpr.md → commands/landpr.md
 
 Scripts (→ scripts/)
 - scripts/committer → scripts/committer
@@ -25,7 +29,7 @@ Skills (→ skills/)
 - skills/markdown-converter/ → skills/utilities/markdown-converter/
 - skills/nano-banana-pro/ → skills/utilities/nano-banana-pro/
 - skills/openai-image-gen/ → skills/utilities/openai-image-gen/
-- skills/oracle/ → skills/utilities/oracle/
+- skills/oracle/ → skills/utilities/oracle/ (NOTE: oracle is an npm package; we use thin wrapper + `pnpm dlx @steipete/oracle@latest`, not vendored content)
 - skills/video-transcript-downloader/ → skills/utilities/video-transcript-downloader/
 
 ## Fork (one-off)
@@ -49,7 +53,7 @@ Skills
 - inspiration/agent-scripts/skills/markdown-converter - Markdown conversion
 - inspiration/agent-scripts/skills/nano-banana-pro - Gemini image generation/editing
 - inspiration/agent-scripts/skills/openai-image-gen - image generation workflow
-- inspiration/agent-scripts/skills/oracle - external LLM helper workflow
+- inspiration/agent-scripts/skills/oracle - NOT synced (npm package `@steipete/oracle`; use wrapper skill only)
 - inspiration/agent-scripts/skills/video-transcript-downloader - transcript automation
 
 ## Ignore

@@ -2,6 +2,10 @@
 
 Track what we pull from `inspiration/compound-engineering-plugin/` when syncing.
 
+## Sync strategy
+
+**Synced content**: pull latest from upstream on `./scripts/agents_refresh.sh`. Human reviews diff before committing.
+
 Rules
 - Entries are paths relative to repo root.
 - New upstream items go in Unclassified first.
@@ -13,10 +17,10 @@ Rules
 The following items were ported to canonical locations:
 
 Commands (→ commands/)
-- workflows/plan.md → commands/wf-plan.md
-- workflows/work.md → commands/wf-work.md
+- workflows/plan.md → commands/wf-shape.md (renamed: plan → shape)
+- workflows/work.md → commands/wf-develop.md (renamed: work → develop)
 - workflows/review.md → commands/wf-review.md
-- workflows/compound.md → commands/wf-compound.md
+- workflows/compound.md → commands/compound.md (utility, not workflow)
 
 Skills (→ skills/)
 - skills/agent-browser/ → skills/utilities/agent-browser/
