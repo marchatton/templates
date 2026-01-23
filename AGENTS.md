@@ -19,7 +19,7 @@ When creating or updating skills, follow the **`skill-creator` skill** (it’s t
 ## Core principles
 
 * Prefer **simple workflows + verification**, not clever automation.
-* **No roles/modes** in v1. **No sub-agents** in v1.
+* **No roles/modes** in v1. No sub-agent dependency; use `multi-agent-routing` (sub-agents if supported, else parallel/serial sessions).
 * Commands are **runbooks**. Skills are reusable blocks.
 * `.agents/` is source of truth; dotagents links it into clients.
 * Code-touching work must include pnpm ladder + **GO/NO-GO**:
@@ -66,15 +66,14 @@ Repo also contains:
 * File: `.agents/commands/<name>.md`
 * Must include: purpose, inputs, outputs, steps (which skills), verification + go/no-go, usage examples.
 * Workflow commands: `wf-explore`, `wf-shape`, `wf-develop`, `wf-review`, `wf-release`, `wf-ralph`
-* Utility commands: short names (no `c-`), eg `verify`, `landpr`, `handoff`, `pickup`, `compound`
-* No backgrounding / “run forever”. Parallelism is manual (separate sessions).
+* Utility commands: short names eg. `verify`, `landpr`, `handoff`, `pickup`, `compound`
 * Keep upstream names where useful (eg `test-browser` wrapper; naming vs `agent-browser` is open).
 
 ---
 
 ## Naming + taxonomy
 
-* Skill name: lowercase/digits/hyphens, <64 chars, verb-led; folder matches name.
+* Skill name: lowercase/digits/hyphens, <64 chars, verb-noun; folder matches name.
 * Single-level categories only. No deep nesting.
 * Framework-specific: encode in folder name (react-, next-, cloudflare-).
 
@@ -110,7 +109,7 @@ Skills must live under exactly:
 
 ## Vendor / marketplace
 
-* Vendors live in `inspiration/<vendor>/`. Decisions in `changelog/<vendor>.md` (Sync/Fork/Ignore).
+* Vendors live in `inspiration/<vendor>/`. Decisions in `changelog/<vendor>.md` (Sync/Fork/Ignore/Unclassified).
 * Enabled surface = what’s linked into `.agents/skills` and `.agents/commands`.
 * Scripts:
 

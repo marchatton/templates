@@ -64,7 +64,7 @@ skills_root = sys.argv[1]
 errors = 0
 names = {}
 
-for base, dirs, files in os.walk(skills_root):
+for base, dirs, files in os.walk(skills_root, followlinks=True):
     if "SKILL.md" not in files:
         continue
     path = os.path.join(base, "SKILL.md")

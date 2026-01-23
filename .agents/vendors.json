@@ -21,7 +21,6 @@
       { "src": "plugins/compound-engineering/commands/resolve_parallel.md", "dst": "commands/resolve-parallel.md" },
       { "src": "plugins/compound-engineering/commands/resolve_pr_parallel.md", "dst": "commands/resolve-pr-parallel.md" },
       { "src": "plugins/compound-engineering/commands/resolve_todo_parallel.md", "dst": "commands/resolve-todo-parallel.md" },
-      { "src": "plugins/compound-engineering/commands/agent-native-audit.md", "dst": "commands/agent-native-audit.md" },
       { "src": "plugins/compound-engineering/commands/changelog.md", "dst": "commands/changelog.md" },
       { "src": "plugins/compound-engineering/commands/generate_command.md", "dst": "commands/generate-command.md" },
       { "src": "plugins/compound-engineering/commands/create-agent-skill.md", "dst": "commands/create-agent-skill.md" },
