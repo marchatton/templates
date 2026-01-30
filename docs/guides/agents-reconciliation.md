@@ -100,8 +100,9 @@
 - Register has no commands entries; all on-disk commands are unregistered.
 
 ## Hooks
-- On disk: `.agents/hooks/README.md`.
-- Register hooks: none.
+- On disk: `.agents/hooks/README.md`, `.agents/hooks/git/*` (canonical git hook templates).
+- `hooks/git` is now a symlink to `.agents/hooks/git` for compatibility.
+- Register hooks: present.
 - Vendor hooks: none.
 
 ## Agents / Agents docs

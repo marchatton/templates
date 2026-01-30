@@ -999,9 +999,59 @@
     "hooks": [
       {
         "name": "README",
-        "trigger": "n/a (examples only)",
+        "trigger": "git hook template",
         "precedence": "n/a",
         "location": ".agents/hooks/README.md",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "commit-msg",
+        "trigger": "git hook template",
+        "precedence": "n/a",
+        "location": ".agents/hooks/git/commit-msg",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "post-merge",
+        "trigger": "git hook template",
+        "precedence": "n/a",
+        "location": ".agents/hooks/git/post-merge",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "pre-commit",
+        "trigger": "git hook template",
+        "precedence": "n/a",
+        "location": ".agents/hooks/git/pre-commit",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "pre-push",
+        "trigger": "git hook template",
+        "precedence": "n/a",
+        "location": ".agents/hooks/git/pre-push",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "prepare-commit-msg",
+        "trigger": "git hook template",
+        "precedence": "n/a",
+        "location": ".agents/hooks/git/prepare-commit-msg",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",

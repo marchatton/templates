@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-hooks_src="${root_dir}/hooks/git"
+hooks_src="${root_dir}/.agents/hooks/git"
 
 if [ ! -d "${hooks_src}" ]; then
   echo "No hooks templates found at ${hooks_src}"
