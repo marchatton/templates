@@ -1,1 +1,1 @@
-../landpr.md
+/Users/marc/code/personal-projects/templates/inspiration/agent-scripts/docs/slash-commands/landpr.md

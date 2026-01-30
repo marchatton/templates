@@ -133,7 +133,12 @@
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "vendor",
-        "status": "missing"
+        "status": "missing",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/workflow/every-style-editor.md"
+        }
       },
       {
         "name": "file-todos",
@@ -308,7 +313,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/agent-native-reviewer.md"
+        }
       },
       {
         "name": "architecture-strategist",
@@ -326,7 +336,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/architecture-strategist.md"
+        }
       },
       {
         "name": "code-simplicity-reviewer",
@@ -343,7 +358,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/code-simplicity-reviewer.md"
+        }
       },
       {
         "name": "data-integrity-guardian",
@@ -361,7 +381,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/data-integrity-guardian.md"
+        }
       },
       {
         "name": "data-migration-expert",
@@ -379,7 +404,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/data-migration-expert.md"
+        }
       },
       {
         "name": "deployment-verification-agent",
@@ -396,7 +426,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/deployment-verification-agent.md"
+        }
       },
       {
         "name": "kieran-python-reviewer",
@@ -413,7 +448,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/kieran-python-reviewer.md"
+        }
       },
       {
         "name": "kieran-typescript-reviewer",
@@ -430,7 +470,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md"
+        }
       },
       {
         "name": "pattern-recognition-specialist",
@@ -448,7 +493,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/pattern-recognition-specialist.md"
+        }
       },
       {
         "name": "performance-oracle",
@@ -466,7 +516,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/performance-oracle.md"
+        }
       },
       {
         "name": "security-sentinel",
@@ -484,7 +539,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "review"
+        "originGroup": "review",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/review/security-sentinel.md"
+        }
       },
       {
         "name": "bug-reproduction-validator",
@@ -502,7 +562,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "workflow"
+        "originGroup": "workflow",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md"
+        }
       },
       {
         "name": "pr-comment-resolver",
@@ -520,7 +585,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "workflow"
+        "originGroup": "workflow",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/workflow/pr-comment-resolver.md"
+        }
       },
       {
         "name": "spec-flow-analyzer",
@@ -538,7 +608,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "workflow"
+        "originGroup": "workflow",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md"
+        }
       },
       {
         "name": "best-practices-researcher",
@@ -556,7 +631,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "research"
+        "originGroup": "research",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/research/best-practices-researcher.md"
+        }
       },
       {
         "name": "framework-docs-researcher",
@@ -574,7 +654,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "research"
+        "originGroup": "research",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/research/framework-docs-researcher.md"
+        }
       },
       {
         "name": "git-history-analyzer",
@@ -592,7 +677,12 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "research"
+        "originGroup": "research",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/research/git-history-analyzer.md"
+        }
       },
       {
         "name": "repo-research-analyst",
@@ -610,148 +700,21 @@
         "changeAuthority": "direct",
         "source": "local",
         "status": "present",
-        "originGroup": "research"
+        "originGroup": "research",
+        "derivedFrom": {
+          "type": "agent",
+          "vendor": "compound-engineering-plugin",
+          "location": "compound-engineering-plugin/plugins/compound-engineering/agents/research/repo-research-analyst.md"
+        }
       }
     ],
     "commands": [
-      {
-        "name": "agent-native-audit",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/agent-native-audit.md",
-        "provenance": "forked",
-        "changeAuthority": "direct",
-        "source": "local",
-        "status": "present"
-      },
-      {
-        "name": "changelog",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/changelog.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "compound",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/compound.md",
-        "provenance": "forked",
-        "changeAuthority": "direct",
-        "source": "local",
-        "status": "present"
-      },
-      {
-        "name": "create-agent-skill",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/create-agent-skill.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "deepen-plan",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/deepen-plan.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "generate-command",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/generate-command.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "handoff",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/handoff.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "heal-skill",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/heal-skill.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "landpr",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/landpr.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "oracle",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/oracle.md",
-        "provenance": "forked",
-        "changeAuthority": "direct",
-        "source": "local",
-        "status": "present"
-      },
-      {
-        "name": "pickup",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/pickup.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "plan-review",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/plan-review.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
       {
         "name": "report-bug",
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/report-bug.md",
+        "location": ".agents/commands/develop/report-bug.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -762,7 +725,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/reproduce-bug.md",
+        "location": ".agents/commands/develop/reproduce-bug.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -773,7 +736,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/resolve-parallel.md",
+        "location": ".agents/commands/develop/resolve-parallel.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -784,7 +747,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/resolve-pr-parallel.md",
+        "location": ".agents/commands/develop/resolve-pr-parallel.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -795,18 +758,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/resolve-todo-parallel.md",
-        "provenance": "synced",
-        "changeAuthority": "upstream-only",
-        "source": "vendor",
-        "status": "present"
-      },
-      {
-        "name": "test-browser",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/test-browser.md",
+        "location": ".agents/commands/develop/resolve-todo-parallel.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -817,7 +769,150 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/triage.md",
+        "location": ".agents/commands/develop/triage.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "changelog",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/release/changelog.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "agent-native-audit",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/review/agent-native-audit.md",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "test-browser",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/review/test-browser.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "deepen-plan",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/shape/deepen-plan.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "plan-review",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/shape/plan-review.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "compound",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/compound.md",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "create-agent-skill",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/create-agent-skill.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "generate-command",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/generate-command.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "handoff",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/handoff.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "heal-skill",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/heal-skill.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "landpr",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/landpr.md",
+        "provenance": "synced",
+        "changeAuthority": "upstream-only",
+        "source": "vendor",
+        "status": "present"
+      },
+      {
+        "name": "oracle",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/oracle.md",
+        "provenance": "forked",
+        "changeAuthority": "direct",
+        "source": "local",
+        "status": "present"
+      },
+      {
+        "name": "pickup",
+        "purpose": "command",
+        "calls": [],
+        "outputs": [],
+        "location": ".agents/commands/utilities/pickup.md",
         "provenance": "synced",
         "changeAuthority": "upstream-only",
         "source": "vendor",
@@ -828,7 +923,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/verify.md",
+        "location": ".agents/commands/utilities/verify.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -839,7 +934,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-develop.md",
+        "location": ".agents/commands/workflows/wf-develop.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -850,7 +945,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-explore.md",
+        "location": ".agents/commands/workflows/wf-explore.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -861,7 +956,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-ralph.md",
+        "location": ".agents/commands/workflows/wf-ralph.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -872,7 +967,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-release.md",
+        "location": ".agents/commands/workflows/wf-release.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -883,7 +978,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-review.md",
+        "location": ".agents/commands/workflows/wf-review.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",
@@ -894,7 +989,7 @@
         "purpose": "command",
         "calls": [],
         "outputs": [],
-        "location": ".agents/commands/wf-shape.md",
+        "location": ".agents/commands/workflows/wf-shape.md",
         "provenance": "forked",
         "changeAuthority": "direct",
         "source": "local",

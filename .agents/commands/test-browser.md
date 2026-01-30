@@ -1,1 +1,0 @@
-/Users/marc/code/personal-projects/templates/inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/test-browser.md

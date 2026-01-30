@@ -1,1 +1,1 @@
-../handoff.md
+/Users/marc/code/personal-projects/templates/inspiration/agent-scripts/docs/slash-commands/handoff.md

@@ -64,12 +64,26 @@ const listHookFiles = (dir, baseDir) => {
 };
 
 const commands = [];
+const listCommandFiles = (dir) => {
+  if (!fs.existsSync(dir)) return [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const results = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...listCommandFiles(fullPath));
+    } else if (entry.isFile() && fullPath.endsWith('.md')) {
+      results.push(fullPath);
+    }
+  }
+  return results.sort();
+};
+
 if (fs.existsSync(commandsDir)) {
-  const commandFiles = listFiles(commandsDir, (filePath) => filePath.endsWith('.md'));
-  for (const fileName of commandFiles) {
-    const filePath = path.join(commandsDir, fileName);
+  const commandFiles = listCommandFiles(commandsDir);
+  for (const filePath of commandFiles) {
     const content = readFile(filePath);
-    const name = path.basename(fileName, '.md');
+    const name = path.basename(filePath, '.md');
     const purpose = extractSectionLine(content, 'Purpose') || 'Purpose not documented.';
     const verification = extractSectionLine(content, 'Verification') || 'See command.';
     commands.push({ name, purpose, verification });

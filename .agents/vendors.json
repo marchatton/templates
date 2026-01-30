@@ -1,37 +1,215 @@
 {
   "agent-scripts": {
     "sync": [
-      { "src": "docs/slash-commands/handoff.md", "dst": "commands/handoff.md" },
-      { "src": "docs/slash-commands/pickup.md", "dst": "commands/pickup.md" },
-      { "src": "docs/slash-commands/landpr.md", "dst": "commands/landpr.md" },
-      { "src": "skills/frontend-design", "dst": "skills/utilities/frontend-design" },
-      { "src": "skills/markdown-converter", "dst": "skills/utilities/markdown-converter" },
-      { "src": "skills/nano-banana-pro", "dst": "skills/utilities/nano-banana-pro" },
-      { "src": "skills/openai-image-gen", "dst": "skills/utilities/openai-image-gen" },
-      { "src": "skills/video-transcript-downloader", "dst": "skills/utilities/video-transcript-downloader" }
+      {
+        "src": "docs/slash-commands/handoff.md",
+        "dst": "commands/utilities/handoff.md"
+      },
+      {
+        "src": "docs/slash-commands/pickup.md",
+        "dst": "commands/utilities/pickup.md"
+      },
+      {
+        "src": "docs/slash-commands/landpr.md",
+        "dst": "commands/utilities/landpr.md"
+      },
+      {
+        "src": "skills/frontend-design",
+        "dst": "skills/utilities/frontend-design"
+      },
+      {
+        "src": "skills/markdown-converter",
+        "dst": "skills/utilities/markdown-converter"
+      },
+      {
+        "src": "skills/nano-banana-pro",
+        "dst": "skills/utilities/nano-banana-pro"
+      },
+      {
+        "src": "skills/openai-image-gen",
+        "dst": "skills/utilities/openai-image-gen"
+      },
+      {
+        "src": "skills/video-transcript-downloader",
+        "dst": "skills/utilities/video-transcript-downloader"
+      }
     ]
   },
   "compound-engineering-plugin": {
     "sync": [
-      { "src": "plugins/compound-engineering/commands/triage.md", "dst": "commands/triage.md" },
-      { "src": "plugins/compound-engineering/commands/plan_review.md", "dst": "commands/plan-review.md" },
-      { "src": "plugins/compound-engineering/commands/deepen-plan.md", "dst": "commands/deepen-plan.md" },
-      { "src": "plugins/compound-engineering/commands/report-bug.md", "dst": "commands/report-bug.md" },
-      { "src": "plugins/compound-engineering/commands/reproduce-bug.md", "dst": "commands/reproduce-bug.md" },
-      { "src": "plugins/compound-engineering/commands/resolve_parallel.md", "dst": "commands/resolve-parallel.md" },
-      { "src": "plugins/compound-engineering/commands/resolve_pr_parallel.md", "dst": "commands/resolve-pr-parallel.md" },
-      { "src": "plugins/compound-engineering/commands/resolve_todo_parallel.md", "dst": "commands/resolve-todo-parallel.md" },
-      { "src": "plugins/compound-engineering/commands/changelog.md", "dst": "commands/changelog.md" },
-      { "src": "plugins/compound-engineering/commands/generate_command.md", "dst": "commands/generate-command.md" },
-      { "src": "plugins/compound-engineering/commands/create-agent-skill.md", "dst": "commands/create-agent-skill.md" },
-      { "src": "plugins/compound-engineering/commands/heal-skill.md", "dst": "commands/heal-skill.md" },
-      { "src": "plugins/compound-engineering/commands/test-browser.md", "dst": "commands/test-browser.md" },
-      { "src": "plugins/compound-engineering/skills/agent-browser", "dst": "skills/utilities/agent-browser" },
-      { "src": "plugins/compound-engineering/skills/create-agent-skills", "dst": "skills/utilities/create-agent-skills" },
-      { "src": "plugins/compound-engineering/skills/every-style-editor", "dst": "skills/utilities/every-style-editor" },
-      { "src": "plugins/compound-engineering/skills/file-todos", "dst": "skills/utilities/file-todos" },
-      { "src": "plugins/compound-engineering/skills/gemini-imagegen", "dst": "skills/utilities/gemini-imagegen" },
-      { "src": "plugins/compound-engineering/skills/skill-creator", "dst": "skills/utilities/skill-creator" }
+      {
+        "src": "plugins/compound-engineering/commands/triage.md",
+        "dst": "commands/develop/triage.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/plan_review.md",
+        "dst": "commands/shape/plan-review.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/deepen-plan.md",
+        "dst": "commands/shape/deepen-plan.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/report-bug.md",
+        "dst": "commands/develop/report-bug.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/reproduce-bug.md",
+        "dst": "commands/develop/reproduce-bug.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/resolve_parallel.md",
+        "dst": "commands/develop/resolve-parallel.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/resolve_pr_parallel.md",
+        "dst": "commands/develop/resolve-pr-parallel.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/resolve_todo_parallel.md",
+        "dst": "commands/develop/resolve-todo-parallel.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/changelog.md",
+        "dst": "commands/release/changelog.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/generate_command.md",
+        "dst": "commands/utilities/generate-command.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/create-agent-skill.md",
+        "dst": "commands/utilities/create-agent-skill.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/heal-skill.md",
+        "dst": "commands/utilities/heal-skill.md"
+      },
+      {
+        "src": "plugins/compound-engineering/commands/test-browser.md",
+        "dst": "commands/review/test-browser.md"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/agent-browser",
+        "dst": "skills/utilities/agent-browser"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/create-agent-skills",
+        "dst": "skills/utilities/create-agent-skills"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/every-style-editor",
+        "dst": "skills/utilities/every-style-editor"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/file-todos",
+        "dst": "skills/utilities/file-todos"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/gemini-imagegen",
+        "dst": "skills/utilities/gemini-imagegen"
+      },
+      {
+        "src": "plugins/compound-engineering/skills/skill-creator",
+        "dst": "skills/utilities/skill-creator"
+      }
+    ],
+    "agentSkillMap": [
+      {
+        "src": "plugins/compound-engineering/agents/review/agent-native-reviewer.md",
+        "dst": "skills/review/agent-native-reviewer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/architecture-strategist.md",
+        "dst": "skills/review/architecture-strategist/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/research/best-practices-researcher.md",
+        "dst": "skills/utilities/best-practices-researcher/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md",
+        "dst": "skills/develop/bug-reproduction-validator/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/code-simplicity-reviewer.md",
+        "dst": "skills/review/code-simplicity-reviewer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/data-integrity-guardian.md",
+        "dst": "skills/review/data-integrity-guardian/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/data-migration-expert.md",
+        "dst": "skills/review/data-migration-expert/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/deployment-verification-agent.md",
+        "dst": "skills/review/deployment-verification-agent/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/workflow/every-style-editor.md",
+        "dst": "skills/utilities/every-style-editor/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/research/framework-docs-researcher.md",
+        "dst": "skills/utilities/framework-docs-researcher/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/research/git-history-analyzer.md",
+        "dst": "skills/utilities/git-history-analyzer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/kieran-python-reviewer.md",
+        "dst": "skills/review/kieran-python-reviewer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md",
+        "dst": "skills/review/kieran-typescript-reviewer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/pattern-recognition-specialist.md",
+        "dst": "skills/review/pattern-recognition-specialist/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/performance-oracle.md",
+        "dst": "skills/review/performance-oracle/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/workflow/pr-comment-resolver.md",
+        "dst": "skills/develop/pr-comment-resolver/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/research/repo-research-analyst.md",
+        "dst": "skills/utilities/repo-research-analyst/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/review/security-sentinel.md",
+        "dst": "skills/review/security-sentinel/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      },
+      {
+        "src": "plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md",
+        "dst": "skills/shape/spec-flow-analyzer/SKILL.md",
+        "note": "metadata-only (agent -> skill)"
+      }
     ]
   }
 }

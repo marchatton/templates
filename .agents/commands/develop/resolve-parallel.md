@@ -1,1 +1,1 @@
-../resolve-parallel.md
+/Users/marc/code/personal-projects/templates/inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/resolve_parallel.md

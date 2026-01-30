@@ -1,1 +1,1 @@
-../create-agent-skill.md
+/Users/marc/code/personal-projects/templates/inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/create-agent-skill.md

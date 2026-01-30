@@ -23,19 +23,19 @@ for dir in "${required_skill_dirs[@]}"; do
 done
 
 required_commands=(
-  "wf-explore"
-  "wf-shape"
-  "wf-develop"
-  "wf-review"
-  "wf-release"
-  "wf-ralph"
-  "verify"
-  "compound"
+  ".agents/commands/workflows/wf-explore.md"
+  ".agents/commands/workflows/wf-shape.md"
+  ".agents/commands/workflows/wf-develop.md"
+  ".agents/commands/workflows/wf-review.md"
+  ".agents/commands/workflows/wf-release.md"
+  ".agents/commands/workflows/wf-ralph.md"
+  ".agents/commands/utilities/verify.md"
+  ".agents/commands/utilities/compound.md"
 )
 
 for cmd in "${required_commands[@]}"; do
-  if [ ! -f "${root_dir}/.agents/commands/${cmd}.md" ]; then
-    echo "Missing command: .agents/commands/${cmd}.md"
+  if [ ! -f "${root_dir}/${cmd}" ]; then
+    echo "Missing command: ${cmd}"
     errors=1
   fi
 done

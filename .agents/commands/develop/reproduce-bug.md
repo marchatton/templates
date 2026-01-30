@@ -1,1 +1,1 @@
-../reproduce-bug.md
+/Users/marc/code/personal-projects/templates/inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/reproduce-bug.md
