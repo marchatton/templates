@@ -26,11 +26,11 @@ Skills (→ skills/)
 - skills/agent-browser/ → skills/utilities/agent-browser/
 - skills/agent-native-architecture/ → skills/review/agent-native-architecture/
 - skills/compound-docs/ → skills/compound/compound-docs/
-- skills/create-agent-skills/ → skills/utilities/create-agent-skills/
+- skills/create-agent-skills/ → skills/skills-maintenance/create-agent-skills/
 - skills/every-style-editor/ → skills/utilities/every-style-editor/
 - skills/file-todos/ → skills/utilities/file-todos/
 - skills/gemini-imagegen/ → skills/utilities/gemini-imagegen/
-- skills/skill-creator/ → skills/utilities/skill-creator/
+- skills/skill-creator/ → skills/skills-maintenance/skill-creator/
 
 ## Fork (one-off)
 
