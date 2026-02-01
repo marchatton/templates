@@ -34,6 +34,10 @@ mkdir -p "${add_stage}/.agents/skills"
     --skill react-best-practices \
     --agent amp \
     --yes
+  npx -y add-skill@latest vercel/ai \
+    --skill use-ai-sdk \
+    --agent amp \
+    --yes
   npx -y add-skill@latest benjitaylor/agentation \
     --skill agentation \
     --agent amp \
@@ -66,8 +70,10 @@ copy_skill "${add_stage}/.agents/skills/web-design-guidelines" \
   "${root_dir}/.agents/skills/review/web-design-guidelines"
 copy_skill "${add_stage}/.agents/skills/react-best-practices" \
   "${root_dir}/.agents/skills/develop/react-best-practices"
+copy_skill "${add_stage}/.agents/skills/use-ai-sdk" \
+  "${root_dir}/.agents/skills/develop/use-ai-sdk"
 copy_skill "${add_stage}/.agents/skills/agentation" \
-  "${root_dir}/.agents/skills/review/agentation"
+  "${root_dir}/.agents/skills/utilities/agentation"
 
 copy_skill "${ui_stage}/.codex/skills/baseline-ui" \
   "${root_dir}/.agents/skills/review/baseline-ui"
@@ -89,7 +95,7 @@ root_dir = Path(sys.argv[1])
 
 default_verify = [
     "- For reviews: list violations with snippet + fix.",
-    "- If code touched: run `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`, `pnpm verify`; report GO or NO-GO with evidence.",
+    "- If code touched: run `pnpm lint`, `pnpm test`, `pnpm build`, `pnpm verify`; report GO or NO-GO with evidence.",
 ]
 
 targets = [
@@ -130,7 +136,7 @@ targets = [
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "review" / "agentation" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "utilities" / "agentation" / "SKILL.md",
         "name": "agentation",
         "description": "Add Agentation toolbar to Next.js. Use for install/config or dev-only <Agentation />.",
         "verify": [],

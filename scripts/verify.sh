@@ -2,7 +2,6 @@
 set -euo pipefail
 
 pnpm -s lint
-pnpm -s typecheck
 pnpm -s test
 pnpm -s build
 

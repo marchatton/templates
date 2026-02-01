@@ -64,7 +64,7 @@ Aim for something close to this, unless your repo genuinely needs more.
 Must-haves:
 - **One-sentence project description** (sets intent and scope)
 - **Package manager** (if not npm) and workspace tooling
-- **How to verify changes** (build/typecheck/test commands) when non-standard
+- **How to verify changes** (build/lint/test commands) when non-standard
 
 Nice-to-haves (only if truly universal and stable):
 - A short note on required runtimes (eg Node version) *if not obvious*
@@ -79,7 +79,7 @@ Keep docs discoverable, named plainly, and scoped by domain.
 
   Example:
   - `docs/`
-    - `BUILD.md` (build, typecheck, common scripts, CI notes)
+    - `BUILD.md` (build, lint, common scripts, CI notes)
     - `TESTING.md` (test runner, how to run unit/integration/e2e)
     - `TYPESCRIPT.md` (TS conventions that aren’t enforced automatically)
     - `API_CONVENTIONS.md` (API patterns, error model, pagination, auth model)
@@ -174,7 +174,7 @@ For each instruction, decide:
 Root AGENTS.md passes if:
 - [ ] One-sentence project description exists
 - [ ] Package manager/workspaces are explicit (if not npm)
-- [ ] Verification commands are clear (build/typecheck/test) if non-standard
+- [ ] Verification commands are clear (build/lint/test) if non-standard
 - [ ] It mostly contains pointers to docs, not detail
 - [ ] No large style guide sections
 - [ ] No brittle file path maps
@@ -196,7 +196,7 @@ Use this as the target shape.
 
 ## Verify changes
 - Build: <command>
-- Typecheck: <command>
+- Lint: <command>
 - Tests: <command>
 
 ## More context (read when relevant)
