@@ -65,6 +65,19 @@
         "provenance": "local"
       },
       {
+        "name": "beautiful-mermaid",
+        "tier": "leaf",
+        "purpose": "Render Mermaid diagrams to SVG or ASCII/Unicode via beautiful-mermaid",
+        "useWhen": "you need Mermaid rendering without a DOM, themed SVG output, or terminal-friendly ASCII/Unicode diagrams",
+        "outputs": [
+          "SVG string",
+          "ASCII/Unicode diagram string"
+        ],
+        "ownerModule": "beautiful-mermaid",
+        "location": ".agents/skills/utilities/beautiful-mermaid/SKILL.md",
+        "provenance": "local"
+      },
+      {
         "name": "compound-docs",
         "tier": "leaf",
         "purpose": "appending structured learnings to a project repo's docs/LEARNINGS.md",

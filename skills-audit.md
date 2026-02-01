@@ -8,7 +8,7 @@ Date: February 01, 2026
 
 ## Summary
 - Local skills with upstream mapping: 32 skills.
-- Local-only (no upstream mapping): 10 skills.
+- Local-only (no upstream mapping): 11 skills.
 
 ## Tracked Skills (local copies with upstream mapping)
 - agent-browser -> inspiration/compound-engineering-plugin/plugins/compound-engineering/skills/agent-browser
@@ -47,6 +47,7 @@ Date: February 01, 2026
 ## Local-Only Skills (no upstream mapping)
 - agentation
 - ask-questions-if-underspecified
+- beautiful-mermaid
 - create-json-prd
 - create-prd
 - docs-list
