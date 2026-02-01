@@ -12,6 +12,7 @@ required_skill_dirs=(
   "${root_dir}/.agents/skills/review"
   "${root_dir}/.agents/skills/release"
   "${root_dir}/.agents/skills/compound"
+  "${root_dir}/.agents/skills/skills-maintenance"
   "${root_dir}/.agents/skills/utilities"
 )
 
