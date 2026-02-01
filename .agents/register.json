@@ -140,6 +140,16 @@
         }
       },
       {
+        "name": "engineering-tutor",
+        "tier": "leaf",
+        "purpose": "teach engineering concepts with Feynman technique, metaphors, and diagrams",
+        "useWhen": "user asks to explain/teach/break down engineering concepts, build intuition/mental models, understand trade-offs/failure modes/design choices, or wants a visual diagram",
+        "outputs": [],
+        "ownerModule": "engineering-tutor",
+        "location": ".agents/skills/utilities/engineering-tutor/SKILL.md",
+        "provenance": "local"
+      },
+      {
         "name": "every-style-editor",
         "tier": "leaf",
         "purpose": "This skill",
