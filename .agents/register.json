@@ -103,7 +103,7 @@
         "useWhen": "working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices",
         "outputs": [],
         "ownerModule": "create-agent-skills",
-        "location": ".agents/skills/utilities/create-agent-skills/SKILL.md",
+        "location": ".agents/skills/skills-maintenance/create-agent-skills/SKILL.md",
         "provenance": "synced",
         "upstream": {
           "repo": "compound-engineering-plugin",
@@ -144,7 +144,7 @@
         "name": "file-todos",
         "tier": "leaf",
         "purpose": "This skill",
-        "useWhen": "managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes",
+        "useWhen": "managing the file-based todo tracking system in the review-to-dos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes",
         "outputs": [],
         "ownerModule": "file-todos",
         "location": ".agents/skills/utilities/file-todos/SKILL.md",
@@ -207,7 +207,7 @@
           "dependency map (a -> b edges + mermaid diagram)"
         ],
         "ownerModule": "modular-skills-architect",
-        "location": ".agents/skills/utilities/modular-skills-architect/SKILL.md",
+        "location": ".agents/skills/skills-maintenance/modular-skills-architect/SKILL.md",
         "provenance": "local"
       },
       {
@@ -269,7 +269,7 @@
         "useWhen": "users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations",
         "outputs": [],
         "ownerModule": "skill-creator",
-        "location": ".agents/skills/utilities/skill-creator/SKILL.md",
+        "location": ".agents/skills/skills-maintenance/skill-creator/SKILL.md",
         "provenance": "forked",
         "upstream": {
           "repo": "compound-engineering-plugin",

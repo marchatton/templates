@@ -55,15 +55,15 @@ This skill must surface provenance early, and every recommendation must state wh
 For every artefact, capture:
 - location (path or invocation)
 - owner/source of truth
-- provenance bucket: forked / synced / external
-- change authority: direct / wrapper-only / upstream-only / unknown
+- provenance bucket: local / forked / synced / external
+- upstream: repo + path when forked/synced
 
 1) Skills corpus
 - each skill purpose/scope
 - tool requirements
 - output conventions (templates, filenames, formatting)
 - cross-skill references + shared patterns
-- provenance for each skill (forked/synced/external)
+- provenance for each skill (local/forked/synced/external)
 
 2) Commands + workflows corpus
 - all commands (including workflow commands `wf-*`)
@@ -71,26 +71,26 @@ For every artefact, capture:
 - which workflows call which skills/commands
 - naming, arguments, expected outputs, GO/NO-GO semantics
 - implied orchestration logic and where it lives
-- provenance for each command/workflow (forked/synced/external)
+- provenance for each command/workflow (local/forked/synced/external)
 
 3) Hooks corpus
 - hook inventory (even if examples only)
 - trigger conditions + precedence
 - conflicts (multiple hooks apply) and fallout
 - what belongs in hooks vs commands vs skills
-- provenance for hooks/templates (forked/synced/external)
+- provenance for hooks/templates (local/forked/synced/external)
 
 4) Agent files + policy corpus
 - agent configs, system prompts, routing logic, tool policies
 - glue behavior outside individual skills
-- provenance (forked/synced/external) and what is actually authoritative
+- provenance (local/forked/synced/external) and what is actually authoritative
 
 5) AGENTS.md corpus (including templates)
 - root `AGENTS.md` + scoped AGENTS (apps/web, docs/*, release, etc)
 - templates (e.g. `docs/agentsmd/*`)
 - source-of-truth rules + symlink expectations
 - repeated guidance that should move into skills/commands (or vice versa)
-- provenance (forked/synced/external) for any template sources
+- provenance (local/forked/synced/external) for any template sources
 
 6) Document structure
 - folder layout + naming conventions
@@ -130,8 +130,8 @@ Default tiers unless user supplies a different scheme:
 - `deprecated`
 
 ### Provenance / control model (required per entry)
-- `provenance`: `forked` | `synced` | `external`
-- `changeAuthority`: `direct` | `wrapper-only` | `upstream-only` | `unknown`
+- `provenance`: `local` | `forked` | `synced` | `external`
+- `upstream`: `{ repo, path }` (only for `forked`/`synced`)
 
 ### Required fields (skills)
 - `name`
@@ -142,7 +142,7 @@ Default tiers unless user supplies a different scheme:
 - `ownerModule` (from proposed module list)
 - `location` (path or invocation)
 - `provenance`
-- `changeAuthority`
+- `upstream` (only if `forked`/`synced`)
 - `replaces` / `replacedBy` (optional, deprecated)
 
 ### Recommended fields (commands/workflows/hooks/AGENTS)
@@ -171,7 +171,7 @@ Interpretation:
 
 1) Inventory + extract contracts (skills + commands + hooks + AGENTS + agent files + docs)
 - list artefacts and where they live
-- for each, capture provenance + change authority
+- for each, capture provenance + upstream
 - pull implicit contracts: naming, outputs, verification, routing rules, precedence
 - identify overlaps, contradictions, glue logic, drift
 
@@ -179,7 +179,7 @@ Interpretation:
 - who routes what (workflow command -> agent logic -> skills -> outputs)
 - where decisions made (agent prompt vs command docs vs skill text vs AGENTS)
 - where contracts unclear/duplicated
-- where source of truth ambiguous (forked vs synced vs external)
+- where source of truth ambiguous (local vs forked vs synced vs external)
 - compute **Refactor Need Score (0-100)** with rubric above
 
 3) Propose modular architecture
@@ -207,7 +207,7 @@ Must include:
 - repeated patterns (3+ occurrences) across skills/commands/AGENTS/templates
 - consolidate minimally
 - justify repetition kept
-- avoid DRY that forces coupling across forked/external boundaries
+- avoid DRY that forces coupling across local/forked/external boundaries
 
 7) Harmonise commands + hooks
 - consistent naming scheme (commands + workflows)
@@ -218,7 +218,7 @@ Must include:
 
 8) Docs + file structure proposal
 - folder structure for skills, commands, hooks, agent files, AGENTS templates, workflow docs
-- where source of truth lives (esp forked vs synced vs external)
+- where source of truth lives (esp local vs forked vs synced vs external)
 - examples location
 - lightweight versioning/deprecation
 
@@ -230,7 +230,7 @@ Must include:
 
 10) Register update
 - create/update `.agents/register.json` in canonical repo
-- every skill classified (max 3 tiers) + provenance + change authority
+- every skill classified (max 3 tiers) + provenance + upstream (if forked/synced)
 - mark deprecated with replacement + removal rule
 
 11) Examples
@@ -282,5 +282,5 @@ Before finalising, confirm:
 - shared rules centralized only if used 3+ places
 - refactor plan includes quick win in first 2 steps
 - command/hook naming consistent + predictable
-- Register exists and every skill classified (max 3 tiers) with provenance + change authority
+- Register exists and every skill classified (max 3 tiers) with provenance + upstream (if forked/synced)
 - new contributor can grok system in under 10 minutes

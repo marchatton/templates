@@ -99,7 +99,7 @@
       },
       {
         "src": "plugins/compound-engineering/skills/create-agent-skills",
-        "dst": "skills/utilities/create-agent-skills"
+        "dst": "skills/skills-maintenance/create-agent-skills"
       },
       {
         "src": "plugins/compound-engineering/skills/every-style-editor",
@@ -111,7 +111,7 @@
       },
       {
         "src": "plugins/compound-engineering/skills/skill-creator",
-        "dst": "skills/utilities/skill-creator"
+        "dst": "skills/skills-maintenance/skill-creator"
       },
       {
         "src": "plugins/compound-engineering/agents/review/agent-native-reviewer.md",
