@@ -1,7 +1,6 @@
 ---
 name: create-agent-skill
-description: Create or edit Claude Code skills with expert guidance on structure and best practices
-allowed-tools: Skill(creating-agent-skills)
+description: Create or edit agent skills with expert guidance on structure and best practices
 argument-hint: [skill description or requirements]
 ---
 

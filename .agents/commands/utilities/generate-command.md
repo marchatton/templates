@@ -4,7 +4,7 @@ description: Create a new custom slash command following conventions and best pr
 argument-hint: "[command purpose and requirements]"
 ---
 
-# Create a Custom Claude Code Command
+# Create a Custom Command
 
 Create a new slash command in `.agents/commands/` for the requested task.
 
@@ -12,27 +12,9 @@ Create a new slash command in `.agents/commands/` for the requested task.
 
 #$ARGUMENTS
 
-## Key Capabilities to Leverage
+## Tooling
 
-**File Operations:**
-- Read, Edit, Write - modify files precisely
-- Glob, Grep - search codebase
-- MultiEdit - atomic multi-part changes
-
-**Development:**
-- Bash - run commands (git, tests, linters)
-- Task - launch specialized agents for complex tasks
-- TodoWrite - track progress with todo lists
-
-**Web & APIs:**
-- WebFetch, WebSearch - research documentation
-- GitHub (gh cli) - PRs, issues, reviews
-- Playwright - browser automation, screenshots
-
-**Integrations:**
-- AppSignal - logs and monitoring
-- Context7 - framework docs
-- Stripe, Todoist, Featurebase (if relevant)
+Use available tools per `AGENTS.md` (search, edit, shell, web, browser automation). Prefer the smallest tool that gets the job done.
 
 ## Best Practices
 
@@ -40,7 +22,7 @@ Create a new slash command in `.agents/commands/` for the requested task.
 2. **Break down complex tasks** - use step-by-step plans
 3. **Use examples** - reference existing code patterns
 4. **Include success criteria** - tests pass, linting clean, etc.
-5. **Think first** - use "think hard" or "plan" keywords for complex problems
+5. **Plan when complex** - share steps before execution
 6. **Iterate** - guide the process step by step
 
 ## Required: YAML Frontmatter
@@ -78,8 +60,8 @@ argument-hint: "[what arguments the command accepts]"
    - Check/verify results
 
 3. [Final steps]
-   - Run tests
-   - Lint code
+   - Run tests/verification
+   - Lint/build if relevant
    - Commit changes (if appropriate)
 
 ## Success Criteria
@@ -113,11 +95,11 @@ Implement #$ARGUMENTS following these steps:
 3. Implement
    - Follow existing code patterns (reference specific files)
    - Write tests first if doing TDD
-   - Ensure code follows CLAUDE.md conventions
+   - Ensure code follows AGENTS.md conventions
 
 4. Verify
-   - Run tests: `bin/rails test`
-   - Run linter: `bundle exec standardrb`
+   - Run tests per repo docs
+   - Run linter per repo docs
    - Check changes with git diff
 
 5. Commit (optional)

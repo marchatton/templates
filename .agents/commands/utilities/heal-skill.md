@@ -2,7 +2,6 @@
 name: heal-skill
 description: Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references
 argument-hint: [optional: specific issue to fix]
-allowed-tools: [Read, Edit, Bash(ls:*), Bash(git:*)]
 ---
 
 <objective>
@@ -12,7 +11,7 @@ Analyze the conversation to detect which skill is running, reflect on what went 
 </objective>
 
 <context>
-Skill detection: !`ls -1 ./.agents/skills/*/*/SKILL.md | head -5`
+Skill detection: `ls -1 ./.agents/skills/*/*/SKILL.md | head -5`
 </context>
 
 <quick_start>
@@ -115,7 +114,7 @@ Choose (1-4):
 <step_6 name="apply_changes">
 Only after approval (option 1 or 2):
 
-1. Use Edit tool for each correction across all files
+1. Apply edits for each correction across all files
 2. Read back modified sections to verify
 3. If option 1, commit with structured message showing what was healed
 4. Confirm completion with file list
