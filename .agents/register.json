@@ -173,7 +173,7 @@
         "name": "file-todos",
         "tier": "leaf",
         "purpose": "This skill",
-        "useWhen": "managing the file-based todo tracking system in the review-to-dos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes",
+        "useWhen": "managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and integrating with slash commands and code review processes",
         "outputs": [],
         "ownerModule": "file-todos",
         "location": ".agents/skills/utilities/file-todos/SKILL.md",
@@ -336,8 +336,8 @@
       {
         "name": "agent-native-reviewer",
         "tier": "leaf",
-        "purpose": "review features for agent-native parity (action + context)",
-        "useWhen": "reviewing feature/PR for agent-native parity",
+        "purpose": "Focused parity review for a feature/PR (action + context)",
+        "useWhen": "reviewing a feature or PR for action/context parity and capability mapping",
         "outputs": [
           "Review notes",
           "Parity checklist",
@@ -776,7 +776,19 @@
           "Review notes"
         ],
         "ownerModule": "web-design-guidelines",
-        "location": ".agents/skills/review/web-design-guidelines/SKILL.md",
+        "location": ".agents/skills/develop/web-design-guidelines/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "rams",
+        "tier": "leaf",
+        "purpose": "Design feedback via /prompts-rams (backup to ui-skills)",
+        "useWhen": "UI critique or feedback is needed; prefer ui-skills first",
+        "outputs": [
+          "Feedback notes"
+        ],
+        "ownerModule": "rams",
+        "location": ".agents/skills/develop/rams/SKILL.md",
         "provenance": "local"
       },
       {
@@ -794,11 +806,11 @@
       {
         "name": "agent-native-audit",
         "tier": "leaf",
-        "purpose": "Run comprehensive agent-native architecture review with scored principles",
-        "useWhen": "This skill should be used when running a comprehensive agent-native architecture audit with scored principles.",
+        "purpose": "Comprehensive agent-native architecture audit with scored principles",
+        "useWhen": "system-wide health checks, periodic audits, or major architecture reviews",
         "outputs": [],
         "ownerModule": "agent-native-audit",
-        "location": ".agents/skills/review/agent-native-audit/SKILL.md",
+        "location": ".agents/skills/audit/agent-native-audit/SKILL.md",
         "provenance": "local",
         "history": [
           "command:.agents/commands/review/agent-native-audit.md"

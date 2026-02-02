@@ -6,7 +6,7 @@ This folder tracks work items once implementation begins.
 - Work items live under `docs/04-projects/<lane>/<id>_<slug>/`.
 - Each work item includes `prd.md` and `prd.json`.
 - Reviews for a work item live inside the dossier (e.g. `reviews/`).
-- If using file-based todos, store them in the dossier’s `review-to-dos/` folder.
+- If using file-based todos, store them in the dossier’s `todos/` folder.
 
 ## Workflow defaults
 - Keep PRs small; one concern per PR.

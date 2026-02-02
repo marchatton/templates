@@ -9,7 +9,7 @@
 <process>
 ## Step 1: Select the Skill
 
-**DO NOT use AskUserQuestion** - there may be many skills.
+**Do not use ask-questions-if-underspecified** - there may be many skills.
 
 ```bash
 ls ~/.claude/skills/
@@ -34,7 +34,7 @@ Report current structure to user.
 
 ## Step 3: Gather Workflow Requirements
 
-Ask using AskUserQuestion or direct question:
+Ask using ask-questions-if-underspecified or direct question:
 - What should this workflow do?
 - When would someone use it vs existing workflows?
 - What references would it need?

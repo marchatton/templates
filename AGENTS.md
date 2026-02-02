@@ -8,6 +8,7 @@ Make skills concise + specific. Sacrifice grammar for concision.
 - Changes here propagate into many repos. Prefer small changes, avoid breaking downstream scaffolds, and call out any intentional breakage in the PR.
 - If a workflow is repeatable, prefer adding/updating a skill/command rather than growing AGENTS.
 - Avoid brittle file-path assertions in prose. Describe stable concepts and search if unsure.
+- For creating new skills, default to `@creating-agent-skills`.
 
 ## Template structure
 - Canonical repo of skills/commands/hooks lives under .agents
@@ -16,13 +17,13 @@ Make skills concise + specific. Sacrifice grammar for concision.
 - Target-repo AGENTS.md templates live in `docs/agentsmd/`.
 - For commands, skills, agent files etc; `AGENTS.md` is the source of truth. Agentic tool specific files (e.g. `CLAUDE.md`) should be symlinked via `iannuttal/dotagents` — don’t fork instructions per agentic tool (e.g. Claude, Amp).
 - Canonical workflows live under `.agents/skills` (`wf-*`); keep AGENTS references in sync
-- .agents/vendors.json contains the mapping from source to target when utilising external skills
-- .agents/register.json contains a list of all the commands, skills, agents etc in the repo
+- .agents/register.json contains all commands/skills/agents + upstream mapping
 - .agents/register.json is the canonical schema for register metadata fields; do not guess field names
+- skills_copy/skills_diff only handle upstreams in inspiration/ (repo without "/"); use scripts/npx_skills_refresh.sh for GitHub-style upstreams
 
 ## Tooling
-- Package manager: default pnpm 
-- When you invoke a skill, print echo: `:: the <skill name> skill must FLOW ::`
+- Package manager: default pnpm
+- When you invoke a skill, print echo: `:: the <skill name> skill must FLOW ::` (only mention here; don't repeat elsewhere)
 
 
 ## Codex web search

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-vendors_file="${root_dir}/.agents/vendors.json"
+register_file="${root_dir}/.agents/register.json"
 
 usage() {
   cat <<'USAGE'
@@ -12,39 +12,35 @@ Usage:
   scripts/skills_diff.sh <skill-name>
 
 Notes:
-- Diffs local skills against inspiration sources from .agents/vendors.json.
+- Diffs local skills against inspiration sources from .agents/register.json.
 - Directories use recursive diff; files use unified diff.
 USAGE
 }
 
 list_entries() {
-  python3 - "${vendors_file}" <<'PY'
+  python3 - "${register_file}" <<'PY'
 import json
 import sys
-from pathlib import Path
 
 path = sys.argv[1]
-with open(path, 'r', encoding='utf-8') as fh:
+with open(path, "r", encoding="utf-8") as fh:
     data = json.load(fh)
 
 entries = []
-for vendor, cfg in data.items():
-    for item in cfg.get("sync", []):
-        src = item.get("src")
-        dst = item.get("dst")
-        if not src or not dst:
-            continue
-        if not dst.startswith("skills/"):
-            continue
-        dst_path = Path(dst)
-        if dst_path.name == "SKILL.md":
-            name = dst_path.parent.name
-        else:
-            name = dst_path.name
-        entries.append((name, vendor, src, dst))
+for skill in data.get("entries", {}).get("skills", []):
+    upstream = skill.get("upstream") or {}
+    repo = upstream.get("repo")
+    src = upstream.get("path")
+    name = skill.get("name")
+    dst = skill.get("location")
+    if not repo or not src or not name or not dst:
+        continue
+    if not dst.startswith(".agents/skills/"):
+        continue
+    entries.append((name, repo, src, dst))
 
-for name, vendor, src, dst in entries:
-    print(f"{name}\t{vendor}\t{src}\t{dst}")
+for name, repo, src, dst in entries:
+    print(f"{name}\t{repo}\t{src}\t{dst}")
 PY
 }
 
@@ -82,28 +78,51 @@ fi
 
 found=0
 
-while IFS=$'\t' read -r name vendor src dst; do
+while IFS=$'\t' read -r name repo src dst; do
   if [ "${mode}" = "one" ] && [ "${name}" != "${skill}" ]; then
     continue
   fi
   found=1
-  src_path="${root_dir}/inspiration/${vendor}/${src}"
-  dst_path="${root_dir}/.agents/${dst}"
+  if [[ "${repo}" == *"/"* ]]; then
+    echo "Skip ${name}: upstream ${repo} not in inspiration/ (use scripts/npx_skills_refresh.sh)." >&2
+    continue
+  fi
+  src_root="${root_dir}/inspiration/${repo}"
+  if [ ! -d "${src_root}" ]; then
+    echo "Missing upstream repo: ${src_root} (run scripts/vendor_update.sh)." >&2
+    continue
+  fi
+  src_path="${src_root}/${src}"
+  dst_path="${root_dir}/${dst}"
 
   if [ ! -e "${src_path}" ]; then
     echo "Missing source: ${src_path}" >&2
     continue
   fi
-  if [ ! -e "${dst_path}" ]; then
-    echo "Missing local: ${dst_path}" >&2
-    continue
-  fi
-
-  echo "==> ${name}"
-  if [ "$(basename "${dst_path}")" = "SKILL.md" ]; then
-    diff -u "${src_path}" "${dst_path}" || true
+  if [ -d "${src_path}" ]; then
+    if [[ "${dst_path}" == *.md ]]; then
+      dst_dir="$(dirname "${dst_path}")"
+    else
+      dst_dir="${dst_path}"
+    fi
+    if [ ! -d "${dst_dir}" ]; then
+      echo "Missing local: ${dst_dir}" >&2
+      continue
+    fi
+    echo "==> ${name}"
+    diff -ru -x .DS_Store "${src_path}" "${dst_dir}" || true
   else
-    diff -ru -x .DS_Store "${src_path}" "${dst_path}" || true
+    if [ -d "${dst_path}" ]; then
+      dst_file="${dst_path}/SKILL.md"
+    else
+      dst_file="${dst_path}"
+    fi
+    if [ ! -f "${dst_file}" ]; then
+      echo "Missing local: ${dst_file}" >&2
+      continue
+    fi
+    echo "==> ${name}"
+    diff -u "${src_path}" "${dst_file}" || true
   fi
 
 done < <(list_entries)

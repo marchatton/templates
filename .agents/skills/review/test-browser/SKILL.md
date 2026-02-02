@@ -47,7 +47,7 @@ npm install -g agent-browser
 agent-browser install  # Downloads Chromium (~160MB)
 ```
 
-See the `agent-browser` skill for detailed usage.
+See the CLI reference below for detailed usage.
 
 ## Main Tasks
 
@@ -67,7 +67,7 @@ If installation fails, inform the user and stop.
 
 Before starting tests, ask user if they want to watch the browser:
 
-Use AskUserQuestion with:
+Use ask-questions-if-underspecified with:
 - Question: "Do you want to watch the browser tests run?"
 - Options:
   1. **Headed (watch)** - Opens visible browser window so you can see tests run
@@ -199,7 +199,7 @@ Pause for human input when testing touches:
 | SMS | "Verify you received the SMS code" |
 | External APIs | "Confirm the [service] integration is working" |
 
-Use AskUserQuestion:
+Use ask-questions-if-underspecified:
 ```markdown
 **Human Verification Needed**
 

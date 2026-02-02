@@ -18,7 +18,7 @@
 
 ### 2) Synced (upstream owned)
 - Keep upstream source in `inspiration/`.
-- Sync into canonical skills via `vendors.json`.
+- Sync into canonical skills via `register.json` upstream mapping.
 - Do not hand-edit the synced copy; fork if you need changes.
 - Track what is synced or ignored in `changelog/`.
 

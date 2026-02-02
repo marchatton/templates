@@ -28,7 +28,6 @@
 - `ask-questions-if-underspecified` when unclear.
 - `oracle` for deep research.
 
-When you invoke a skill, print echo: `:: the <skill name> skill must FLOW ::`
 
 ## Canonical and local agents files and instructions (skills, commands, hooks etc)
 - For other agentic tools (not Codex), respective skills and files etc will be symlinked using `iannuttal/dotagents`. Don’t fork instructions per agentic tool (e.g. Claude, Amp).

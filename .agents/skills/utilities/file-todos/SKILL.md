@@ -7,7 +7,7 @@ description: Manage file-based todos stored alongside a dossier. Create, triage,
 
 ## Overview
 
-The dossier `review-to-dos` folder contains a file-based tracking system for managing code review feedback, technical debt, feature requests, and work items. Each todo is a markdown file with YAML frontmatter and structured sections.
+The dossier `todos` folder contains a file-based tracking system for managing code review feedback, technical debt, feature requests, and work items. Each todo is a markdown file with YAML frontmatter and structured sections.
 
 This skill should be used when:
 - Creating new todos from findings or feedback
@@ -18,7 +18,7 @@ This skill should be used when:
 - Updating work logs during todo execution
 
 ## Location
-- Set `REVIEW_TODOS_DIR` to the active dossier’s `review-to-dos` folder (see `docs/AGENTS.md`).
+- Set `REVIEW_TODOS_DIR` to the active dossier’s `todos` folder (see `docs/AGENTS.md`).
 
 ## File Naming Convention
 

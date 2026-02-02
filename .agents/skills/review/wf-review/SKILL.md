@@ -39,13 +39,13 @@ Single-agent exhaustive review: start with native `/review`, then multi-angle pa
    - Scenarios: invalid inputs, boundaries, concurrency, scale, timeouts, resource exhaustion, data corruption, security attacks.
 5. Synthesize findings: de-dupe, categorize, severity (P1/P2/P3), effort (S/M/L).
 6. Create todos (mandatory): use `file-todos` skill for **all** findings.
-   - Store in the active dossier folder (e.g. `docs/04-projects/<lane>/<id>_<slug>/review-to-dos/`).
-   - Periodic reviews: store under `docs/05-reviews-audits/<slug>/review-to-dos/`.
+   - Store in the active dossier folder (e.g. `docs/04-projects/<lane>/<id>_<slug>/todos/`).
+   - Periodic reviews: store under `docs/05-reviews-audits/<slug>/todos/`.
 7. Run the verify skill in the target repo.
 8. **If verify fails**, ask: "Fix failures now? (y/n)"
    - **Yes**: Ask max iterations (default 10). Loop: pick top failure, fix, re-run targeted check, then re-run verify skill until clean or max reached.
    - **No**: Continue to summary with failures noted.
-9. If UI/user-flow changed, run `test-browser` (wraps `agent-browser`) and record results.
+9. If UI/user-flow changed, run `test-browser` and record results.
 10. Write review summary and GO/NO-GO.
 
 ## Verification

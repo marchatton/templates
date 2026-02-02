@@ -48,7 +48,7 @@ docs/
   04-projects/                       # all work items once implementation begins (dossiers)
     README.md                        # how to create a new dossier + naming conventions
     _templates/                      # copy these when creating a new dossier
-    (each dossier may include reviews/ for review notes + QA and review-to-dos/ for findings)
+    (each dossier may include reviews/ for review notes + QA and todos/ for findings)
 
     01-experiments/                  # lightweight trials, metric-driven
     02-features/                     # feature work

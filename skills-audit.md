@@ -4,7 +4,7 @@ Date: February 01, 2026
 
 ## Scope
 - All skills under .agents/ are local copies (no symlinks).
-- Upstream mappings tracked via .agents/vendors.json (agent-scripts + compound-engineering-plugin).
+- Upstream mappings tracked via .agents/register.json (agent-scripts + compound-engineering-plugin).
 
 ## Summary
 - Local skills with upstream mapping: 32 skills.
