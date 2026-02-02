@@ -15,9 +15,10 @@ Make skills concise + specific. Sacrifice grammar for concision.
 - Canonical document templates `docs/templates`
 - Target-repo AGENTS.md templates live in `docs/agentsmd/`.
 - For commands, skills, agent files etc; `AGENTS.md` is the source of truth. Agentic tool specific files (e.g. `CLAUDE.md`) should be symlinked via `iannuttal/dotagents` — don’t fork instructions per agentic tool (e.g. Claude, Amp).
-- Canonical workflows live under `.agents/commands` (`wf-*`); keep AGENTS references in sync
+- Canonical workflows live under `.agents/skills` (`wf-*`); keep AGENTS references in sync
 - .agents/vendors.json contains the mapping from source to target when utilising external skills
 - .agents/register.json contains a list of all the commands, skills, agents etc in the repo
+- .agents/register.json is the canonical schema for register metadata fields; do not guess field names
 
 ## Tooling
 - Package manager: default pnpm 

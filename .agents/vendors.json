@@ -2,18 +2,6 @@
   "agent-scripts": {
     "sync": [
       {
-        "src": "docs/slash-commands/handoff.md",
-        "dst": "commands/utilities/handoff.md"
-      },
-      {
-        "src": "docs/slash-commands/pickup.md",
-        "dst": "commands/utilities/pickup.md"
-      },
-      {
-        "src": "docs/slash-commands/landpr.md",
-        "dst": "commands/utilities/landpr.md"
-      },
-      {
         "src": "skills/create-cli",
         "dst": "skills/utilities/create-cli"
       },
@@ -45,46 +33,6 @@
   },
   "compound-engineering-plugin": {
     "sync": [
-      {
-        "src": "plugins/compound-engineering/commands/triage.md",
-        "dst": "commands/develop/triage.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/plan_review.md",
-        "dst": "commands/shape/plan-review.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/deepen-plan.md",
-        "dst": "commands/shape/deepen-plan.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/report-bug.md",
-        "dst": "commands/develop/report-bug.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/reproduce-bug.md",
-        "dst": "commands/develop/reproduce-bug.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/resolve_parallel.md",
-        "dst": "commands/develop/resolve-parallel.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/resolve_pr_parallel.md",
-        "dst": "commands/develop/resolve-pr-parallel.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/resolve_todo_parallel.md",
-        "dst": "commands/develop/resolve-todo-parallel.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/changelog.md",
-        "dst": "commands/release/changelog.md"
-      },
-      {
-        "src": "plugins/compound-engineering/commands/test-browser.md",
-        "dst": "commands/review/test-browser.md"
-      },
       {
         "src": "plugins/compound-engineering/skills/agent-native-architecture",
         "dst": "skills/review/agent-native-architecture"

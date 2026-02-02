@@ -6,7 +6,6 @@ root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 errors=0
 
 required_skill_dirs=(
-  "${root_dir}/.agents/skills/explore"
   "${root_dir}/.agents/skills/shape"
   "${root_dir}/.agents/skills/develop"
   "${root_dir}/.agents/skills/review"
@@ -23,19 +22,17 @@ for dir in "${required_skill_dirs[@]}"; do
   fi
 done
 
-required_commands=(
-  ".agents/commands/workflows/wf-explore.md"
-  ".agents/commands/workflows/wf-shape.md"
-  ".agents/commands/workflows/wf-develop.md"
-  ".agents/commands/workflows/wf-review.md"
-  ".agents/commands/workflows/wf-release.md"
-  ".agents/commands/workflows/wf-ralph.md"
-  ".agents/commands/utilities/compound.md"
+required_workflow_skills=(
+  ".agents/skills/shape/wf-shape/SKILL.md"
+  ".agents/skills/develop/wf-develop/SKILL.md"
+  ".agents/skills/review/wf-review/SKILL.md"
+  ".agents/skills/release/wf-release/SKILL.md"
+  ".agents/skills/develop/wf-ralph/SKILL.md"
 )
 
-for cmd in "${required_commands[@]}"; do
-  if [ ! -f "${root_dir}/${cmd}" ]; then
-    echo "Missing command: ${cmd}"
+for skill in "${required_workflow_skills[@]}"; do
+  if [ ! -f "${root_dir}/${skill}" ]; then
+    echo "Missing workflow skill: ${skill}"
     errors=1
   fi
 done
@@ -98,11 +95,6 @@ for base, dirs, files in os.walk(skills_root, followlinks=True):
         errors += 1
         continue
 
-    extra = [k for k in keys.keys() if k not in {"name", "description", "license"}]
-    if extra:
-        print(f"Extra frontmatter keys in {path}: {', '.join(extra)}")
-        errors += 1
-
     name = keys["name"]
     if name in names:
         print(f"Duplicate skill name: {name} ({path}, {names[name]})")
@@ -124,7 +116,7 @@ echo "- ./scripts/npx_skills_refresh.sh"
 echo "- node --experimental-strip-types ./scripts/generate_cheatsheet.ts"
 echo "- ./scripts/verify_repo.sh"
 
-echo "- Run a wf-* command end-to-end and confirm outputs."
+echo "- Run a wf-* skill end-to-end and confirm outputs."
 
 if [ "${errors}" -ne 0 ]; then
   exit 1

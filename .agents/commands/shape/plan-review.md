@@ -1,1 +1,0 @@
-../../../inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/plan_review.md

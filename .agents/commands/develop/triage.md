@@ -1,1 +1,0 @@
-../../../inspiration/compound-engineering-plugin/plugins/compound-engineering/commands/triage.md

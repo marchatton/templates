@@ -2,7 +2,7 @@
   "version": 1,
   "canonicalRepo": "marchatton/templates",
   "localRoot": ".",
-  "generatedAt": "2026-02-01",
+  "generatedAt": "2026-02-02",
   "tiers": [
     "core",
     "leaf",
@@ -91,7 +91,10 @@
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/skills/compound-docs"
-        }
+        },
+        "history": [
+          "command:.agents/commands/utilities/compound.md"
+        ]
       },
       {
         "name": "create-cli",
@@ -121,7 +124,10 @@
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/skills/create-agent-skills"
-        }
+        },
+        "history": [
+          "command:.agents/commands/utilities/create-agent-skill.md"
+        ]
       },
       {
         "name": "docs-list",
@@ -784,168 +790,66 @@
         "ownerModule": "react-best-practices",
         "location": ".agents/skills/develop/react-best-practices/SKILL.md",
         "provenance": "local"
-      }
-    ],
-    "commands": [
-      {
-        "name": "report-bug",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/develop/report-bug.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/report-bug.md"
-        }
       },
       {
-        "name": "reproduce-bug",
-        "purpose": "command",
-        "calls": [],
+        "name": "agent-native-audit",
+        "tier": "leaf",
+        "purpose": "Run comprehensive agent-native architecture review with scored principles",
+        "useWhen": "This skill should be used when running a comprehensive agent-native architecture audit with scored principles.",
         "outputs": [],
-        "location": ".agents/commands/develop/reproduce-bug.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/reproduce-bug.md"
-        }
-      },
-      {
-        "name": "resolve-parallel",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/develop/resolve-parallel.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_parallel.md"
-        }
-      },
-      {
-        "name": "resolve-pr-parallel",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/develop/resolve-pr-parallel.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_pr_parallel.md"
-        }
-      },
-      {
-        "name": "resolve-todo-parallel",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/develop/resolve-todo-parallel.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_todo_parallel.md"
-        }
-      },
-      {
-        "name": "triage",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/develop/triage.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/triage.md"
-        }
+        "ownerModule": "agent-native-audit",
+        "location": ".agents/skills/review/agent-native-audit/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/review/agent-native-audit.md"
+        ]
       },
       {
         "name": "changelog",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Create engaging changelogs for recent merges to main branch",
+        "useWhen": "This skill should be used when creating changelogs for recent merges to main branch.",
         "outputs": [],
-        "location": ".agents/commands/release/changelog.md",
+        "ownerModule": "changelog",
+        "location": ".agents/skills/release/changelog/SKILL.md",
         "provenance": "synced",
+        "history": [
+          "command:.agents/commands/release/changelog.md"
+        ],
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/commands/changelog.md"
         }
       },
       {
-        "name": "agent-native-audit",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/review/agent-native-audit.md",
-        "provenance": "local"
-      },
-      {
-        "name": "test-browser",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/review/test-browser.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/test-browser.md"
-        }
-      },
-      {
         "name": "deepen-plan",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details",
+        "useWhen": "This skill should be used when deepening a plan with parallel research agents for each section.",
         "outputs": [],
-        "location": ".agents/commands/shape/deepen-plan.md",
+        "ownerModule": "deepen-plan",
+        "location": ".agents/skills/shape/deepen-plan/SKILL.md",
         "provenance": "synced",
+        "history": [
+          "command:.agents/commands/shape/deepen-plan.md"
+        ],
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/commands/deepen-plan.md"
         }
       },
       {
-        "name": "plan-review",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/shape/plan-review.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/plan_review.md"
-        }
-      },
-      {
-        "name": "compound",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/utilities/compound.md",
-        "provenance": "local"
-      },
-      {
-        "name": "create-agent-skill",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/utilities/create-agent-skill.md",
-        "provenance": "local"
-      },
-      {
-        "name": "generate-command",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/utilities/generate-command.md",
-        "provenance": "local"
-      },
-      {
         "name": "handoff",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Codex handoff checklist for agents.",
+        "useWhen": "This skill should be used when preparing a handoff checklist for agents.",
         "outputs": [],
-        "location": ".agents/commands/utilities/handoff.md",
+        "ownerModule": "handoff",
+        "location": ".agents/skills/utilities/handoff/SKILL.md",
         "provenance": "synced",
+        "history": [
+          "command:.agents/commands/utilities/handoff.md"
+        ],
         "upstream": {
           "repo": "agent-scripts",
           "path": "docs/slash-commands/handoff.md"
@@ -953,19 +857,29 @@
       },
       {
         "name": "heal-skill",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references",
+        "useWhen": "This skill should be used when fixing incorrect SKILL.md files with outdated instructions or APIs.",
         "outputs": [],
-        "location": ".agents/commands/utilities/heal-skill.md",
-        "provenance": "local"
+        "ownerModule": "heal-skill",
+        "location": ".agents/skills/skills-maintenance/heal-skill/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/utilities/heal-skill.md"
+        ]
       },
       {
         "name": "landpr",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Land PR prompt/checklist template.",
+        "useWhen": "This skill should be used when preparing a /landpr prompt/checklist to land a PR.",
         "outputs": [],
-        "location": ".agents/commands/utilities/landpr.md",
+        "ownerModule": "landpr",
+        "location": ".agents/skills/utilities/landpr/SKILL.md",
         "provenance": "synced",
+        "history": [
+          "command:.agents/commands/utilities/landpr.md"
+        ],
         "upstream": {
           "repo": "agent-scripts",
           "path": "docs/slash-commands/landpr.md"
@@ -973,57 +887,242 @@
       },
       {
         "name": "pickup",
-        "purpose": "command",
-        "calls": [],
+        "tier": "leaf",
+        "purpose": "Codex pickup checklist when starting on a task.",
+        "useWhen": "This skill should be used when preparing a pickup checklist when starting a task.",
         "outputs": [],
-        "location": ".agents/commands/utilities/pickup.md",
+        "ownerModule": "pickup",
+        "location": ".agents/skills/utilities/pickup/SKILL.md",
         "provenance": "synced",
+        "history": [
+          "command:.agents/commands/utilities/pickup.md"
+        ],
         "upstream": {
           "repo": "agent-scripts",
           "path": "docs/slash-commands/pickup.md"
         }
       },
       {
-        "name": "wf-develop",
-        "purpose": "command",
-        "calls": [],
+        "name": "plan-review",
+        "tier": "leaf",
+        "purpose": "Have multiple specialized agents review a plan in parallel",
+        "useWhen": "This skill should be used when having multiple specialized agents review a plan in parallel.",
         "outputs": [],
-        "location": ".agents/commands/workflows/wf-develop.md",
-        "provenance": "local"
+        "ownerModule": "plan-review",
+        "location": ".agents/skills/shape/plan-review/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/shape/plan-review.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/plan_review.md"
+        }
+      },
+      {
+        "name": "report-bug",
+        "tier": "leaf",
+        "purpose": "Report a bug in the compound-engineering plugin",
+        "useWhen": "This skill should be used when reporting a bug in the compound-engineering plugin.",
+        "outputs": [],
+        "ownerModule": "report-bug",
+        "location": ".agents/skills/develop/report-bug/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/report-bug.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/report-bug.md"
+        }
+      },
+      {
+        "name": "reproduce-bug",
+        "tier": "leaf",
+        "purpose": "Reproduce and investigate a bug using logs, console inspection, and browser screenshots",
+        "useWhen": "This skill should be used when reproducing and investigating a bug using logs, console inspection, and browser screenshots.",
+        "outputs": [],
+        "ownerModule": "reproduce-bug",
+        "location": ".agents/skills/shape/reproduce-bug/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/reproduce-bug.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/reproduce-bug.md"
+        }
+      },
+      {
+        "name": "resolve-parallel",
+        "tier": "leaf",
+        "purpose": "Resolve all TODO comments using parallel processing",
+        "useWhen": "This skill should be used when resolving TODO comments using parallel processing.",
+        "outputs": [],
+        "ownerModule": "resolve-parallel",
+        "location": ".agents/skills/develop/resolve-parallel/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/resolve-parallel.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/resolve_parallel.md"
+        }
+      },
+      {
+        "name": "resolve-pr-parallel",
+        "tier": "leaf",
+        "purpose": "Resolve all PR comments using parallel processing",
+        "useWhen": "This skill should be used when resolving PR comments using parallel processing.",
+        "outputs": [],
+        "ownerModule": "resolve-pr-parallel",
+        "location": ".agents/skills/develop/resolve-pr-parallel/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/resolve-pr-parallel.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/resolve_pr_parallel.md"
+        }
+      },
+      {
+        "name": "resolve-todo-parallel",
+        "tier": "leaf",
+        "purpose": "Resolve all pending CLI todos using parallel processing",
+        "useWhen": "This skill should be used when resolving pending CLI todos using parallel processing.",
+        "outputs": [],
+        "ownerModule": "resolve-todo-parallel",
+        "location": ".agents/skills/develop/resolve-todo-parallel/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/resolve-todo-parallel.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/resolve_todo_parallel.md"
+        }
+      },
+      {
+        "name": "test-browser",
+        "tier": "leaf",
+        "purpose": "Run browser tests on pages affected by current PR or branch",
+        "useWhen": "This skill should be used when running browser tests on pages affected by the current PR or branch.",
+        "outputs": [],
+        "ownerModule": "test-browser",
+        "location": ".agents/skills/review/test-browser/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/review/test-browser.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/test-browser.md"
+        }
+      },
+      {
+        "name": "triage",
+        "tier": "leaf",
+        "purpose": "Triage and categorize findings for the CLI todo system",
+        "useWhen": "This skill should be used when triaging and categorizing findings for the CLI todo system.",
+        "outputs": [],
+        "ownerModule": "triage",
+        "location": ".agents/skills/develop/triage/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/develop/triage.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/triage.md"
+        }
+      },
+      {
+        "name": "wf-develop",
+        "tier": "core",
+        "purpose": "Implement changes with a verification-first loop.",
+        "useWhen": "This skill should only be used when the user uses the word workflow and asks to develop or implement changes with a verification-first loop.",
+        "outputs": [
+          "Code changes.",
+          "Docs artefacts saved per `docs/AGENTS.md` in the target repo (dev log summary + verification + GO/NO-GO)."
+        ],
+        "ownerModule": "wf-develop",
+        "location": ".agents/skills/develop/wf-develop/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/workflows/wf-develop.md"
+        ]
       },
       {
         "name": "wf-ralph",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/workflows/wf-ralph.md",
-        "provenance": "local"
+        "tier": "core",
+        "purpose": "Continuous Ralph loop for dev, code review, e2e testing, research and more.",
+        "useWhen": "This skill should only be used when the user uses the word workflow and asks to run the Ralph workflow loop (dev/review/research/e2e).",
+        "outputs": [
+          "Updated prd.json (passes true per story).",
+          "`.ralph/` state + logs.",
+          "Optional: dossier log per docs/AGENTS.md."
+        ],
+        "ownerModule": "wf-ralph",
+        "location": ".agents/skills/develop/wf-ralph/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/workflows/wf-ralph.md"
+        ]
       },
       {
         "name": "wf-release",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/workflows/wf-release.md",
-        "provenance": "local"
+        "tier": "core",
+        "purpose": "Ship changes with a release checklist, changelog, and post-release verification.",
+        "useWhen": "This skill should only be used when the user uses the word workflow and asks to release or ship changes with a release checklist.",
+        "outputs": [
+          "Docs artefacts saved per `docs/AGENTS.md` in the target repo (release notes, changelog entry, post-release notes as needed).",
+          "Optional: appended entry in `docs/learnings.md` via `compound`"
+        ],
+        "ownerModule": "wf-release",
+        "location": ".agents/skills/release/wf-release/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/workflows/wf-release.md"
+        ]
       },
       {
         "name": "wf-review",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/workflows/wf-review.md",
-        "provenance": "local"
+        "tier": "core",
+        "purpose": "Single-agent exhaustive review: start with native `/review`, then multi-angle passes, mandatory file-todos, verification, GO/NO-GO.",
+        "useWhen": "This skill should only be used when the user uses the word workflow and asks to run a review workflow (multi-pass review, todos, verification).",
+        "outputs": [
+          "Review summary + severity breakdown.",
+          "Todo files for all findings (file-todos skill).",
+          "Verification results + GO/NO-GO.",
+          "Optional browser QA notes."
+        ],
+        "ownerModule": "wf-review",
+        "location": ".agents/skills/review/wf-review/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/workflows/wf-review.md"
+        ]
       },
       {
         "name": "wf-shape",
-        "purpose": "command",
-        "calls": [],
-        "outputs": [],
-        "location": ".agents/commands/workflows/wf-shape.md",
-        "provenance": "local"
+        "tier": "core",
+        "purpose": "Produce a PRD and optional supporting artefacts that are ready for implementation.",
+        "useWhen": "This skill should only be used when the user uses the word workflow and asks to shape a project (produce a PRD and supporting artefacts).",
+        "outputs": [
+          "Docs artefacts saved per `docs/AGENTS.md` in the target repo (PRD required; optional supporting docs per skills).",
+          "Required for tooling: `.agents/tasks/prd-<slug>.json`"
+        ],
+        "ownerModule": "wf-shape",
+        "location": ".agents/skills/shape/wf-shape/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/workflows/wf-shape.md"
+        ]
       }
     ],
+    "commands": [],
     "hooks": [
       {
         "name": "README",
