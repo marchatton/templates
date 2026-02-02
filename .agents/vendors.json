@@ -7,7 +7,7 @@
       },
       {
         "src": "skills/frontend-design",
-        "dst": "skills/utilities/frontend-design"
+        "dst": "skills/develop/frontend-design"
       },
       {
         "src": "skills/markdown-converter",
@@ -71,7 +71,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/best-practices-researcher.md",
-        "dst": "skills/utilities/best-practices-researcher/SKILL.md"
+        "dst": "skills/shape/best-practices-researcher/SKILL.md"
       },
       {
         "src": "plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md",
@@ -91,7 +91,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/review/deployment-verification-agent.md",
-        "dst": "skills/review/deployment-verification-agent/SKILL.md"
+        "dst": "skills/release/deployment-verification-agent/SKILL.md"
       },
       {
         "src": "plugins/compound-engineering/agents/research/framework-docs-researcher.md",
@@ -99,7 +99,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/git-history-analyzer.md",
-        "dst": "skills/utilities/git-history-analyzer/SKILL.md"
+        "dst": "skills/review/git-history-analyzer/SKILL.md"
       },
       {
         "src": "plugins/compound-engineering/agents/review/kieran-python-reviewer.md",
@@ -123,7 +123,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/repo-research-analyst.md",
-        "dst": "skills/utilities/repo-research-analyst/SKILL.md"
+        "dst": "skills/develop/repo-research-analyst/SKILL.md"
       },
       {
         "src": "plugins/compound-engineering/agents/review/security-sentinel.md",
@@ -147,7 +147,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/best-practices-researcher.md",
-        "dst": "skills/utilities/best-practices-researcher/SKILL.md",
+        "dst": "skills/shape/best-practices-researcher/SKILL.md",
         "note": "synced (agent -> skill)"
       },
       {
@@ -172,7 +172,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/review/deployment-verification-agent.md",
-        "dst": "skills/review/deployment-verification-agent/SKILL.md",
+        "dst": "skills/release/deployment-verification-agent/SKILL.md",
         "note": "synced (agent -> skill)"
       },
       {
@@ -187,7 +187,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/git-history-analyzer.md",
-        "dst": "skills/utilities/git-history-analyzer/SKILL.md",
+        "dst": "skills/review/git-history-analyzer/SKILL.md",
         "note": "synced (agent -> skill)"
       },
       {
@@ -217,7 +217,7 @@
       },
       {
         "src": "plugins/compound-engineering/agents/research/repo-research-analyst.md",
-        "dst": "skills/utilities/repo-research-analyst/SKILL.md",
+        "dst": "skills/develop/repo-research-analyst/SKILL.md",
         "note": "synced (agent -> skill)"
       },
       {

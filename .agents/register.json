@@ -190,7 +190,7 @@
         "useWhen": "",
         "outputs": [],
         "ownerModule": "frontend-design",
-        "location": ".agents/skills/utilities/frontend-design/SKILL.md",
+        "location": ".agents/skills/develop/frontend-design/SKILL.md",
         "provenance": "forked",
         "upstream": {
           "repo": "agent-scripts",
@@ -437,7 +437,7 @@
           "Rollback triggers"
         ],
         "ownerModule": "deployment-verification-agent",
-        "location": ".agents/skills/review/deployment-verification-agent/SKILL.md",
+        "location": ".agents/skills/release/deployment-verification-agent/SKILL.md",
         "provenance": "forked",
         "originGroup": "review",
         "upstream": {
@@ -606,7 +606,7 @@
           "Recommendations"
         ],
         "ownerModule": "best-practices-researcher",
-        "location": ".agents/skills/utilities/best-practices-researcher/SKILL.md",
+        "location": ".agents/skills/shape/best-practices-researcher/SKILL.md",
         "provenance": "forked",
         "originGroup": "research",
         "upstream": {
@@ -644,7 +644,7 @@
           "Evolution notes"
         ],
         "ownerModule": "git-history-analyzer",
-        "location": ".agents/skills/utilities/git-history-analyzer/SKILL.md",
+        "location": ".agents/skills/review/git-history-analyzer/SKILL.md",
         "provenance": "forked",
         "originGroup": "research",
         "upstream": {
@@ -663,7 +663,7 @@
           "Entry points"
         ],
         "ownerModule": "repo-research-analyst",
-        "location": ".agents/skills/utilities/repo-research-analyst/SKILL.md",
+        "location": ".agents/skills/develop/repo-research-analyst/SKILL.md",
         "provenance": "forked",
         "originGroup": "research",
         "upstream": {
@@ -920,23 +920,6 @@
         }
       },
       {
-        "name": "report-bug",
-        "tier": "leaf",
-        "purpose": "Report a bug in the compound-engineering plugin",
-        "useWhen": "This skill should be used when reporting a bug in the compound-engineering plugin.",
-        "outputs": [],
-        "ownerModule": "report-bug",
-        "location": ".agents/skills/develop/report-bug/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/develop/report-bug.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/report-bug.md"
-        }
-      },
-      {
         "name": "reproduce-bug",
         "tier": "leaf",
         "purpose": "Reproduce and investigate a bug using logs, console inspection, and browser screenshots",
@@ -951,57 +934,6 @@
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/commands/reproduce-bug.md"
-        }
-      },
-      {
-        "name": "resolve-parallel",
-        "tier": "leaf",
-        "purpose": "Resolve all TODO comments using parallel processing",
-        "useWhen": "This skill should be used when resolving TODO comments using parallel processing.",
-        "outputs": [],
-        "ownerModule": "resolve-parallel",
-        "location": ".agents/skills/develop/resolve-parallel/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/develop/resolve-parallel.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_parallel.md"
-        }
-      },
-      {
-        "name": "resolve-pr-parallel",
-        "tier": "leaf",
-        "purpose": "Resolve all PR comments using parallel processing",
-        "useWhen": "This skill should be used when resolving PR comments using parallel processing.",
-        "outputs": [],
-        "ownerModule": "resolve-pr-parallel",
-        "location": ".agents/skills/develop/resolve-pr-parallel/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/develop/resolve-pr-parallel.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_pr_parallel.md"
-        }
-      },
-      {
-        "name": "resolve-todo-parallel",
-        "tier": "leaf",
-        "purpose": "Resolve all pending CLI todos using parallel processing",
-        "useWhen": "This skill should be used when resolving pending CLI todos using parallel processing.",
-        "outputs": [],
-        "ownerModule": "resolve-todo-parallel",
-        "location": ".agents/skills/develop/resolve-todo-parallel/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/develop/resolve-todo-parallel.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/resolve_todo_parallel.md"
         }
       },
       {
