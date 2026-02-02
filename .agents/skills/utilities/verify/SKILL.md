@@ -6,16 +6,24 @@ description: Single verification flow; read docs/AGENTS.md; report PASS/NO-GO.
 # Verify
 
 ## Purpose
-Skill-only verification. Repo steps live in `docs/AGENTS.md`.
+Light verification. Code changes: follow AGENTS.md (or equivalent).
 
 ## When
-Any change affecting behavior/build/tests/types/lint/package/UI. If blocked, return NO-GO + smallest unblock.
+Any change affecting behavior/build/tests/types/lint/package/UI. Also skills/docs edits. If blocked, return NO-GO + smallest unblock.
 
 ## Steps
-1. Read `docs/AGENTS.md` verification section.
-2. If a `verify` script exists, run it first.
-3. Run smallest-scope scripts in doc (monorepo: narrowest package).
-4. If docs missing: run lint/typecheck/test/build if present; else NO-GO.
+1. Classify change: docs/skills-only vs code.
+2. Docs/skills-only audit:
+   - NO-GO if any year mention.
+   - Flag brittle links/paths (advisory).
+   - Frontmatter valid (name+description).
+   - Description includes trigger keywords.
+   - References one level deep.
+   - Examples concrete.
+3. Code changes: read AGENTS.md (or equivalent) verification section.
+4. If a verify command is documented (AGENTS or package scripts), run it first.
+5. Run smallest-scope scripts in doc (monorepo: narrowest package).
+6. If docs missing: run lint/typecheck/test/build if present; else NO-GO.
 
 ## Browser smoke (UI only)
 If UI/user-flow changed: after normal checks, use `agent-browser` skill to start app, exercise path, capture evidence.
@@ -23,3 +31,4 @@ If UI/user-flow changed: after normal checks, use `agent-browser` skill to start
 ## Output
 Include a `Verification` section with commands + results.
 Use `PASS:` or `NO-GO:`.
+If docs/skills-only: list checks + flags; NO-GO on years.
