@@ -2,7 +2,7 @@
   "version": 1,
   "canonicalRepo": "marchatton/templates",
   "localRoot": ".",
-  "generatedAt": "2026-02-02",
+  "generatedAt": "2026-02-03",
   "tiers": [
     "core",
     "leaf",
@@ -399,6 +399,38 @@
         }
       },
       {
+        "name": "agent-native-audit",
+        "tier": "leaf",
+        "purpose": "Comprehensive agent-native architecture audit with scored principles",
+        "useWhen": "system-wide health checks, periodic audits, or major architecture reviews",
+        "outputs": [],
+        "ownerModule": "agent-native-audit",
+        "location": ".agents/skills/audit/agent-native-audit/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/review/agent-native-audit.md"
+        ]
+      },
+      {
+        "name": "agent-native-reviewer",
+        "tier": "leaf",
+        "purpose": "Focused parity review for a feature/PR (action + context)",
+        "useWhen": "reviewing a feature or PR for action/context parity and capability mapping",
+        "outputs": [
+          "Review notes",
+          "Parity checklist",
+          "Fix recommendations"
+        ],
+        "ownerModule": "agent-native-reviewer",
+        "location": ".agents/skills/review/agent-native-reviewer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/agent-native-reviewer.md"
+        }
+      },
+      {
         "name": "agentation",
         "tier": "leaf",
         "purpose": "Add Agentation visual feedback toolbar to Next.js (App Router or Pages Router)",
@@ -413,6 +445,25 @@
         }
       },
       {
+        "name": "architecture-strategist",
+        "tier": "leaf",
+        "purpose": "review architecture decisions, constraints, tradeoffs",
+        "useWhen": "reviewing architecture decisions and risks",
+        "outputs": [
+          "Review notes",
+          "Risks + mitigations",
+          "Follow-up questions"
+        ],
+        "ownerModule": "architecture-strategist",
+        "location": ".agents/skills/review/architecture-strategist/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/architecture-strategist.md"
+        }
+      },
+      {
         "name": "ask-questions-if-underspecified",
         "tier": "core",
         "purpose": "Clarify requirements before implementing. Do not use automatically, only when invoked explicitly",
@@ -420,6 +471,18 @@
         "outputs": [],
         "ownerModule": "ask-questions-if-underspecified",
         "location": ".agents/skills/utilities/ask-questions-if-underspecified/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "baseline-ui",
+        "tier": "leaf",
+        "purpose": "Baseline UI rules to prevent design slop",
+        "useWhen": "reviewing UI for baseline quality",
+        "outputs": [
+          "Review notes"
+        ],
+        "ownerModule": "baseline-ui",
+        "location": ".agents/skills/review/baseline-ui/SKILL.md",
         "provenance": "local"
       },
       {
@@ -433,6 +496,107 @@
         ],
         "ownerModule": "beautiful-mermaid",
         "location": ".agents/skills/utilities/beautiful-mermaid/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "best-practices-researcher",
+        "tier": "leaf",
+        "purpose": "find external best practices and examples",
+        "useWhen": "need external best practices",
+        "outputs": [
+          "Source list",
+          "Summary",
+          "Recommendations"
+        ],
+        "ownerModule": "best-practices-researcher",
+        "location": ".agents/skills/shape/best-practices-researcher/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "research",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/research/best-practices-researcher.md"
+        }
+      },
+      {
+        "name": "breadboarding",
+        "tier": "leaf",
+        "purpose": "Breadboard a change using affordances and wiring to reach a buildable shape",
+        "useWhen": "shaping a software change and need an affordance-level breadboard, or mapping existing system flows to decide structure",
+        "outputs": [
+          "Breadboard pack",
+          "Wiring diagram",
+          "Parts/BOM",
+          "Fit check",
+          "Optional extract-vs-duplicate analysis"
+        ],
+        "ownerModule": "breadboarding",
+        "location": ".agents/skills/shape/breadboarding/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "bug-reproduction-validator",
+        "tier": "leaf",
+        "purpose": "reproduce bugs and validate reports",
+        "useWhen": "bug report needs validation",
+        "outputs": [
+          "Repro steps",
+          "Evidence",
+          "Minimal repro notes"
+        ],
+        "ownerModule": "bug-reproduction-validator",
+        "location": ".agents/skills/develop/bug-reproduction-validator/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "workflow",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md"
+        }
+      },
+      {
+        "name": "changelog",
+        "tier": "leaf",
+        "purpose": "Create engaging changelogs for recent merges to main branch",
+        "useWhen": "This skill should be used when creating changelogs for recent merges to main branch.",
+        "outputs": [],
+        "ownerModule": "changelog",
+        "location": ".agents/skills/release/changelog/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/release/changelog.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/changelog.md"
+        }
+      },
+      {
+        "name": "code-simplicity-reviewer",
+        "tier": "leaf",
+        "purpose": "simplify code, remove unnecessary complexity",
+        "useWhen": "final pass for simplicity/minimalism",
+        "outputs": [
+          "Simplification notes",
+          "Deletion/merge suggestions"
+        ],
+        "ownerModule": "code-simplicity-reviewer",
+        "location": ".agents/skills/review/code-simplicity-reviewer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/code-simplicity-reviewer.md"
+        }
+      },
+      {
+        "name": "composition-patterns",
+        "tier": "leaf",
+        "purpose": "React composition patterns that scale",
+        "useWhen": "refactoring boolean prop proliferation, designing reusable component APIs, or reviewing component architecture",
+        "outputs": [
+          "Review notes"
+        ],
+        "ownerModule": "composition-patterns",
+        "location": ".agents/skills/develop/composition-patterns/SKILL.md",
         "provenance": "local"
       },
       {
@@ -455,6 +619,23 @@
         ]
       },
       {
+        "name": "create-agent-skills",
+        "tier": "leaf",
+        "purpose": "Expert guidance for creating, writing, and refining Claude Code Skills",
+        "useWhen": "working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices",
+        "outputs": [],
+        "ownerModule": "create-agent-skills",
+        "location": ".agents/skills/skills-maintenance/create-agent-skills/SKILL.md",
+        "provenance": "synced",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/skills/create-agent-skills"
+        },
+        "history": [
+          "command:.agents/commands/utilities/create-agent-skill.md"
+        ]
+      },
+      {
         "name": "create-cli",
         "tier": "leaf",
         "purpose": "creating a new CLI project scaffold with pnpm and basic structure",
@@ -471,21 +652,109 @@
         }
       },
       {
-        "name": "create-agent-skills",
+        "name": "create-json-prd",
+        "tier": "core",
+        "purpose": "Convert a PRD into JSON PRD format for tooling",
+        "useWhen": "a JSON PRD is required for tooling or automation",
+        "outputs": [
+          "JSON PRD"
+        ],
+        "ownerModule": "create-json-prd",
+        "location": ".agents/skills/shape/create-json-prd/SKILL.md",
+        "provenance": "forked",
+        "upstream": {
+          "repo": "snarktank/ralph",
+          "path": "skills/ralph/SKILL.md"
+        }
+      },
+      {
+        "name": "create-prd",
+        "tier": "core",
+        "purpose": "Draft a PRD with clear scope, acceptance criteria, and verification plan",
+        "useWhen": "you need a PRD ready for implementation",
+        "outputs": [
+          "PRD doc"
+        ],
+        "ownerModule": "create-prd",
+        "location": ".agents/skills/shape/create-prd/SKILL.md",
+        "provenance": "forked",
+        "upstream": {
+          "repo": "snarktank/ralph",
+          "path": "skills/prd/SKILL.md"
+        }
+      },
+      {
+        "name": "data-integrity-guardian",
         "tier": "leaf",
-        "purpose": "Expert guidance for creating, writing, and refining Claude Code Skills",
-        "useWhen": "working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices",
-        "outputs": [],
-        "ownerModule": "create-agent-skills",
-        "location": ".agents/skills/skills-maintenance/create-agent-skills/SKILL.md",
-        "provenance": "synced",
+        "purpose": "review data changes for integrity and safety",
+        "useWhen": "migrations or data changes touch critical data",
+        "outputs": [
+          "Integrity risks",
+          "Validation checks",
+          "Rollback notes"
+        ],
+        "ownerModule": "data-integrity-guardian",
+        "location": ".agents/skills/review/data-integrity-guardian/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
         "upstream": {
           "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/skills/create-agent-skills"
-        },
+          "path": "plugins/compound-engineering/agents/review/data-integrity-guardian.md"
+        }
+      },
+      {
+        "name": "data-migration-expert",
+        "tier": "leaf",
+        "purpose": "validate ID mappings and migration correctness",
+        "useWhen": "data migration involves ID mapping",
+        "outputs": [
+          "Mapping issues",
+          "Validation plan",
+          "Fix suggestions"
+        ],
+        "ownerModule": "data-migration-expert",
+        "location": ".agents/skills/review/data-migration-expert/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/data-migration-expert.md"
+        }
+      },
+      {
+        "name": "deepen-plan",
+        "tier": "leaf",
+        "purpose": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details",
+        "useWhen": "This skill should be used when deepening a plan with parallel research agents for each section.",
+        "outputs": [],
+        "ownerModule": "deepen-plan",
+        "location": ".agents/skills/shape/deepen-plan/SKILL.md",
+        "provenance": "synced",
         "history": [
-          "command:.agents/commands/utilities/create-agent-skill.md"
-        ]
+          "command:.agents/commands/shape/deepen-plan.md"
+        ],
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/commands/deepen-plan.md"
+        }
+      },
+      {
+        "name": "deployment-verification-agent",
+        "tier": "leaf",
+        "purpose": "create go/no-go checklist for risky deploys",
+        "useWhen": "risky deploys or data changes need go/no-go",
+        "outputs": [
+          "Go/No-Go checklist",
+          "Rollback triggers"
+        ],
+        "ownerModule": "deployment-verification-agent",
+        "location": ".agents/skills/release/deployment-verification-agent/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/deployment-verification-agent.md"
+        }
       },
       {
         "name": "docs-list",
@@ -542,6 +811,64 @@
         }
       },
       {
+        "name": "fixing-accessibility",
+        "tier": "leaf",
+        "purpose": "Fix accessibility issues",
+        "useWhen": "auditing or fixing a11y problems",
+        "outputs": [
+          "Fix plan",
+          "Applied changes"
+        ],
+        "ownerModule": "fixing-accessibility",
+        "location": ".agents/skills/review/fixing-accessibility/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "fixing-metadata",
+        "tier": "leaf",
+        "purpose": "Fix SEO/social metadata issues",
+        "useWhen": "auditing or fixing metadata",
+        "outputs": [
+          "Fix plan",
+          "Applied changes"
+        ],
+        "ownerModule": "fixing-metadata",
+        "location": ".agents/skills/review/fixing-metadata/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "fixing-motion-performance",
+        "tier": "leaf",
+        "purpose": "Fix animation performance issues",
+        "useWhen": "reviewing motion performance or refactors",
+        "outputs": [
+          "Fix plan",
+          "Applied changes"
+        ],
+        "ownerModule": "fixing-motion-performance",
+        "location": ".agents/skills/review/fixing-motion-performance/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "framework-docs-researcher",
+        "tier": "leaf",
+        "purpose": "consult official framework docs for correct usage",
+        "useWhen": "framework behavior/usage needs confirmation",
+        "outputs": [
+          "Doc summary",
+          "Recommended approach",
+          "Links"
+        ],
+        "ownerModule": "framework-docs-researcher",
+        "location": ".agents/skills/utilities/framework-docs-researcher/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "research",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/research/framework-docs-researcher.md"
+        }
+      },
+      {
         "name": "frontend-design",
         "tier": "leaf",
         "purpose": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics",
@@ -567,6 +894,108 @@
         "upstream": {
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/skills/gemini-imagegen"
+        }
+      },
+      {
+        "name": "git-history-analyzer",
+        "tier": "leaf",
+        "purpose": "analyze git history for context",
+        "useWhen": "need change history or context",
+        "outputs": [
+          "Change summary",
+          "Key commits",
+          "Evolution notes"
+        ],
+        "ownerModule": "git-history-analyzer",
+        "location": ".agents/skills/review/git-history-analyzer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "research",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/research/git-history-analyzer.md"
+        }
+      },
+      {
+        "name": "handoff",
+        "tier": "leaf",
+        "purpose": "Codex handoff checklist for agents.",
+        "useWhen": "This skill should be used when preparing a handoff checklist for agents.",
+        "outputs": [],
+        "ownerModule": "handoff",
+        "location": ".agents/skills/utilities/handoff/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/utilities/handoff.md"
+        ],
+        "upstream": {
+          "repo": "agent-scripts",
+          "path": "docs/slash-commands/handoff.md"
+        }
+      },
+      {
+        "name": "heal-skill",
+        "tier": "leaf",
+        "purpose": "Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references",
+        "useWhen": "This skill should be used when fixing incorrect SKILL.md files with outdated instructions or APIs.",
+        "outputs": [],
+        "ownerModule": "heal-skill",
+        "location": ".agents/skills/skills-maintenance/heal-skill/SKILL.md",
+        "provenance": "local",
+        "history": [
+          "command:.agents/commands/utilities/heal-skill.md"
+        ]
+      },
+      {
+        "name": "kieran-python-reviewer",
+        "tier": "leaf",
+        "purpose": "review Python code for strict conventions",
+        "useWhen": "Python code needs strict convention review",
+        "outputs": [
+          "Convention violations",
+          "Fix suggestions"
+        ],
+        "ownerModule": "kieran-python-reviewer",
+        "location": ".agents/skills/review/kieran-python-reviewer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/kieran-python-reviewer.md"
+        }
+      },
+      {
+        "name": "kieran-typescript-reviewer",
+        "tier": "leaf",
+        "purpose": "review TypeScript code for strict conventions",
+        "useWhen": "TypeScript code needs strict convention review",
+        "outputs": [
+          "Convention violations",
+          "Fix suggestions"
+        ],
+        "ownerModule": "kieran-typescript-reviewer",
+        "location": ".agents/skills/review/kieran-typescript-reviewer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md"
+        }
+      },
+      {
+        "name": "landpr",
+        "tier": "leaf",
+        "purpose": "Land PR prompt/checklist template.",
+        "useWhen": "This skill should be used when preparing a /landpr prompt/checklist to land a PR.",
+        "outputs": [],
+        "ownerModule": "landpr",
+        "location": ".agents/skills/utilities/landpr/SKILL.md",
+        "provenance": "synced",
+        "history": [
+          "command:.agents/commands/utilities/landpr.md"
+        ],
+        "upstream": {
+          "repo": "agent-scripts",
+          "path": "docs/slash-commands/landpr.md"
         }
       },
       {
@@ -650,196 +1079,6 @@
         }
       },
       {
-        "name": "skill-creator",
-        "tier": "leaf",
-        "purpose": "Guide for creating effective skills. This skill",
-        "useWhen": "users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations",
-        "outputs": [],
-        "ownerModule": "skill-creator",
-        "location": ".agents/skills/skills-maintenance/skill-creator/SKILL.md",
-        "provenance": "forked",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/skills/skill-creator"
-        }
-      },
-      {
-        "name": "use-ai-sdk",
-        "tier": "leaf",
-        "purpose": "AI SDK guidance. Use for Vercel AI SDK APIs (generateText, streamText, ToolLoopAgent, tools), providers, streaming, tool calling, structured output, or troubleshooting",
-        "useWhen": "",
-        "outputs": [],
-        "ownerModule": "use-ai-sdk",
-        "location": ".agents/skills/develop/use-ai-sdk/SKILL.md",
-        "provenance": "synced",
-        "upstream": {
-          "repo": "vercel/ai",
-          "path": "skills/use-ai-sdk/SKILL.md"
-        }
-      },
-      {
-        "name": "video-transcript-downloader",
-        "tier": "leaf",
-        "purpose": "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site",
-        "useWhen": "asked to \u201cdownload this video\u201d, \u201csave this clip\u201d, \u201crip audio\u201d, \u201cget subtitles\u201d, \u201cget transcript\u201d, or to troubleshoot yt-dlp/ffmpeg and formats/playlists",
-        "outputs": [],
-        "ownerModule": "video-transcript-downloader",
-        "location": ".agents/skills/utilities/video-transcript-downloader/SKILL.md",
-        "provenance": "forked",
-        "upstream": {
-          "repo": "agent-scripts",
-          "path": "skills/video-transcript-downloader"
-        }
-      },
-      {
-        "name": "agent-native-reviewer",
-        "tier": "leaf",
-        "purpose": "Focused parity review for a feature/PR (action + context)",
-        "useWhen": "reviewing a feature or PR for action/context parity and capability mapping",
-        "outputs": [
-          "Review notes",
-          "Parity checklist",
-          "Fix recommendations"
-        ],
-        "ownerModule": "agent-native-reviewer",
-        "location": ".agents/skills/review/agent-native-reviewer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/agent-native-reviewer.md"
-        }
-      },
-      {
-        "name": "architecture-strategist",
-        "tier": "leaf",
-        "purpose": "review architecture decisions, constraints, tradeoffs",
-        "useWhen": "reviewing architecture decisions and risks",
-        "outputs": [
-          "Review notes",
-          "Risks + mitigations",
-          "Follow-up questions"
-        ],
-        "ownerModule": "architecture-strategist",
-        "location": ".agents/skills/review/architecture-strategist/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/architecture-strategist.md"
-        }
-      },
-      {
-        "name": "code-simplicity-reviewer",
-        "tier": "leaf",
-        "purpose": "simplify code, remove unnecessary complexity",
-        "useWhen": "final pass for simplicity/minimalism",
-        "outputs": [
-          "Simplification notes",
-          "Deletion/merge suggestions"
-        ],
-        "ownerModule": "code-simplicity-reviewer",
-        "location": ".agents/skills/review/code-simplicity-reviewer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/code-simplicity-reviewer.md"
-        }
-      },
-      {
-        "name": "data-integrity-guardian",
-        "tier": "leaf",
-        "purpose": "review data changes for integrity and safety",
-        "useWhen": "migrations or data changes touch critical data",
-        "outputs": [
-          "Integrity risks",
-          "Validation checks",
-          "Rollback notes"
-        ],
-        "ownerModule": "data-integrity-guardian",
-        "location": ".agents/skills/review/data-integrity-guardian/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/data-integrity-guardian.md"
-        }
-      },
-      {
-        "name": "data-migration-expert",
-        "tier": "leaf",
-        "purpose": "validate ID mappings and migration correctness",
-        "useWhen": "data migration involves ID mapping",
-        "outputs": [
-          "Mapping issues",
-          "Validation plan",
-          "Fix suggestions"
-        ],
-        "ownerModule": "data-migration-expert",
-        "location": ".agents/skills/review/data-migration-expert/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/data-migration-expert.md"
-        }
-      },
-      {
-        "name": "deployment-verification-agent",
-        "tier": "leaf",
-        "purpose": "create go/no-go checklist for risky deploys",
-        "useWhen": "risky deploys or data changes need go/no-go",
-        "outputs": [
-          "Go/No-Go checklist",
-          "Rollback triggers"
-        ],
-        "ownerModule": "deployment-verification-agent",
-        "location": ".agents/skills/release/deployment-verification-agent/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/deployment-verification-agent.md"
-        }
-      },
-      {
-        "name": "kieran-python-reviewer",
-        "tier": "leaf",
-        "purpose": "review Python code for strict conventions",
-        "useWhen": "Python code needs strict convention review",
-        "outputs": [
-          "Convention violations",
-          "Fix suggestions"
-        ],
-        "ownerModule": "kieran-python-reviewer",
-        "location": ".agents/skills/review/kieran-python-reviewer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/kieran-python-reviewer.md"
-        }
-      },
-      {
-        "name": "kieran-typescript-reviewer",
-        "tier": "leaf",
-        "purpose": "review TypeScript code for strict conventions",
-        "useWhen": "TypeScript code needs strict convention review",
-        "outputs": [
-          "Convention violations",
-          "Fix suggestions"
-        ],
-        "ownerModule": "kieran-typescript-reviewer",
-        "location": ".agents/skills/review/kieran-typescript-reviewer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/kieran-typescript-reviewer.md"
-        }
-      },
-      {
         "name": "pattern-recognition-specialist",
         "tier": "leaf",
         "purpose": "scan for patterns and anti-patterns",
@@ -878,396 +1117,6 @@
         }
       },
       {
-        "name": "security-sentinel",
-        "tier": "leaf",
-        "purpose": "security review for auth/data exposure",
-        "useWhen": "security review needed for changes",
-        "outputs": [
-          "Vulnerabilities",
-          "Mitigations",
-          "Security tests"
-        ],
-        "ownerModule": "security-sentinel",
-        "location": ".agents/skills/review/security-sentinel/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "review",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/review/security-sentinel.md"
-        }
-      },
-      {
-        "name": "bug-reproduction-validator",
-        "tier": "leaf",
-        "purpose": "reproduce bugs and validate reports",
-        "useWhen": "bug report needs validation",
-        "outputs": [
-          "Repro steps",
-          "Evidence",
-          "Minimal repro notes"
-        ],
-        "ownerModule": "bug-reproduction-validator",
-        "location": ".agents/skills/develop/bug-reproduction-validator/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "workflow",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/workflow/bug-reproduction-validator.md"
-        }
-      },
-      {
-        "name": "pr-comment-resolver",
-        "tier": "leaf",
-        "purpose": "address PR comments and re-verify",
-        "useWhen": "PR comments need resolution",
-        "outputs": [
-          "Fixes applied",
-          "Reply notes",
-          "Verification results"
-        ],
-        "ownerModule": "pr-comment-resolver",
-        "location": ".agents/skills/develop/pr-comment-resolver/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "workflow",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/workflow/pr-comment-resolver.md"
-        }
-      },
-      {
-        "name": "spec-flow-analyzer",
-        "tier": "leaf",
-        "purpose": "analyze specs for flow gaps",
-        "useWhen": "specs need flow/gap analysis",
-        "outputs": [
-          "Gap list",
-          "Open questions",
-          "Spec updates"
-        ],
-        "ownerModule": "spec-flow-analyzer",
-        "location": ".agents/skills/shape/spec-flow-analyzer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "workflow",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md"
-        }
-      },
-      {
-        "name": "best-practices-researcher",
-        "tier": "leaf",
-        "purpose": "find external best practices and examples",
-        "useWhen": "need external best practices",
-        "outputs": [
-          "Source list",
-          "Summary",
-          "Recommendations"
-        ],
-        "ownerModule": "best-practices-researcher",
-        "location": ".agents/skills/shape/best-practices-researcher/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "research",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/research/best-practices-researcher.md"
-        }
-      },
-      {
-        "name": "framework-docs-researcher",
-        "tier": "leaf",
-        "purpose": "consult official framework docs for correct usage",
-        "useWhen": "framework behavior/usage needs confirmation",
-        "outputs": [
-          "Doc summary",
-          "Recommended approach",
-          "Links"
-        ],
-        "ownerModule": "framework-docs-researcher",
-        "location": ".agents/skills/utilities/framework-docs-researcher/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "research",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/research/framework-docs-researcher.md"
-        }
-      },
-      {
-        "name": "git-history-analyzer",
-        "tier": "leaf",
-        "purpose": "analyze git history for context",
-        "useWhen": "need change history or context",
-        "outputs": [
-          "Change summary",
-          "Key commits",
-          "Evolution notes"
-        ],
-        "ownerModule": "git-history-analyzer",
-        "location": ".agents/skills/review/git-history-analyzer/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "research",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/research/git-history-analyzer.md"
-        }
-      },
-      {
-        "name": "repo-research-analyst",
-        "tier": "leaf",
-        "purpose": "survey repo structure and conventions",
-        "useWhen": "need repo structure/conventions overview",
-        "outputs": [
-          "Structure summary",
-          "Conventions",
-          "Entry points"
-        ],
-        "ownerModule": "repo-research-analyst",
-        "location": ".agents/skills/develop/repo-research-analyst/SKILL.md",
-        "provenance": "forked",
-        "originGroup": "research",
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/agents/research/repo-research-analyst.md"
-        }
-      },
-      {
-        "name": "create-prd",
-        "tier": "core",
-        "purpose": "Draft a PRD with clear scope, acceptance criteria, and verification plan",
-        "useWhen": "you need a PRD ready for implementation",
-        "outputs": [
-          "PRD doc"
-        ],
-        "ownerModule": "create-prd",
-        "location": ".agents/skills/shape/create-prd/SKILL.md",
-        "provenance": "forked",
-        "upstream": {
-          "repo": "snarktank/ralph",
-          "path": "skills/prd/SKILL.md"
-        }
-      },
-      {
-        "name": "create-json-prd",
-        "tier": "core",
-        "purpose": "Convert a PRD into JSON PRD format for tooling",
-        "useWhen": "a JSON PRD is required for tooling or automation",
-        "outputs": [
-          "JSON PRD"
-        ],
-        "ownerModule": "create-json-prd",
-        "location": ".agents/skills/shape/create-json-prd/SKILL.md",
-        "provenance": "forked",
-        "upstream": {
-          "repo": "snarktank/ralph",
-          "path": "skills/ralph/SKILL.md"
-        }
-      },
-      {
-        "name": "verify",
-        "tier": "core",
-        "purpose": "Run the repo verification ladder and report GO/NO-GO",
-        "useWhen": "you need a verification pass before marking work done",
-        "outputs": [
-          "Verification summary",
-          "GO/NO-GO decision"
-        ],
-        "ownerModule": "verify",
-        "location": ".agents/skills/utilities/verify/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "baseline-ui",
-        "tier": "leaf",
-        "purpose": "Baseline UI rules to prevent design slop",
-        "useWhen": "reviewing UI for baseline quality",
-        "outputs": [
-          "Review notes"
-        ],
-        "ownerModule": "baseline-ui",
-        "location": ".agents/skills/review/baseline-ui/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "fixing-motion-performance",
-        "tier": "leaf",
-        "purpose": "Fix animation performance issues",
-        "useWhen": "reviewing motion performance or refactors",
-        "outputs": [
-          "Fix plan",
-          "Applied changes"
-        ],
-        "ownerModule": "fixing-motion-performance",
-        "location": ".agents/skills/review/fixing-motion-performance/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "fixing-metadata",
-        "tier": "leaf",
-        "purpose": "Fix SEO/social metadata issues",
-        "useWhen": "auditing or fixing metadata",
-        "outputs": [
-          "Fix plan",
-          "Applied changes"
-        ],
-        "ownerModule": "fixing-metadata",
-        "location": ".agents/skills/review/fixing-metadata/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "fixing-accessibility",
-        "tier": "leaf",
-        "purpose": "Fix accessibility issues",
-        "useWhen": "auditing or fixing a11y problems",
-        "outputs": [
-          "Fix plan",
-          "Applied changes"
-        ],
-        "ownerModule": "fixing-accessibility",
-        "location": ".agents/skills/review/fixing-accessibility/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "web-design-guidelines",
-        "tier": "leaf",
-        "purpose": "Review UI for Web Interface Guidelines",
-        "useWhen": "UI/UX/accessibility audits",
-        "outputs": [
-          "Review notes"
-        ],
-        "ownerModule": "web-design-guidelines",
-        "location": ".agents/skills/develop/web-design-guidelines/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "rams",
-        "tier": "leaf",
-        "purpose": "Design feedback via rams (backup to ui-skills)",
-        "useWhen": "UI critique or feedback is needed; prefer ui-skills first",
-        "outputs": [
-          "Feedback notes"
-        ],
-        "ownerModule": "rams",
-        "location": ".agents/skills/develop/rams/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "react-best-practices",
-        "tier": "leaf",
-        "purpose": "React/Next.js performance best practices from Vercel",
-        "useWhen": "writing, reviewing, or refactoring React/Next.js code for performance, data fetching, or bundle size",
-        "outputs": [
-          "Review notes"
-        ],
-        "ownerModule": "react-best-practices",
-        "location": ".agents/skills/develop/react-best-practices/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "composition-patterns",
-        "tier": "leaf",
-        "purpose": "React composition patterns that scale",
-        "useWhen": "refactoring boolean prop proliferation, designing reusable component APIs, or reviewing component architecture",
-        "outputs": [
-          "Review notes"
-        ],
-        "ownerModule": "composition-patterns",
-        "location": ".agents/skills/develop/composition-patterns/SKILL.md",
-        "provenance": "local"
-      },
-      {
-        "name": "agent-native-audit",
-        "tier": "leaf",
-        "purpose": "Comprehensive agent-native architecture audit with scored principles",
-        "useWhen": "system-wide health checks, periodic audits, or major architecture reviews",
-        "outputs": [],
-        "ownerModule": "agent-native-audit",
-        "location": ".agents/skills/audit/agent-native-audit/SKILL.md",
-        "provenance": "local",
-        "history": [
-          "command:.agents/commands/review/agent-native-audit.md"
-        ]
-      },
-      {
-        "name": "changelog",
-        "tier": "leaf",
-        "purpose": "Create engaging changelogs for recent merges to main branch",
-        "useWhen": "This skill should be used when creating changelogs for recent merges to main branch.",
-        "outputs": [],
-        "ownerModule": "changelog",
-        "location": ".agents/skills/release/changelog/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/release/changelog.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/changelog.md"
-        }
-      },
-      {
-        "name": "deepen-plan",
-        "tier": "leaf",
-        "purpose": "Enhance a plan with parallel research agents for each section to add depth, best practices, and implementation details",
-        "useWhen": "This skill should be used when deepening a plan with parallel research agents for each section.",
-        "outputs": [],
-        "ownerModule": "deepen-plan",
-        "location": ".agents/skills/shape/deepen-plan/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/shape/deepen-plan.md"
-        ],
-        "upstream": {
-          "repo": "compound-engineering-plugin",
-          "path": "plugins/compound-engineering/commands/deepen-plan.md"
-        }
-      },
-      {
-        "name": "handoff",
-        "tier": "leaf",
-        "purpose": "Codex handoff checklist for agents.",
-        "useWhen": "This skill should be used when preparing a handoff checklist for agents.",
-        "outputs": [],
-        "ownerModule": "handoff",
-        "location": ".agents/skills/utilities/handoff/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/utilities/handoff.md"
-        ],
-        "upstream": {
-          "repo": "agent-scripts",
-          "path": "docs/slash-commands/handoff.md"
-        }
-      },
-      {
-        "name": "heal-skill",
-        "tier": "leaf",
-        "purpose": "Fix incorrect SKILL.md files when a skill has wrong instructions or outdated API references",
-        "useWhen": "This skill should be used when fixing incorrect SKILL.md files with outdated instructions or APIs.",
-        "outputs": [],
-        "ownerModule": "heal-skill",
-        "location": ".agents/skills/skills-maintenance/heal-skill/SKILL.md",
-        "provenance": "local",
-        "history": [
-          "command:.agents/commands/utilities/heal-skill.md"
-        ]
-      },
-      {
-        "name": "landpr",
-        "tier": "leaf",
-        "purpose": "Land PR prompt/checklist template.",
-        "useWhen": "This skill should be used when preparing a /landpr prompt/checklist to land a PR.",
-        "outputs": [],
-        "ownerModule": "landpr",
-        "location": ".agents/skills/utilities/landpr/SKILL.md",
-        "provenance": "synced",
-        "history": [
-          "command:.agents/commands/utilities/landpr.md"
-        ],
-        "upstream": {
-          "repo": "agent-scripts",
-          "path": "docs/slash-commands/landpr.md"
-        }
-      },
-      {
         "name": "pickup",
         "tier": "leaf",
         "purpose": "Codex pickup checklist when starting on a task.",
@@ -1302,6 +1151,68 @@
         }
       },
       {
+        "name": "pr-comment-resolver",
+        "tier": "leaf",
+        "purpose": "address PR comments and re-verify",
+        "useWhen": "PR comments need resolution",
+        "outputs": [
+          "Fixes applied",
+          "Reply notes",
+          "Verification results"
+        ],
+        "ownerModule": "pr-comment-resolver",
+        "location": ".agents/skills/develop/pr-comment-resolver/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "workflow",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/workflow/pr-comment-resolver.md"
+        }
+      },
+      {
+        "name": "rams",
+        "tier": "leaf",
+        "purpose": "Design feedback via rams (backup to ui-skills)",
+        "useWhen": "UI critique or feedback is needed; prefer ui-skills first",
+        "outputs": [
+          "Feedback notes"
+        ],
+        "ownerModule": "rams",
+        "location": ".agents/skills/develop/rams/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "react-best-practices",
+        "tier": "leaf",
+        "purpose": "React/Next.js performance best practices from Vercel",
+        "useWhen": "writing, reviewing, or refactoring React/Next.js code for performance, data fetching, or bundle size",
+        "outputs": [
+          "Review notes"
+        ],
+        "ownerModule": "react-best-practices",
+        "location": ".agents/skills/develop/react-best-practices/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "repo-research-analyst",
+        "tier": "leaf",
+        "purpose": "survey repo structure and conventions",
+        "useWhen": "need repo structure/conventions overview",
+        "outputs": [
+          "Structure summary",
+          "Conventions",
+          "Entry points"
+        ],
+        "ownerModule": "repo-research-analyst",
+        "location": ".agents/skills/develop/repo-research-analyst/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "research",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/research/repo-research-analyst.md"
+        }
+      },
+      {
         "name": "reproduce-bug",
         "tier": "leaf",
         "purpose": "Reproduce and investigate a bug using logs, console inspection, and browser screenshots",
@@ -1317,6 +1228,73 @@
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/commands/reproduce-bug.md"
         }
+      },
+      {
+        "name": "security-sentinel",
+        "tier": "leaf",
+        "purpose": "security review for auth/data exposure",
+        "useWhen": "security review needed for changes",
+        "outputs": [
+          "Vulnerabilities",
+          "Mitigations",
+          "Security tests"
+        ],
+        "ownerModule": "security-sentinel",
+        "location": ".agents/skills/review/security-sentinel/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "review",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/review/security-sentinel.md"
+        }
+      },
+      {
+        "name": "skill-creator",
+        "tier": "leaf",
+        "purpose": "Guide for creating effective skills. This skill",
+        "useWhen": "users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations",
+        "outputs": [],
+        "ownerModule": "skill-creator",
+        "location": ".agents/skills/skills-maintenance/skill-creator/SKILL.md",
+        "provenance": "forked",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/skills/skill-creator"
+        }
+      },
+      {
+        "name": "spec-flow-analyzer",
+        "tier": "leaf",
+        "purpose": "analyze specs for flow gaps",
+        "useWhen": "specs need flow/gap analysis",
+        "outputs": [
+          "Gap list",
+          "Open questions",
+          "Spec updates"
+        ],
+        "ownerModule": "spec-flow-analyzer",
+        "location": ".agents/skills/shape/spec-flow-analyzer/SKILL.md",
+        "provenance": "forked",
+        "originGroup": "workflow",
+        "upstream": {
+          "repo": "compound-engineering-plugin",
+          "path": "plugins/compound-engineering/agents/workflow/spec-flow-analyzer.md"
+        }
+      },
+      {
+        "name": "spike",
+        "tier": "leaf",
+        "purpose": "Run a timeboxed spike to de-risk rabbit holes and turn uncertainty into proof",
+        "useWhen": "shaping work with technical unknowns, design gaps, or risky dependencies that need proof before committing",
+        "outputs": [
+          "Risk register",
+          "Spike plan",
+          "Spike report",
+          "Updated shaped artefacts"
+        ],
+        "ownerModule": "spike",
+        "location": ".agents/skills/shape/spike/SKILL.md",
+        "provenance": "local"
       },
       {
         "name": "test-browser",
@@ -1351,6 +1329,59 @@
           "repo": "compound-engineering-plugin",
           "path": "plugins/compound-engineering/commands/triage.md"
         }
+      },
+      {
+        "name": "use-ai-sdk",
+        "tier": "leaf",
+        "purpose": "AI SDK guidance. Use for Vercel AI SDK APIs (generateText, streamText, ToolLoopAgent, tools), providers, streaming, tool calling, structured output, or troubleshooting",
+        "useWhen": "",
+        "outputs": [],
+        "ownerModule": "use-ai-sdk",
+        "location": ".agents/skills/develop/use-ai-sdk/SKILL.md",
+        "provenance": "synced",
+        "upstream": {
+          "repo": "vercel/ai",
+          "path": "skills/use-ai-sdk/SKILL.md"
+        }
+      },
+      {
+        "name": "verify",
+        "tier": "core",
+        "purpose": "Run the repo verification ladder and report GO/NO-GO",
+        "useWhen": "you need a verification pass before marking work done",
+        "outputs": [
+          "Verification summary",
+          "GO/NO-GO decision"
+        ],
+        "ownerModule": "verify",
+        "location": ".agents/skills/utilities/verify/SKILL.md",
+        "provenance": "local"
+      },
+      {
+        "name": "video-transcript-downloader",
+        "tier": "leaf",
+        "purpose": "Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site",
+        "useWhen": "asked to \u201cdownload this video\u201d, \u201csave this clip\u201d, \u201crip audio\u201d, \u201cget subtitles\u201d, \u201cget transcript\u201d, or to troubleshoot yt-dlp/ffmpeg and formats/playlists",
+        "outputs": [],
+        "ownerModule": "video-transcript-downloader",
+        "location": ".agents/skills/utilities/video-transcript-downloader/SKILL.md",
+        "provenance": "forked",
+        "upstream": {
+          "repo": "agent-scripts",
+          "path": "skills/video-transcript-downloader"
+        }
+      },
+      {
+        "name": "web-design-guidelines",
+        "tier": "leaf",
+        "purpose": "Review UI for Web Interface Guidelines",
+        "useWhen": "UI/UX/accessibility audits",
+        "outputs": [
+          "Review notes"
+        ],
+        "ownerModule": "web-design-guidelines",
+        "location": ".agents/skills/develop/web-design-guidelines/SKILL.md",
+        "provenance": "local"
       },
       {
         "name": "wf-develop",
