@@ -1,6 +1,6 @@
 ---
 name: beautiful-mermaid
-description: Render Mermaid diagrams to SVG or ASCII/Unicode with beautiful-mermaid (Node/Bun/Deno/browser, no DOM).
+description: Render Mermaid diagrams to SVG or ASCII/Unicode with beautiful-mermaid (Node/Bun/Deno/browser, no DOM). Use when you need Mermaid render without DOM.
 ---
 
 # Beautiful Mermaid

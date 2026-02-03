@@ -1,6 +1,6 @@
 ---
 name: modular-skills-architect
-description: Map and refactor an agent context ecosystem: skills, commands/workflows, hooks, agent files, AGENTS.md templates, and docs. Output system map, module/dependency design, Register updates, and a concrete split/consolidate/rename/delete plan.
+description: Map and refactor an agent context ecosystem: skills, commands/workflows, hooks, agent files, AGENTS.md templates, and docs. Output system map, module/dependency design, Register updates, and a concrete split/consolidate/rename/delete plan. Use when routing or ownership is messy.
 ---
 
 # Modular Skills Architect

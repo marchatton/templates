@@ -1,6 +1,6 @@
 ---
 name: create-json-prd
-description: Convert PRD to JSON PRD for tooling.
+description: Convert PRD to JSON PRD for tooling. Use when tools require json-prd.
 ---
 
 # Create JSON PRD

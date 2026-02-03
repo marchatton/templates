@@ -1,6 +1,6 @@
 ---
 name: create-prd
-description: Draft PRD with scope, stories, acceptance criteria, verification.
+description: Draft PRD with scope, stories, acceptance criteria, verification. Use when shaping a new feature or spec.
 ---
 
 # Create PRD

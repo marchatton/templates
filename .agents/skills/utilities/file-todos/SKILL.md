@@ -1,6 +1,6 @@
 ---
 name: file-todos
-description: Manage file-based todos stored alongside a dossier. Create, triage, and track dependencies.
+description: Manage file-based todos stored alongside a dossier. Create, triage, and track dependencies. Use when work is tracked in docs/*/todos.
 ---
 
 # File-Based Todo Tracking Skill

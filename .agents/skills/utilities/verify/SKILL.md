@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Single verification flow; read docs/AGENTS.md; report PASS/NO-GO.
+description: Single verification flow; read docs/AGENTS.md; report PASS/NO-GO. Use before handoff or release.
 ---
 
 # Verify
@@ -26,7 +26,7 @@ Any change affecting behavior/build/tests/types/lint/package/UI. Also skills/doc
 6. If docs missing: run lint/typecheck/test/build if present; else NO-GO.
 
 ## Browser smoke (UI only)
-If UI/user-flow changed: after normal checks, use `agent-browser` skill to start app, exercise path, capture evidence.
+If UI/user-flow changed: after normal checks, use `test-browser` to start the app, exercise the path, capture evidence.
 
 ## Output
 Include a `Verification` section with commands + results.

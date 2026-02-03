@@ -1,6 +1,6 @@
 ---
 name: compound-docs
-description: Capture solved problems as categorized documentation with YAML frontmatter for fast lookup
+description: Capture solved problems as categorized documentation with YAML frontmatter for fast lookup. Use when a non-trivial problem is solved and worth reusing.
 ---
 
 # compound-docs Skill
