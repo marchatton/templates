@@ -7,6 +7,8 @@ description: Map and refactor an agent context ecosystem: skills, commands/workf
 
 the modular-skills-architect must flow
 
+Consistency across skills not required. Do not standardize structure unless asked.
+
 ## Canonical repo only (important)
 
 Use this skill **only** in the canonical templates repo where agent instructions live (GitHub: `marchatton/templates`; local path may differ).

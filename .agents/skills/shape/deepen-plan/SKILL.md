@@ -10,7 +10,7 @@ description: This skill should be used when deepening a plan with parallel resea
 
 **Note: The current year is 2026.** Use this when searching for recent documentation and best practices.
 
-This command takes an existing plan (from `/workflows:plan`) and enhances each section with parallel research agents. Each major element gets its own dedicated research sub-agent to find:
+This skill takes an existing plan (from `wf-shape`) and enhances each section with parallel research agents. Each major element gets its own dedicated research sub-agent to find:
 - Best practices and industry patterns
 - Performance optimizations
 - UI/UX improvements (if applicable)
@@ -21,7 +21,7 @@ The result is a deeply grounded, production-ready plan with concrete implementat
 
 ## Plan File
 
-<plan_path> #$ARGUMENTS </plan_path>
+Plan path: $ARGUMENTS
 
 **If the plan path above is empty:**
 1. Check for recent plans: `ls -la docs/plans/`
@@ -33,9 +33,7 @@ Do not proceed until you have a valid plan file path.
 
 ### 1. Parse and Analyze Plan Structure
 
-<thinking>
 First, read and parse the plan to identify each major section that can be enhanced with research.
-</thinking>
 
 **Read the plan file and extract:**
 - [ ] Overview/Problem Statement
@@ -57,9 +55,7 @@ Section 2: [Title] - [Brief description of what to research]
 
 ### 2. Discover and Apply Available Skills
 
-<thinking>
 Dynamically discover all available skills and match them to plan sections. Don't assume what skills exist - discover them at runtime.
-</thinking>
 
 **Step 1: Discover ALL available skills from ALL sources**
 
@@ -144,14 +140,12 @@ Task general-purpose: "Use the security-patterns skill at ~/.claude/skills/secur
 
 ### 3. Discover and Apply Learnings/Solutions
 
-<thinking>
-Check for documented learnings from /workflows:compound. These are solved problems stored as markdown files. Spawn a sub-agent for each learning to check if it's relevant.
-</thinking>
+Check for documented learnings from `compound-docs`. These are solved problems stored as markdown files. Spawn a sub-agent for each learning to check if it's relevant.
 
 **LEARNINGS LOCATION - Check these exact folders:**
 
 ```
-docs/solutions/           <-- PRIMARY: Project-level learnings (created by /workflows:compound)
+docs/solutions/           <-- PRIMARY: Project-level learnings (created by `compound-docs`)
 ├── performance-issues/
 │   └── *.md
 ├── debugging-patterns/
@@ -267,9 +261,7 @@ docs/solutions/authentication-issues/jwt-expiry.md           # plan has no auth
 
 ### 4. Launch Per-Section Research Agents
 
-<thinking>
 For each major section in the plan, spawn dedicated sub-agents to research improvements. Use the Explore agent type for open-ended research.
-</thinking>
 
 **For each identified section, launch parallel research:**
 
@@ -297,9 +289,7 @@ Search for recent (2024-2026) articles, blog posts, and documentation on topics 
 
 ### 5. Discover and Run ALL Review Agents
 
-<thinking>
 Dynamically discover every available agent and run them ALL against the plan. Don't filter, don't skip, don't assume relevance. 40+ parallel agents is fine. Use everything available.
-</thinking>
 
 **Step 1: Discover ALL available agents from ALL sources**
 
@@ -363,14 +353,12 @@ Research agents (like `best-practices-researcher`, `framework-docs-researcher`, 
 
 ### 6. Wait for ALL Agents and Synthesize Everything
 
-<thinking>
 Wait for ALL parallel agents to complete - skills, research agents, review agents, everything. Then synthesize all findings into a comprehensive enhancement.
-</thinking>
 
 **Collect outputs from ALL sources:**
 
 1. **Skill-based sub-agents** - Each skill's full output (code examples, patterns, recommendations)
-2. **Learnings/Solutions sub-agents** - Relevant documented learnings from /workflows:compound
+2. **Learnings/Solutions sub-agents** - Relevant documented learnings from `compound-docs`
 3. **Research agents** - Best practices, documentation, real-world examples
 4. **Review agents** - All feedback from every reviewer (architecture, security, performance, simplicity, etc.)
 5. **Context7 queries** - Framework documentation and patterns
@@ -395,9 +383,7 @@ Wait for ALL parallel agents to complete - skills, research agents, review agent
 
 ### 7. Enhance Plan Sections
 
-<thinking>
 Merge research findings back into the plan, adding depth without changing the original structure.
-</thinking>
 
 **Enhancement format for each section:**
 
@@ -480,28 +466,28 @@ After writing the enhanced plan, use **ask-questions-if-underspecified** to pres
 
 **Options:**
 1. **View diff** - Show what was added/changed
-2. **Run `/plan_review`** - Get feedback from reviewers on enhanced plan
-3. **Start `/workflows:work`** - Begin implementing this enhanced plan
+2. **Run `wf-review`** - Get feedback from reviewers on enhanced plan
+3. **Start `wf-develop`** - Begin implementing this enhanced plan
 4. **Deepen further** - Run another round of research on specific sections
 5. **Revert** - Restore original plan (if backup exists)
 
 Based on selection:
 - **View diff** → Run `git diff [plan_path]` or show before/after
-- **`/plan_review`** → Call the /plan_review command with the plan file path
-- **`/workflows:work`** → Call the /workflows:work command with the plan file path
+- **`wf-review`** → Use the `wf-review` skill with the plan file path
+- **`wf-develop`** → Use the `wf-develop` skill with the plan file path
 - **Deepen further** → Ask which sections need more research, then re-run those agents
 - **Revert** → Restore from git or backup
 
 ## Example Enhancement
 
-**Before (from /workflows:plan):**
+**Before (from `wf-shape`):**
 ```markdown
 ## Technical Approach
 
 Use React Query for data fetching with optimistic updates.
 ```
 
-**After (from /workflows:deepen-plan):**
+**After (from `deepen-plan`):**
 ```markdown
 ## Technical Approach
 

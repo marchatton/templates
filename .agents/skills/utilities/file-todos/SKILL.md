@@ -117,7 +117,7 @@ dependencies: ["001"]     # Issue IDs this is blocked by
    - Adjust priority if different from initial assessment
 4. Deferred todos stay in `pending` status
 
-**Use slash command:** `/triage` for interactive approval workflow
+**Use `triage` skill** for interactive approval workflow
 
 ### Managing Dependencies
 
@@ -187,11 +187,11 @@ Work logs serve as:
 
 | Trigger | Flow | Tool |
 |---------|------|------|
-| Code review | `/workflows:review` → Findings → `/triage` → Todos | Review agent + skill |
-| PR comments | `/resolve_pr_parallel` → Individual fixes → Todos | gh CLI + skill |
-| Code TODOs | `/resolve_todo_parallel` → Fixes + Complex todos | Agent + skill |
-| Planning | Brainstorm → Create todo → Work → Complete | Skill |
-| Feedback | Discussion → Create todo → Triage → Work | Skill + slash |
+| Code review | `wf-review` → Findings → `triage` → Todos | wf-review + file-todos |
+| PR comments | `pr-comment-resolver` → Fixes → Todos | pr-comment-resolver + file-todos |
+| Code TODOs | `wf-develop` → Fixes → Todos | wf-develop + file-todos |
+| Planning | Brainstorm → Create todo → Work → Complete | file-todos |
+| Feedback | Discussion → Create todo → Triage → Work | file-todos + triage |
 
 ## Quick Reference Commands
 

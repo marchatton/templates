@@ -1,9 +1,9 @@
 ---
-name: creating-agent-skills
+name: create-agent-skills
 description: Expert guidance for creating, writing, and refining Claude Code Skills. Use when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices.
 ---
 
-# Creating Agent Skills
+# Create Agent Skills
 
 This skill teaches how to create effective Claude Code Skills following Anthropic's official specification.
 
@@ -44,7 +44,7 @@ my-skill/
 ├── SKILL.md              # Entry point (required)
 ├── reference.md          # Detailed docs (loaded when needed)
 ├── examples.md           # Usage examples
-└── scripts/              # Utility scripts (executed, not loaded)
+└── assets/               # Optional templates or static files
 ```
 
 ### 4. Effective Descriptions
@@ -175,20 +175,7 @@ For form filling guide, see [FORMS.md](FORMS.md).
 
 Keep references **one level deep** from SKILL.md.
 
-### Step 4: Add Scripts (If Needed)
-
-Scripts execute without loading into context:
-
-```markdown
-## Utility Scripts
-
-Extract fields:
-```bash
-python scripts/analyze.py input.pdf > fields.json
-```
-```
-
-### Step 5: Test With Real Usage
+### Step 4: Test With Real Usage
 
 1. Test with actual tasks, not test scenarios
 2. Observe where Claude struggles
@@ -207,7 +194,7 @@ Check against this rubric:
 - [ ] Examples are concrete, not abstract
 - [ ] Consistent terminology
 - [ ] No time-sensitive information
-- [ ] Scripts handle errors explicitly
+- [ ] Any executable helpers handle errors explicitly
 
 ## Common Patterns
 
@@ -251,7 +238,7 @@ Copy this checklist:
 ```
 
 **Step 1: Backup database**
-Run: `./scripts/backup.sh`
+Back up before running the migration.
 ...
 ```
 

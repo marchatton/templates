@@ -66,8 +66,6 @@ When relevant, include:
 
 Your final output should be formatted as follows:
 
-<change_log>
-
 # 🚀 [Daily/Weekly] Change Log: [Current Date]
 
 ## 🚨 Breaking Changes (if any)
@@ -94,13 +92,11 @@ Your final output should be formatted as follows:
 
 [Include a brief, work-related fun fact or joke]
 
-</change_log>
-
 ## Style Guide Review
 
 Now review the changelog using the EVERY_WRITE_STYLE.md file and go one by one to make sure you are following the style guide. Use multiple agents, run in parallel to make it faster.
 
-Remember, your final output should only include the content within the <change_log> tags. Do not include any of your thought process or the original data in the output.
+Remember, your final output should only include the change log content. Do not include any of your thought process or the original data in the output.
 
 ## Discord Posting (Optional)
 

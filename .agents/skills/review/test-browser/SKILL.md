@@ -6,7 +6,7 @@ description: This skill should be used when running browser tests on pages affec
 
 # Browser Test Command
 
-<command_purpose>Run end-to-end browser tests on pages affected by a PR or branch changes using agent-browser CLI.</command_purpose>
+Run end-to-end browser tests on pages affected by a PR or branch changes using agent-browser CLI.
 
 ## CRITICAL: Use agent-browser CLI Only
 
@@ -18,7 +18,7 @@ If you find yourself calling `mcp__claude-in-chrome__*` tools, STOP. Use `agent-
 
 ## Introduction
 
-<role>QA Engineer specializing in browser-based end-to-end testing</role>
+Role: QA Engineer specializing in browser-based end-to-end testing
 
 This command tests affected pages in a real browser, catching issues that unit tests miss:
 - JavaScript integration bugs
@@ -28,11 +28,9 @@ This command tests affected pages in a real browser, catching issues that unit t
 
 ## Prerequisites
 
-<requirements>
 - Local development server running (e.g., `bin/dev`, `rails server`, `npm run dev`)
 - agent-browser CLI installed (see Setup below)
 - Git repository with changes to test
-</requirements>
 
 ## Setup
 
@@ -63,7 +61,6 @@ If installation fails, inform the user and stop.
 
 ### 1. Ask Browser Mode
 
-<ask_browser_mode>
 
 Before starting tests, ask user if they want to watch the browser:
 
@@ -75,13 +72,11 @@ Use ask-questions-if-underspecified with:
 
 Store the choice and use `--headed` flag when user selects "Headed".
 
-</ask_browser_mode>
 
 ### 2. Determine Test Scope
 
-<test_target> $ARGUMENTS </test_target>
+Test target: $ARGUMENTS
 
-<determine_scope>
 
 **If PR number provided:**
 ```bash
@@ -98,11 +93,9 @@ git diff --name-only main...HEAD
 git diff --name-only main...[branch]
 ```
 
-</determine_scope>
 
 ### 3. Map Files to Routes
 
-<file_to_route_mapping>
 
 Map changed files to testable routes:
 
@@ -120,11 +113,9 @@ Map changed files to testable routes:
 
 Build a list of URLs to test based on the mapping.
 
-</file_to_route_mapping>
 
 ### 4. Verify Server is Running
 
-<check_server>
 
 Before testing, verify the local server is accessible:
 
@@ -144,11 +135,9 @@ Please start your development server:
 Then run `/test-browser` again.
 ```
 
-</check_server>
 
 ### 5. Test Each Affected Page
 
-<test_pages>
 
 For each affected route, use agent-browser CLI commands (NOT Chrome MCP):
 
@@ -183,11 +172,9 @@ agent-browser screenshot page-name.png
 agent-browser screenshot --full page-name-full.png  # Full page
 ```
 
-</test_pages>
 
 ### 6. Human Verification (When Required)
 
-<human_verification>
 
 Pause for human input when testing touches:
 
@@ -212,11 +199,9 @@ Did it work correctly?
 2. No - describe the issue
 ```
 
-</human_verification>
 
 ### 7. Handle Failures
 
-<failure_handling>
 
 When a test fails:
 
@@ -251,11 +236,9 @@ When a test fails:
    - Log as skipped
    - Continue testing
 
-</failure_handling>
 
 ### 8. Test Summary
 
-<test_summary>
 
 After all tests complete, present summary:
 
@@ -290,7 +273,6 @@ After all tests complete, present summary:
 ### Result: [PASS / FAIL / PARTIAL]
 ```
 
-</test_summary>
 
 ## Quick Usage Examples
 
