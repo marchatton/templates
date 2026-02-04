@@ -1,5 +1,5 @@
 # Project repo docs structure (scaffold)
-This is the canonical docs structure that `marchatton/templates` scaffolds into *each* new project repo.
+This is the canonical docs structure that `marchatton/agent-skills` scaffolds into *each* new project repo.
 Guidelines are stored in the respective AGENTS.md folder 
 
 ## Repo shape (stable concepts)

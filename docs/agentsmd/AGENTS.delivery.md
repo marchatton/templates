@@ -26,4 +26,4 @@ This folder tracks work items once implementation begins.
 
 ## Tooling intent
 - ESLint/Prettier configs are the source of truth.
-- If something is repeatable, prefer skills/commands/hooks using/updating from `marchatton/templates` over adding more prose here.
+- If something is repeatable, prefer skills/commands/hooks using/updating from `marchatton/agent-skills` over adding more prose here.

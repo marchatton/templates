@@ -2,7 +2,7 @@
 
 Owner: Marc  
 Status: Draft (ready for implementation)  
-Repo: `/Users/marc/Code/personal-projects/templates`  
+Repo: `/Users/marc/Code/personal-projects/agent-skills`  
 Primary runner: Codex (model-agnostic core). Claude-specific parts allowed, clearly tagged `CLAUDE_ONLY`.
 
 ## Summary
