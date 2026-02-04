@@ -27,8 +27,76 @@ if [[ ! -f "$STRUCTURE_DOC" ]]; then
   exit 1
 fi
 
+ensure_python3() {
+  if command -v python3 >/dev/null 2>&1; then
+    PYTHON_BIN="python3"
+    return 0
+  fi
+
+  if ! command -v uv >/dev/null 2>&1; then
+    echo "python3 not found and uv is not installed. Install uv or python3 manually." >&2
+    exit 1
+  fi
+
+  echo "python3 not found; installing via uv..." >&2
+  uv python install 3.12
+  PYTHON_BIN="$(uv python find 3.12 | head -n 1)"
+  if [[ -z "$PYTHON_BIN" ]]; then
+    echo "uv python install failed or python path not found." >&2
+    exit 1
+  fi
+}
+
+is_placeholder_path() {
+  local rel_path="$1"
+  [[ "$rel_path" == *"<"* ]] && return 0
+  [[ "$rel_path" == *"YYYY"* ]] && return 0
+  return 1
+}
+
+add_gitkeep_to_empty_dirs() {
+  local base_dir="$1"
+  [[ -d "$base_dir" ]] || return 0
+  while IFS= read -r -d '' dir; do
+    if [[ -z "$(ls -A "$dir")" ]]; then
+      : > "$dir/.gitkeep"
+    fi
+  done < <(find "$base_dir" -type d -print0)
+}
+
+ensure_gitignore() {
+  local gitignore_path="$TARGET_DIR/.gitignore"
+  local added=0
+
+  if [[ ! -f "$gitignore_path" ]]; then
+    cat > "$gitignore_path" <<'EOF'
+# Onboarding defaults
+/throwaway/
+/packages/
+EOF
+    return 0
+  fi
+
+  if ! grep -Fxq "/throwaway/" "$gitignore_path"; then
+    echo "/throwaway/" >> "$gitignore_path"
+    added=1
+  fi
+
+  if ! grep -Fxq "/packages/" "$gitignore_path"; then
+    echo "/packages/" >> "$gitignore_path"
+    added=1
+  fi
+
+  if [[ "$added" -eq 1 ]]; then
+    # Ensure trailing newline for clean diffs
+    printf "\n" >> "$gitignore_path"
+  fi
+}
+
 # Parse docs tree from REPO-STRUCTURE.md.
-DOC_PATHS=$(python3 - <<'PY' "$STRUCTURE_DOC"
+PYTHON_BIN="python3"
+ensure_python3
+DOC_PATHS=$("$PYTHON_BIN" - <<'PY' "$STRUCTURE_DOC"
 import sys
 from pathlib import Path
 
@@ -91,6 +159,9 @@ while IFS= read -r rel_path; do
   if [[ "$rel_path" == */ ]]; then
     mkdir -p "$TARGET_DIR/$rel_path"
   else
+    if is_placeholder_path "$rel_path"; then
+      continue
+    fi
     mkdir -p "$(dirname "$TARGET_DIR/$rel_path")"
     if [[ ! -f "$TARGET_DIR/$rel_path" ]]; then
       : > "$TARGET_DIR/$rel_path"
@@ -147,6 +218,9 @@ if [[ -d "$DOC_TEMPLATES_DIR" ]]; then
   cp -f "$DOC_TEMPLATES_DIR/release-checklist.md" "$TARGET_DIR/docs/04-projects/_templates/release-checklist.md" 2>/dev/null || true
   cp -f "$DOC_TEMPLATES_DIR/json-prd.schema.json" "$TARGET_DIR/docs/04-projects/_templates/json-prd.schema.json" 2>/dev/null || true
 fi
+
+add_gitkeep_to_empty_dirs "$TARGET_DIR/docs"
+ensure_gitignore
 
 echo "Onboarding scaffold complete: $TARGET_DIR"
 echo "Optional: run npx @iannuttall/dotagents in the target repo to link .agents into other tools."
