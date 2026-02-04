@@ -12,6 +12,7 @@ Next.js App Router web application.
 - Treat `useEffect` as an escape hatch (imperative interop only) — not for data fetching, derived state, prop→state, or URL sync.
 - Never import server-only into client components (use `server-only` / `client-only` boundaries).
 - Validate external inputs with Zod and map errors to safe user-facing messages.
+- AI SDK flows: use Workflow DevKit (`workflow`) and add `"use workflow"` in async TS fns for durability, reliability, observability.
 
 ## Frontend skills
 - `frontend-design`: build distinctive UI.
