@@ -1,6 +1,10 @@
 ---
 name: web-design-guidelines
-description: Review UI for Web Interface Guidelines. Use for UI/UX/accessibility audits.
+description: Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check accessibility", "audit design", "review UX", or "check my site against best practices".
+metadata:
+  author: vercel
+  version: "1.0.0"
+  argument-hint: <file-or-pattern>
 ---
 
 # Web Interface Guidelines
@@ -33,8 +37,3 @@ When a user provides a file or pattern argument:
 4. Output findings using the format specified in the guidelines
 
 If no files specified, ask the user which files to review.
-
-## Verify
-
-- For reviews: list violations with snippet + fix.
-- If code touched: run `pnpm lint`, `pnpm test`, `pnpm build`, `pnpm verify`; report GO or NO-GO with evidence.
