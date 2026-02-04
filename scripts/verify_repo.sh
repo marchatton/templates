@@ -6,13 +6,17 @@ root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 errors=0
 
 required_skill_dirs=(
-  "${root_dir}/.agents/skills/shape"
-  "${root_dir}/.agents/skills/develop"
-  "${root_dir}/.agents/skills/review"
-  "${root_dir}/.agents/skills/release"
-  "${root_dir}/.agents/skills/compound"
-  "${root_dir}/.agents/skills/skills-maintenance"
-  "${root_dir}/.agents/skills/utilities"
+  "${root_dir}/.agents/skills/00-utilities"
+  "${root_dir}/.agents/skills/01-research-brainstorm"
+  "${root_dir}/.agents/skills/02-shape"
+  "${root_dir}/.agents/skills/03-plan"
+  "${root_dir}/.agents/skills/04-develop"
+  "${root_dir}/.agents/skills/05-review"
+  "${root_dir}/.agents/skills/06-release"
+  "${root_dir}/.agents/skills/07-compound"
+  "${root_dir}/.agents/skills/10-audit"
+  "${root_dir}/.agents/skills/98-skill-maintenance"
+  "${root_dir}/.agents/skills/99-archive"
 )
 
 for dir in "${required_skill_dirs[@]}"; do
@@ -23,11 +27,12 @@ for dir in "${required_skill_dirs[@]}"; do
 done
 
 required_workflow_skills=(
-  ".agents/skills/shape/wf-shape/SKILL.md"
-  ".agents/skills/develop/wf-develop/SKILL.md"
-  ".agents/skills/review/wf-review/SKILL.md"
-  ".agents/skills/release/wf-release/SKILL.md"
-  ".agents/skills/develop/wf-ralph/SKILL.md"
+  ".agents/skills/02-shape/wf-shape/SKILL.md"
+  ".agents/skills/03-plan/wf-plan/SKILL.md"
+  ".agents/skills/04-develop/wf-develop/SKILL.md"
+  ".agents/skills/04-develop/wf-ralph/SKILL.md"
+  ".agents/skills/05-review/wf-review/SKILL.md"
+  ".agents/skills/06-release/wf-release/SKILL.md"
 )
 
 for skill in "${required_workflow_skills[@]}"; do

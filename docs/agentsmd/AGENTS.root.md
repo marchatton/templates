@@ -8,7 +8,7 @@
 We mostly follow the core principles of the pragmatic programmer (book by Andy Hunt and Dave Thomas
 ):
 * **Take ownership.** If something’s broken, unclear, risky, or “not your job”, act anyway. Flag it, fix it, or help shape a better path.
-* **Always be learning.** Keep a “knowledge portfolio”: read, experiment, learn a language/tool each year, and invest in fundamentals (data structures, debugging, design, communication). We store learnings in  `LEARNINGS.md`
+* **Always be learning.** Keep a “knowledge portfolio”: read, experiment, learn a language/tool each year, and invest in fundamentals (data structures, debugging, design, communication). We store learnings in `docs/learnings.md`.
 * **Avoid duplication (DRY).** Duplication isn’t just copy-paste code, it’s duplicated *knowledge* across files, services, docs, tests, and people’s heads. Put knowledge in one place and reuse it.
 * **Build with orthogonality.** Design components so changes don’t ripple everywhere. Reduce coupling, make dependencies explicit, keep interfaces small and sharp.
 * **Think in feedback loops.** Prefer small steps, short cycles, and frequent validation. Use “tracer bullets” (thin end-to-end slices) to prove direction before you optimise or polish. Keep changes small and focused (one concern per commit/PR). Prefer the simplest thing that meets the requirement (avoid enterprise edge-case soup).

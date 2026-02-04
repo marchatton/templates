@@ -98,7 +98,7 @@ For each risk/unknown, choose one mitigation move:
 
 ### 4) Spike the rabbit holes (only when needed)
 
-- For each risk marked **Spike**, invoke the spike-investigation skill.
+- For each risk marked **Spike**, invoke the `spike` skill.
 - Record all spike outputs inside `spike-investigation.md`.
   - Use `references/spike-section-template.md` as the per-spike skeleton.
 

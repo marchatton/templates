@@ -17,7 +17,7 @@ description: Convert PRD to JSON PRD for tooling. Use when tools require json-pr
 2. For each story: id (US-001), title, description, acceptanceCriteria[], priority int.
 3. Add optional fields if helpful: `passes` (false), `notes` (empty).
 4. Save `prd.json` next to `prd.md` in the relevant docs folder.
-5. Validate against `docs/templates/json-prd.schema.json`; fix gaps or NO-GO.
+5. Validate against repo schema (find `json-prd.schema.json` in docs templates); fix gaps or NO-GO.
 
 ## Verification
 - JSON validates against schema.

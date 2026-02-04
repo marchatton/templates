@@ -69,32 +69,32 @@ copy_skill() {
 }
 
 copy_skill "${add_stage}/.agents/skills/web-design-guidelines" \
-  "${root_dir}/.agents/skills/develop/web-design-guidelines"
+  "${root_dir}/.agents/skills/04-develop/00-frontend-skills/web-design-guidelines"
 if [ -d "${add_stage}/.agents/skills/react-best-practices" ]; then
   copy_skill "${add_stage}/.agents/skills/react-best-practices" \
-    "${root_dir}/.agents/skills/develop/react-best-practices"
+    "${root_dir}/.agents/skills/04-develop/00-frontend-skills/react-best-practices"
 else
   echo "Skipping react-best-practices (not found in source repo)"
 fi
 if [ -d "${add_stage}/.agents/skills/composition-patterns" ]; then
   copy_skill "${add_stage}/.agents/skills/composition-patterns" \
-    "${root_dir}/.agents/skills/develop/composition-patterns"
+    "${root_dir}/.agents/skills/04-develop/00-frontend-skills/composition-patterns"
 else
   echo "Skipping composition-patterns (not found in source repo)"
 fi
 copy_skill "${add_stage}/.agents/skills/ai-sdk" \
-  "${root_dir}/.agents/skills/develop/use-ai-sdk"
+  "${root_dir}/.agents/skills/04-develop/use-ai-sdk"
 copy_skill "${add_stage}/.agents/skills/agentation" \
-  "${root_dir}/.agents/skills/utilities/agentation"
+  "${root_dir}/.agents/skills/00-utilities/agentation"
 
 copy_skill "${agents_home}/skills/baseline-ui" \
-  "${root_dir}/.agents/skills/review/baseline-ui"
+  "${root_dir}/.agents/skills/05-review/baseline-ui"
 copy_skill "${agents_home}/skills/fixing-motion-performance" \
-  "${root_dir}/.agents/skills/review/fixing-motion-performance"
+  "${root_dir}/.agents/skills/05-review/fixing-motion-performance"
 copy_skill "${agents_home}/skills/fixing-metadata" \
-  "${root_dir}/.agents/skills/review/fixing-metadata"
+  "${root_dir}/.agents/skills/05-review/fixing-metadata"
 copy_skill "${agents_home}/skills/fixing-accessibility" \
-  "${root_dir}/.agents/skills/review/fixing-accessibility"
+  "${root_dir}/.agents/skills/05-review/fixing-accessibility"
 
 python3 - "${root_dir}" <<'PY'
 from __future__ import annotations
@@ -112,55 +112,55 @@ default_verify = [
 
 targets = [
     {
-        "path": root_dir / ".agents" / "skills" / "develop" / "web-design-guidelines" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "web-design-guidelines" / "SKILL.md",
         "name": "web-design-guidelines",
         "description": "Review UI for Web Interface Guidelines. Use for UI/UX/accessibility audits.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "develop" / "react-best-practices" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "react-best-practices" / "SKILL.md",
         "name": "react-best-practices",
         "description": "React/Next.js performance best practices from Vercel. Use when writing, reviewing, or refactoring React/Next.js code for performance, data fetching, or bundle size.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "develop" / "composition-patterns" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "composition-patterns" / "SKILL.md",
         "name": "composition-patterns",
         "description": "React composition patterns that scale. Use when refactoring boolean prop proliferation, designing reusable component APIs, or reviewing component architecture.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "develop" / "use-ai-sdk" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "use-ai-sdk" / "SKILL.md",
         "name": "use-ai-sdk",
         "description": "AI SDK guidance. Use for Vercel AI SDK APIs (generateText, streamText, ToolLoopAgent, tools), providers, streaming, tool calling, structured output, or troubleshooting.",
         "verify": [],
     },
     {
-        "path": root_dir / ".agents" / "skills" / "review" / "baseline-ui" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "05-review" / "baseline-ui" / "SKILL.md",
         "name": "baseline-ui",
         "description": "Baseline UI rules to prevent design slop. Use for UI design or review.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "review" / "fixing-motion-performance" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "05-review" / "fixing-motion-performance" / "SKILL.md",
         "name": "fixing-motion-performance",
         "description": "Fix animation performance issues. Use for motion audits or refactors.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "review" / "fixing-metadata" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "05-review" / "fixing-metadata" / "SKILL.md",
         "name": "fixing-metadata",
         "description": "Fix metadata issues. Use for SEO/social metadata audits or fixes.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "review" / "fixing-accessibility" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "05-review" / "fixing-accessibility" / "SKILL.md",
         "name": "fixing-accessibility",
         "description": "Fix accessibility issues. Use for a11y audits or fixes.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "utilities" / "agentation" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "00-utilities" / "agentation" / "SKILL.md",
         "name": "agentation",
         "description": "Add Agentation toolbar to Next.js. Use for install/config or dev-only <Agentation />.",
         "verify": [],
