@@ -36,6 +36,7 @@ Write a single plan file inside the same dossier folder:
 
 - Read `brief.md` first.
 - Read `breadboard-pack.md`, `risk-register.md`, and `spike-investigation.md`.
+- If `brief.md` is missing and this is a larger feature, stop and route to the brief skill.
 
 If any of the following are missing, stop and route back to wf-shape:
 - perimeter (in vs out)
