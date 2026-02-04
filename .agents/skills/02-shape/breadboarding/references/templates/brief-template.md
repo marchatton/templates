@@ -1,13 +1,13 @@
-# Project Brief (1–2 pager)
+# Project Brief (1-2 pager)
 
 > Keep this doc short. Link out to breadboard + risks + spikes.
 
 **[Project Name]**
 
-- One-line description: 
-- Team: 
-- Contributors: 
-- Resources: 
+- One-line description:
+- Team:
+- Contributors:
+- Resources:
 - Status: Draft / Problem Review / Solution Review / Launch Review / Launched
 - Last updated: YYYY-MM-DD (2026)
 
@@ -15,15 +15,15 @@
 
 ## Problem alignment
 
-**Problem (1–2 sentences):**
+**Problem (1-2 sentences):**
 
 **Why it matters (customers + business):**
 
 **Evidence:**
-- 
+-
 
 **Success looks like:**
-- 
+-
 
 ---
 
@@ -31,13 +31,13 @@
 
 Describe the rough shape. A person should be able to squint and see the same shape.
 
-- 
+-
 
 ---
 
 ## Narrative (optional)
 
-Write 2–4 short stories:
+Write 2-4 short stories:
 - common case
 - edgy case
 - failure case
@@ -46,41 +46,41 @@ Write 2–4 short stories:
 
 ## Goals
 
-Prioritise. Keep it small.
+Prioritize. Keep it small.
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## Non-goals
 
 Be explicit. These are as important as goals.
 
-- 
+-
 
 ---
 
 ## Solution alignment
 
-### ✅ Draw the perimeter
+### Draw the perimeter (required)
 
 Do not force others to infer scope.
 
 **In scope:**
-- 
+-
 
 **Out of scope (de-scope / cuts):**
-- 
+-
 
 ### Key features (plan of record)
 
 List the features that shape the solution (priority order).
 
-- 
+-
 
 ### Future considerations (later)
 
-- 
+-
 
 ---
 
@@ -89,7 +89,7 @@ List the features that shape the solution (priority order).
 Show the end-to-end experience. Use prose, diagrams, screenshots, or links.
 
 - Link: `breadboard-pack.md`
-- 
+-
 
 ---
 
@@ -97,7 +97,7 @@ Show the end-to-end experience. Use prose, diagrams, screenshots, or links.
 
 List rules to guide design + development. Cover common + edge cases.
 
-- 
+-
 
 ---
 
@@ -105,17 +105,17 @@ List rules to guide design + development. Cover common + edge cases.
 
 Link: `risk-register.md`
 
-- 
+-
 
 ## Open questions (top 10)
 
-- 
+-
 
 ---
 
 ## Review alignment
 
-🛑 Do not proceed if contributors are not aligned on the problem + perimeter.
+STOP. Do not proceed if contributors are not aligned on the problem + perimeter.
 
 | Reviewer | Team/Role | Status |
 |---|---|---|

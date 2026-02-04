@@ -621,6 +621,18 @@
         "useWhen": "shaping a software change and need an affordance-level breadboard, or mapping existing system flows to decide structure"
       },
       {
+        "location": ".agents/skills/02-shape/brief/SKILL.md",
+        "name": "brief",
+        "outputs": [
+          "brief.md"
+        ],
+        "ownerModule": "brief",
+        "provenance": "local",
+        "purpose": "Write or update brief.md to start shaping",
+        "tier": "leaf",
+        "useWhen": "need a project or feature brief, a 1-2 pager, or to turn rough inputs into goals, non-goals, scope, risks, and open questions"
+      },
+      {
         "location": ".agents/skills/03-plan/bug-reproduction-validator/SKILL.md",
         "name": "bug-reproduction-validator",
         "originGroup": "workflow",
