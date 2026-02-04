@@ -44,6 +44,8 @@ If the repo structure differs, locate the canonical project dossier location and
 
 ## Workflow
 
+Start with the brief. Do not breadboard without it.
+
 ### 0) Start a dossier
 
 - Choose `id_<slug>` (prefer `0001_<short>` for ordering).
@@ -54,7 +56,7 @@ If the repo structure differs, locate the canonical project dossier location and
 
 ### 1) Write the 1–2 pager brief
 
-- Draft `brief.md` using the bundled template in `references/brief-template.md`.
+- Draft `brief.md` using `../breadboarding/references/templates/brief-template.md`.
 - Keep it short; link out instead of bloating the brief.
 
 Hard requirements inside `brief.md`:
