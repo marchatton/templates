@@ -765,7 +765,7 @@
         "useWhen": "creating a new CLI project scaffold with pnpm and basic structure"
       },
       {
-        "location": ".agents/skills/03-plan/create-json-prd/SKILL.md",
+        "location": ".agents/skills/02-shape/create-json-prd/SKILL.md",
         "name": "create-json-prd",
         "outputs": [
           "JSON PRD"
@@ -781,7 +781,7 @@
         "useWhen": "a JSON PRD is required for tooling or automation"
       },
       {
-        "location": ".agents/skills/03-plan/create-prd/SKILL.md",
+        "location": ".agents/skills/02-shape/create-prd/SKILL.md",
         "name": "create-prd",
         "outputs": [
           "PRD doc"
