@@ -23,10 +23,11 @@ Start shaping with a concise `brief.md`.
 ## Workflow
 
 1) Read any existing brief + inputs.
-2) Draft `brief.md` using `../breadboarding/references/templates/brief-template.md`.
-3) Keep 1-2 pages. Link out instead of dumping details.
+2) Ask questions to clarify using `ask-questions-if-underspecified` skill.
+3) Draft `brief.md`.
+4) Keep 1-2 pages. Link out instead of dumping details.
 4) Ensure: problem alignment, goals/non-goals, perimeter, de-scope, risks/unknowns (<=10), open questions (<=10), shaping decision placeholder.
-5) Return updated `brief.md`.
+6) Return updated `brief.md`.
 
 ## Output
 
