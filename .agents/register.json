@@ -721,7 +721,7 @@
         "useWhen": "final pass for simplicity/minimalism"
       },
       {
-        "location": ".agents/skills/04-develop/00-frontend-skills/composition-patterns/SKILL.md",
+        "location": ".agents/skills/04-develop/00-frontend-general/composition-patterns/SKILL.md",
         "name": "composition-patterns",
         "outputs": [
           "Review notes"
@@ -1012,7 +1012,7 @@
         "useWhen": "framework behavior/usage needs confirmation"
       },
       {
-        "location": ".agents/skills/04-develop/00-frontend-skills/frontend-design/SKILL.md",
+        "location": ".agents/skills/04-develop/00-frontend-general/frontend-design/SKILL.md",
         "name": "frontend-design",
         "outputs": [],
         "ownerModule": "frontend-design",
@@ -1319,7 +1319,7 @@
         "useWhen": "PR comments need resolution"
       },
       {
-        "location": ".agents/skills/04-develop/00-frontend-skills/rams/SKILL.md",
+        "location": ".agents/skills/04-develop/00-frontend-general/rams/SKILL.md",
         "name": "rams",
         "outputs": [
           "Feedback notes"
@@ -1331,7 +1331,7 @@
         "useWhen": "UI critique or feedback is needed; prefer ui-skills first"
       },
       {
-        "location": ".agents/skills/04-develop/00-frontend-skills/react-best-practices/SKILL.md",
+        "location": ".agents/skills/04-develop/00-frontend-general/react-best-practices/SKILL.md",
         "name": "react-best-practices",
         "outputs": [
           "Review notes"
@@ -1561,7 +1561,7 @@
         "useWhen": "auditing accessibility, fixing WCAG violations, or implementing accessible patterns"
       },
       {
-        "location": ".agents/skills/04-develop/00-frontend-skills/web-design-guidelines/SKILL.md",
+        "location": ".agents/skills/04-develop/00-frontend-general/web-design-guidelines/SKILL.md",
         "name": "web-design-guidelines",
         "outputs": [
           "Review notes"

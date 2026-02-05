@@ -69,16 +69,16 @@ copy_skill() {
 }
 
 copy_skill "${add_stage}/.agents/skills/web-design-guidelines" \
-  "${root_dir}/.agents/skills/04-develop/00-frontend-skills/web-design-guidelines"
+  "${root_dir}/.agents/skills/04-develop/00-frontend-general/web-design-guidelines"
 if [ -d "${add_stage}/.agents/skills/react-best-practices" ]; then
   copy_skill "${add_stage}/.agents/skills/react-best-practices" \
-    "${root_dir}/.agents/skills/04-develop/00-frontend-skills/react-best-practices"
+    "${root_dir}/.agents/skills/04-develop/00-frontend-general/react-best-practices"
 else
   echo "Skipping react-best-practices (not found in source repo)"
 fi
 if [ -d "${add_stage}/.agents/skills/composition-patterns" ]; then
   copy_skill "${add_stage}/.agents/skills/composition-patterns" \
-    "${root_dir}/.agents/skills/04-develop/00-frontend-skills/composition-patterns"
+    "${root_dir}/.agents/skills/04-develop/00-frontend-general/composition-patterns"
 else
   echo "Skipping composition-patterns (not found in source repo)"
 fi
@@ -112,19 +112,19 @@ default_verify = [
 
 targets = [
     {
-        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "web-design-guidelines" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-general" / "web-design-guidelines" / "SKILL.md",
         "name": "web-design-guidelines",
         "description": "Review UI for Web Interface Guidelines. Use for UI/UX/accessibility audits.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "react-best-practices" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-general" / "react-best-practices" / "SKILL.md",
         "name": "react-best-practices",
         "description": "React/Next.js performance best practices from Vercel. Use when writing, reviewing, or refactoring React/Next.js code for performance, data fetching, or bundle size.",
         "verify": default_verify,
     },
     {
-        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-skills" / "composition-patterns" / "SKILL.md",
+        "path": root_dir / ".agents" / "skills" / "04-develop" / "00-frontend-general" / "composition-patterns" / "SKILL.md",
         "name": "composition-patterns",
         "description": "React composition patterns that scale. Use when refactoring boolean prop proliferation, designing reusable component APIs, or reviewing component architecture.",
         "verify": default_verify,
