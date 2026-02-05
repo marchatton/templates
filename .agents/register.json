@@ -982,20 +982,6 @@
         "useWhen": ""
       },
       {
-        "location": ".agents/skills/00-utilities/gemini-imagegen/SKILL.md",
-        "name": "gemini-imagegen",
-        "outputs": [],
-        "ownerModule": "gemini-imagegen",
-        "provenance": "forked",
-        "purpose": "This skill",
-        "tier": "leaf",
-        "upstream": {
-          "path": "plugins/compound-engineering/skills/gemini-imagegen",
-          "repo": "compound-engineering-plugin"
-        },
-        "useWhen": "generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, creating stickers, product mockups, or any image generation/manipulation task. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images"
-      },
-      {
         "location": ".agents/skills/05-review/git-history-analyzer/SKILL.md",
         "name": "git-history-analyzer",
         "originGroup": "research",
@@ -1135,7 +1121,7 @@
         ],
         "ownerModule": "nano-banana-pro",
         "provenance": "forked",
-        "purpose": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image create/modify requests incl. edits. Supports text-to-image + image-to-image; 1K/2K/4K; use --input-image",
+        "purpose": "Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image creation or modification incl logos, stickers, mockups, style transfer, multi-image composition, and multi-turn refinement",
         "tier": "leaf",
         "upstream": {
           "path": "skills/nano-banana-pro",

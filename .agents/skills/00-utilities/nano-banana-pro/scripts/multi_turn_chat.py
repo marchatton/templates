@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "google-genai>=1.0.0",
+#     "pillow>=10.0.0",
+# ]
+# ///
 """
 Interactive multi-turn image generation and refinement using Gemini API.
 
 Usage:
-    python multi_turn_chat.py [--model MODEL] [--output-dir DIR]
+    uv run multi_turn_chat.py [--model MODEL] [--output-dir DIR]
 
 This starts an interactive session where you can:
 - Generate images from prompts
@@ -37,7 +44,7 @@ class ImageChat:
     
     def __init__(
         self,
-        model: str = "gemini-2.5-flash-image",
+        model: str = "gemini-3-pro-image-preview",
         output_dir: str = ".",
     ):
         api_key = os.environ.get("GEMINI_API_KEY")
@@ -120,7 +127,7 @@ def main():
     )
     parser.add_argument(
         "--model", "-m",
-        default="gemini-2.5-flash-image",
+        default="gemini-3-pro-image-preview",
         choices=["gemini-2.5-flash-image", "gemini-3-pro-image-preview"],
         help="Model to use"
     )

@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "google-genai>=1.0.0",
+#     "pillow>=10.0.0",
+# ]
+# ///
 """
-Generate images from text prompts using Gemini API.
+Compose multiple images into a new image using Gemini API.
 
 Usage:
-    python generate_image.py "prompt" output.png [--model MODEL] [--aspect RATIO] [--size SIZE]
+    uv run compose_images.py "instruction" output.png image1.png [image2.png ...]
 
 Examples:
-    python generate_image.py "A cat in space" cat.png
-    python generate_image.py "A logo for Acme Corp" logo.png --model gemini-3-pro-image-preview --aspect 1:1
-    python generate_image.py "Epic landscape" landscape.png --aspect 16:9 --size 2K
+    uv run compose_images.py "Create a group photo of these people" group.png person1.png person2.png
+    uv run compose_images.py "Put the cat from the first image on the couch from the second" result.png cat.png couch.png
+    uv run compose_images.py "Apply the art style from the first image to the scene in the second" styled.png style.png photo.png
+
+Note: Supports up to 14 reference images (Gemini 3 Pro only).
 
 Environment:
     GEMINI_API_KEY - Required API key
@@ -18,25 +27,28 @@ import argparse
 import os
 import sys
 
+from PIL import Image
 from google import genai
 from google.genai import types
 
 
-def generate_image(
-    prompt: str,
+def compose_images(
+    instruction: str,
     output_path: str,
-    model: str = "gemini-2.5-flash-image",
+    image_paths: list[str],
+    model: str = "gemini-3-pro-image-preview",
     aspect_ratio: str | None = None,
     image_size: str | None = None,
 ) -> str | None:
-    """Generate an image from a text prompt.
+    """Compose multiple images based on instructions.
     
     Args:
-        prompt: Text description of the image to generate
-        output_path: Path to save the generated image
-        model: Gemini model to use
-        aspect_ratio: Aspect ratio (1:1, 16:9, 9:16, etc.)
-        image_size: Resolution (1K, 2K, 4K - 4K only for pro model)
+        instruction: Text description of how to combine images
+        output_path: Path to save the result
+        image_paths: List of input image paths (up to 14)
+        model: Gemini model to use (pro recommended)
+        aspect_ratio: Output aspect ratio
+        image_size: Output resolution
     
     Returns:
         Any text response from the model, or None
@@ -45,7 +57,24 @@ def generate_image(
     if not api_key:
         raise EnvironmentError("GEMINI_API_KEY environment variable not set")
     
+    if len(image_paths) > 14:
+        raise ValueError("Maximum 14 reference images supported")
+    
+    if len(image_paths) < 1:
+        raise ValueError("At least one image is required")
+    
+    # Verify all images exist
+    for path in image_paths:
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Image not found: {path}")
+    
     client = genai.Client(api_key=api_key)
+    
+    # Load images
+    images = [Image.open(path) for path in image_paths]
+    
+    # Build contents: instruction first, then images
+    contents = [instruction] + images
     
     # Build config
     config_kwargs = {"response_modalities": ["TEXT", "IMAGE"]}
@@ -63,7 +92,7 @@ def generate_image(
     
     response = client.models.generate_content(
         model=model,
-        contents=[prompt],
+        contents=contents,
         config=config,
     )
     
@@ -79,48 +108,50 @@ def generate_image(
             image_saved = True
     
     if not image_saved:
-        raise RuntimeError("No image was generated. Check your prompt and try again.")
+        raise RuntimeError("No image was generated.")
     
     return text_response
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate images from text prompts using Gemini API",
+        description="Compose multiple images using Gemini API",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__
     )
-    parser.add_argument("prompt", help="Text prompt describing the image")
-    parser.add_argument("output", help="Output file path (e.g., output.png)")
+    parser.add_argument("instruction", help="Composition instruction")
+    parser.add_argument("output", help="Output file path")
+    parser.add_argument("images", nargs="+", help="Input images (up to 14)")
     parser.add_argument(
         "--model", "-m",
-        default="gemini-2.5-flash-image",
+        default="gemini-3-pro-image-preview",
         choices=["gemini-2.5-flash-image", "gemini-3-pro-image-preview"],
-        help="Model to use (default: gemini-2.5-flash-image)"
+        help="Model to use (pro recommended for composition)"
     )
     parser.add_argument(
         "--aspect", "-a",
         choices=["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"],
-        help="Aspect ratio"
+        help="Output aspect ratio"
     )
     parser.add_argument(
         "--size", "-s",
         choices=["1K", "2K", "4K"],
-        help="Image resolution (4K only available with pro model)"
+        help="Output resolution"
     )
     
     args = parser.parse_args()
     
     try:
-        text = generate_image(
-            prompt=args.prompt,
+        text = compose_images(
+            instruction=args.instruction,
             output_path=args.output,
+            image_paths=args.images,
             model=args.model,
             aspect_ratio=args.aspect,
             image_size=args.size,
         )
         
-        print(f"Image saved to: {args.output}")
+        print(f"Composed image saved to: {args.output}")
         if text:
             print(f"Model response: {text}")
             

@@ -10,7 +10,7 @@
 Generate images using Google's Nano Banana Pro (Gemini 3 Pro Image) API.
 
 Usage:
-    uv run generate_image.py --prompt "your image description" --filename "output.png" [--resolution 1K|2K|4K] [--api-key KEY]
+    uv run generate_image.py --prompt "your image description" --filename "output.png" [--resolution 1K|2K|4K] [--aspect 1:1|2:3|3:2|3:4|4:3|4:5|5:4|9:16|16:9|21:9] [--api-key KEY]
 """
 
 import argparse
@@ -49,6 +49,11 @@ def main():
         choices=["1K", "2K", "4K"],
         default="1K",
         help="Output resolution: 1K (default), 2K, or 4K"
+    )
+    parser.add_argument(
+        "--aspect", "-a",
+        choices=["1:1", "2:3", "3:2", "3:4", "4:3", "4:5", "5:4", "9:16", "16:9", "21:9"],
+        help="Optional aspect ratio"
     )
     parser.add_argument(
         "--api-key", "-k",
@@ -111,13 +116,17 @@ def main():
         print(f"Generating image with resolution {output_resolution}...")
 
     try:
+        image_config_kwargs = {"image_size": output_resolution}
+        if args.aspect:
+            image_config_kwargs["aspect_ratio"] = args.aspect
+
         response = client.models.generate_content(
             model="gemini-3-pro-image-preview",
             contents=contents,
             config=types.GenerateContentConfig(
                 response_modalities=["TEXT", "IMAGE"],
                 image_config=types.ImageConfig(
-                    image_size=output_resolution
+                    **image_config_kwargs
                 )
             )
         )
