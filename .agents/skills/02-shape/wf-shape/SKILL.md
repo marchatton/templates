@@ -21,7 +21,6 @@ Optimise for:
 - Raw notes, feature idea, bug report, links
 - Constraints + appetite/timebox
 - Any existing artefacts (designs, metrics, incidents)
-- Preferred tracking: `prd.md` and `prd.json` (especially `prd.json`)
 
 ## Outputs (dossier)
 
@@ -30,23 +29,26 @@ Create/update a dossier folder:
 
 Files:
 - `brief.md` (1–2 pager)
-- `prd.md`
-- `prd.json` (recommended; created via `create-json-prd`)
 - `breadboard-pack.md`
 - `risk-register.md`
 - `spike-investigation.md` (optional; single file)
+- `prd.md` (can be one or many)
+- `prd.json` (recommended; created via `create-json-prd`) (can be one or many)
 
 ## Steps
 
 0) Pickup (recommended if resuming / new thread)
-- Invoke `pickup` if repo/dossier context is not fresh.
+- Understand where we are in the process.
+- If new, start at step 1.
+- Otherwise start at the relevant step (usually step 8), but first ensure previous steps have been completed.
 
-1) Start a dossier
+1) Start a dossier (if not created already)
 - Choose `id_<slug>` (prefer `0001_<short>`).
 - Choose a lane under `docs/04-projects/`.
 - Create dossier + stub files.
 
 2) Write the 1–2 pager brief
+- Inputs should come from the user by invoking `ask-questions-if-underspecified` and/or using relevant context.
 - Write `brief.md`.
 - Hard requirements:
   - goals + non-goals
@@ -55,39 +57,65 @@ Files:
   - open questions
   - GO/NO-GO placeholder
 
-3) PRD (source of truth for “done”)
-- Create/update `prd.md` in the dossier.
-- Capture user stories and measurable acceptance criteria.
-- If acceptance criteria are missing, write explicit TODOs rather than vibes.
-
-4) Breadboard
+3) Breadboard
 - Invoke breadboarding skill.
 - Save as `breadboard-pack.md` (places/affordances/connections + parts list + rabbit holes + fit check).
 
-5) Risk register
+4) Risk register
 - Write `risk-register.md`.
 - For every top risk choose: Cut / Patch / Spike / Out-of-bounds.
 
-6) Spike investigation (only for Spike items)
+5) Spike investigation (only for Spike items)
 - Invoke spike-investigation skill for each Spike.
 - Record results in `spike-investigation.md`.
 
-7) Oracle pass (mandatory per spike)
-- After each spike section, invoke `oracle` skill.
-- Append oracle notes and apply cuts/patches if needed.
+6) Oracle bundle (mandatory)
+- Invoke `oracle` once to create an oracle bundle for the dossier so later oracle passes have clean, repeatable context.
+- Bundle inputs should include (at minimum):
+  - dossier `brief.md`
+  - dossier `breadboard-pack.md`
+  - dossier `spike-investigation.md` 
+  - dossier `risk-register.md`
+  - any raw notes/links that materially affect scope
+  - any existing artefacts (designs, metrics, incidents) that materially affect decisions
 
-8) JSON PRD (recommended)
-- Run `create-json-prd` so agents/tools can execute acceptance criteria.
+7) Midpoint handoff (mandatory, before PRD creation)
+- Invoke `handoff` skill as a context checkpoint (this is separate from the final handoff).
+- Include:
+  - dossier path
+  - current brief status + perimeter draft (in/out)
+  - all context from dossier files
+  - oracle bundle created: y/n + what was included
+  - next step: PRD creation
+
+8) Pickup on context
+- User manually links to the midpoint handoff file and oracle findings and invokes the `pickup` skill.
+
+9) Review oracle pass and make updates to:
+- `brief.md`
+- `breadboard-pack.md`
+- `spike-investigation.md` (when present)
+- `risk-register.md`
+
+Also consider making updates to relevant `docs/03-architecture` documents where required.
+
+10) PRD (source of truth for “done”)
+- Use the `create-prd` skill to create one or many `prd.md` in the dossier.
+- If acceptance criteria are missing, write explicit TODOs rather than vibes.
+
+11) JSON PRD (recommended)
+- Run `create-json-prd` skill so agents/tools can execute acceptance criteria.
+- Each `prd.md` should have a corresponding `prd.json`.
 - Ensure it validates against the repo schema (NO-GO if invalid).
 
-9) Synthesis + perimeter lock
-- Update `brief.md` and `prd.md` to reflect the final perimeter, cuts, and risk treatments.
+12) Synthesis + perimeter lock
+- Update `brief.md`, `prd.md`s and `prd.json`s to reflect the final perimeter, cuts, and risk treatments.
 - Ensure breadboard is buildable as parts.
 
-10) Shaping decision
+13) Shaping decision
 - GO only if biggest risks are proved, cut, or out-of-bounds.
 
-11) Handoff (pick wf-plan vs wf-develop explicitly)
+14) Handoff (pick wf-plan vs wf-develop explicitly)
 - Invoke `handoff` and include:
   - dossier path
   - perimeter (in/out)
