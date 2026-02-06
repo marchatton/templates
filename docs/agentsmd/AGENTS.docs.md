@@ -13,12 +13,12 @@ Single place for workflow artefacts + docs outputs.
     - `05-reviews-audits/`: periodic reviews, audits, and systems compliance 
     - `06-release/`: global `CHANGELOG.md` and postmortems etc
     - `08-example-data/`: worked examples w/ synthetic (but realistic) data
-    - `10-tmp/`: scratch space (move or delete). Synced to GitHub
+    - `98-tmp/`: scratch space (move or delete). Synced to GitHub
   - Resources:
     - `01-insights/`: reports, summaries and raw transcripts covering customers, competitors, capabilities (internal) and tech-market trends.
     - `02-guidelines/`: brand-tone (storytelling and visual) incl inspiration.
   - Archive: 
-    - `99-archive/` - mirrors (00..10) for closed work + old context
+    - `99-archive/` - mirrors live structure for closed work + old context
 
 ## Guidelines
 - Keep docs append-only where that’s the existing convention (e.g. `CHANGELOG.md`, `learnings.md`).
