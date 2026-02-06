@@ -45,7 +45,7 @@ docs/
     data-flow.md
     state.md
     risks-constraints.md
-    decisions.md                     # all decisions in one file (append-only sections)
+    DECISIONS.md                     # all decisions in one file (append-only sections)
 
   04-projects/                       # all work items once implementation begins (dossiers)
     README.md                        # how to create a new dossier + naming conventions

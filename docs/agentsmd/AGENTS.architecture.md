@@ -20,4 +20,4 @@
 
 ## Docs + decisions
 - Artefacts live under `docs/03-architecture/`.
-- ADRs: Append to `docs/03-architecture/decisions.md` when you introduce a new cross-cutting pattern (dependency class, boundary rule, auth/security posture). Keep it short and link the PR.
+- ADRs: Append to `docs/03-architecture/DECISIONS.md` when you introduce a new cross-cutting pattern (dependency class, boundary rule, auth/security posture). Keep it short and link the PR.

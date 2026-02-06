@@ -8,7 +8,7 @@
 We follow core ideas from *The Pragmatic Programmer* (Andy Hunt, Dave Thomas):
 
 - **Take ownership.** If something’s broken/unclear/risky or “not your job”, act anyway: flag it, fix it, or shape a better path.
-- **Keep learning.** Maintain a “knowledge portfolio”. Store learnings in `docs/learnings.md`.
+- **Keep learning.** Maintain a “knowledge portfolio”. Store learnings in `docs/LEARNINGS.md`.
 - **Avoid duplication (DRY).** Duplicate knowledge is as bad as duplicate code. Keep one source of truth and reuse it.
 - **Build orthogonally.** Reduce coupling, keep dependencies explicit, and interfaces small.
 - **Use tight feedback loops.** Small steps, fast validation. Use tracer bullets (thin end-to-end slices). One concern per commit/PR. Prefer the simplest thing that meets the requirement.
@@ -34,14 +34,23 @@ Vibe: be practical, stay curious, optimise for long-term leverage over short-ter
 - `AGENTS.md`: Repo‑wide engineering standards, tooling, and verification rules.
 - `apps/web/AGENTS.md`: Stack and guardrails for the Next.js web app.
 - `docs/AGENTS.md`: Structure and rules for the docs/knowledge hub.
-- `docs/02-guidelines/AGENTS.md`: Brand, tone, and  accessibility guidance sources.
+- `docs/02-guidelines/AGENTS.md`: Brand/tone/a11y guidance + Brand DNA outputs (including Tailwind-ready token/preset artefacts).
 - `docs/03-architecture/AGENTS.md`: Architecture boundaries and security posture rules.
 - `docs/04-projects/AGENTS.md`: Dossier conventions and delivery workflow for project work.
 - `docs/06-release/AGENTS.md`: Release process and changelog/postmortem expectations
 
 ## File management
-- Store random once off files in root `throwaway` folder (not synced to Github)
-- Store random tmp files in root `tmp` folder (synced to Github)
+- Oracle bundles (`oracle --render`) are committed under:
+  - Dossier work: `<dossier>/tmp-oracle/` (inside `docs/04-projects/...`)
+  - Non-dossier work: `docs/98-tmp/oracle/`
+- Handoff notes (`handoff` skill) are committed under:
+  - Dossier work: `<dossier>/tmp-handoffs/` (inside `docs/04-projects/...`)
+  - Non-dossier or cross-dossier: `docs/98-tmp/handoffs/`
+- Filenames:
+  - Oracle bundles: `oracle-bundle_<slug>.md` (or `oracle-bundle_<id>_<slug>.md` inside dossiers)
+  - Handoff notes: `handoff_YYYY-MM-DD_HH-MM-SS_<slug>.md`
+- Store local-only scratch in root `throwaway/` (gitignored; not synced to GitHub)
+- Store other random tmp files in root `tmp/` folder (synced to GitHub)
 - When working on a project, follow the conventions outlined in `docs/04-projects/AGENTS.md`
 
 ## Core skills to use
