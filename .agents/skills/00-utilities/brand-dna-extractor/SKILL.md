@@ -60,11 +60,9 @@ Follow this sequence. Keep the pipeline modular: crawl → extract → infer →
 - Prefer sitemap and internal link discovery.
 - Prioritise likely brand signal pages early:
   - homepage
-  - pricing
   - product / features
-  - about
   - blog index and one recent article
-  - careers (optional)
+  - brand / assets pages
 - Apply allow/deny rules:
   - If `include_paths` is non-empty, crawl only those subpaths.
   - Always apply `exclude_paths`.
