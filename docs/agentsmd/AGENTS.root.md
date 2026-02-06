@@ -1,42 +1,55 @@
 # AGENTS.md
 
 ## Tooling
-- Package manager: pnpm (workspaces).
-- Prefer TypeScript for new code unless the repo already uses something else.
+- Package manager: pnpm (workspaces)
+- Prefer TypeScript for new code unless the repo already uses something else
 
 ## Principles
-We mostly follow the core principles of the pragmatic programmer (book by Andy Hunt and Dave Thomas
-):
-* **Take ownership.** If something’s broken, unclear, risky, or “not your job”, act anyway. Flag it, fix it, or help shape a better path.
-* **Always be learning.** Keep a “knowledge portfolio”: read, experiment, learn a language/tool each year, and invest in fundamentals (data structures, debugging, design, communication). We store learnings in `docs/learnings.md`.
-* **Avoid duplication (DRY).** Duplication isn’t just copy-paste code, it’s duplicated *knowledge* across files, services, docs, tests, and people’s heads. Put knowledge in one place and reuse it.
-* **Build with orthogonality.** Design components so changes don’t ripple everywhere. Reduce coupling, make dependencies explicit, keep interfaces small and sharp.
-* **Think in feedback loops.** Prefer small steps, short cycles, and frequent validation. Use “tracer bullets” (thin end-to-end slices) to prove direction before you optimise or polish. Keep changes small and focused (one concern per commit/PR). Prefer the simplest thing that meets the requirement (avoid enterprise edge-case soup).
-* **Prototype to learn, then throw away (when needed).** Prototypes are for answering questions fast. Don’t let them quietly become production by accident.
-* **Make behaviour explicit.** Use clear contracts (preconditions, postconditions, invariants), assert assumptions, and fail loudly when those assumptions break.
-* **Automate the boring and the error-prone.** Builds, tests, formatting, releases, environment setup, checks. If you do it twice, consider scripting it.
-* **Keep the code easy to change.** Refactor continuously, rename aggressively, and keep things readable. Write for the next person, who might be you on a bad day.
-* **Debug systematically.** Don’t guess. Reproduce, isolate, change one thing at a time, and use tools properly. “It can’t happen” is a warning sign.
-* **Don’t tolerate “broken windows”.** Small messes spread. Fix small issues early so the whole system doesn’t slide into chaos.
-* **Communicate and negotiate trade-offs.** Requirements and estimates are conversations, not promises. Explain options, risks, and costs in plain language.
+We follow core ideas from *The Pragmatic Programmer* (Andy Hunt, Dave Thomas):
 
-And the vibe throughout is: be practical, stay curious, and optimise for long-term leverage, not short-term heroics.
+- **Take ownership.** If something’s broken/unclear/risky or “not your job”, act anyway: flag it, fix it, or shape a better path.
+- **Keep learning.** Maintain a “knowledge portfolio”. Store learnings in `docs/learnings.md`.
+- **Avoid duplication (DRY).** Duplicate knowledge is as bad as duplicate code. Keep one source of truth and reuse it.
+- **Build orthogonally.** Reduce coupling, keep dependencies explicit, and interfaces small.
+- **Use tight feedback loops.** Small steps, fast validation. Use tracer bullets (thin end-to-end slices). One concern per commit/PR. Prefer the simplest thing that meets the requirement.
+- **Prototype to learn, then bin it (when needed).** Don’t let prototypes silently become production.
+- **Make behaviour explicit.** Clear contracts, assert assumptions, fail loudly when they break.
+- **Automate boring/error-prone work.** Builds, tests, formatting, releases, setup, checks. If you do it twice, consider scripting it.
+- **Keep code easy to change.** Refactor continuously, rename aggressively, optimise for readability.
+- **Debug systematically.** Reproduce, isolate, change one thing at a time. Use tools properly.
+- **Fix broken windows.** Small messes spread — tidy early.
+- **Communicate trade-offs.** Requirements/estimates are conversations. Explain options, risks, and costs plainly.
+
+Vibe: be practical, stay curious, optimise for long-term leverage over short-term heroics.
 
 ## Error handling + safety (high level)
-- Validate external inputs at boundaries (Zod) and return safe user-facing errors.
-- Don’t leak internal errors/details to clients.
-- Unexpected issues: fail loudly (log/throw). Only surface user-facing errors when needed.
+- Validate external inputs at boundaries (Zod) and return safe user-facing errors
+- Don’t leak internal errors/details to clients
+- Unexpected issues: fail loudly (log/throw). Only show user-facing errors when needed
 
 ## Compatibility
-- Bcakwards compatibility usually not required.
+- Backwards compatibility usually not required
 
-## Core skills to use frequently
-- `ask-questions-if-underspecified` when unclear.
-- `oracle` for deep research.
-- `verify` for code changes. 
+## Agent files
+- `AGENTS.md`: Repo‑wide engineering standards, tooling, and verification rules.
+- `apps/web/AGENTS.md`: Stack and guardrails for the Next.js web app.
+- `docs/AGENTS.md`: Structure and rules for the docs/knowledge hub.
+- `docs/02-guidelines/AGENTS.md`: Brand, tone, and  accessibility guidance sources.
+- `docs/03-architecture/AGENTS.md`: Architecture boundaries and security posture rules.
+- `docs/04-projects/AGENTS.md`: Dossier conventions and delivery workflow for project work.
+- `docs/06-release/AGENTS.md`: Release process and changelog/postmortem expectations
 
-## Canonical and local agents files and instructions (skills, commands, hooks etc)
-- `.agents/` is canonical in this repo; Codex reads it directly.
-- For other agentic tools, use `iannuttall/dotagents` to symlink `.agents` into tool-specific files/folders. Don’t fork instructions per tool.
-- `AGENTS.md` is the source of truth. Any other agent-specific files are symlinks — don’t fork instructions per tool.
-- Canonical skills/commands/hooks live in `marchatton/agent-skills`. If a skill/command seems missing or wrong, fix it there.
+## File management
+- Store random once off files in root `throwaway` folder (not synced to Github)
+- Store random tmp files in root `tmp` folder (synced to Github)
+- When working on a project, follow the conventions outlined in `docs/04-projects/AGENTS.md`
+
+## Core skills to use
+- `ask-questions-if-underspecified` skill when unclear
+- `oracle` skill for deep research
+- `verify` skill for checking code changes
+
+## Canonical instructions + local agent setup
+- Canonical skills/commands/hooks live in `marchatton/agent-skills` — fix/add missing/wrong skills there NOT in this repo
+- `.agents/` contains all skills etc in this repo (e.g. `codex`). For other tools, use `iannuttall/dotagents` to symlink `.agents` into tool-specific locations
+- `AGENTS.md` is the source of truth; other agent files should be symlinks (don’t fork instructions per tool)
