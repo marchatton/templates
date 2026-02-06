@@ -40,6 +40,8 @@ description: Teach engineering concepts for real understanding using the Feynman
 - Identify weak spots; re-explain only those.
 - Use a different metaphor on retry.
 
+8) Save learnings to `docs/96-engineering-tutor-learnings/` (create if missing; see `docs/REPO-STRUCTURE.md`)
+
 ## Engineering mindset
 Include at least one: inputs/outputs, constraints, trade-offs, failure modes, why this design vs alternatives.
 

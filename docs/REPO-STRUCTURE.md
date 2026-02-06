@@ -67,6 +67,8 @@ docs/
     CHANGELOG.md                     # dated entries linking to each project’s release.md
     postmortems/                     # incident postmortems, link back to dossiers
 
+  96-engineering-tutor-learnings/    # files created by `engineering-tutor` skill
+
   97-throwaway/                      # scratch space for random docs, NOT committed.
 
   98-tmp/                            # scratch space for random docs, can be committed.
