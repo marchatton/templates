@@ -52,7 +52,7 @@ docs/
     _templates/                      # copy these when creating a new dossier
     (each dossier may include reviews/ for review notes + QA and todos/ for findings)
 
-    01-experiments/                  # lightweight trials, metric-driven
+    01-experiments-prototypes/       # lightweight trials, metric-driven, prototypes
     02-features/                     # feature work
     03-fixes/                        # bug fixes and incidents
     04-refactors/                    # internal quality work
