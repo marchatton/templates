@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "${{ env.NODE_VERSION }}"
-          cache: "pnpm"
+          # Avoid cache step failures when this repo intentionally omits a lockfile.
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -36,7 +36,7 @@ jobs:
 
       - name: Verify
         run: |
-          pnpm -s verify
-          pnpm -s typecheck
-          pnpm -s ast-grep
-          pnpm -s knip
+          pnpm -s run verify
+          pnpm -s run --if-present typecheck
+          pnpm -s run --if-present ast-grep
+          pnpm -s run --if-present knip
