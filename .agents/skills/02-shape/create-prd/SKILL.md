@@ -12,6 +12,7 @@ description: Draft PRD with scope, stories, acceptance criteria, verification. U
 
 ## Outputs
 - PRD doc saved per `docs/AGENTS.md` in target repo.
+- If a dossier/project needs multiple PRDs, create a `prds/` subfolder and store them there using an ordering prefix plus a short slug (kebab-case) in the filename (for example `prds/prd-1-auth-flow.md`, `prds/prd-2-audit-log.md`, ...).
 
 ## Steps
 1. Ask 3-5 clarifying questions (answerable as 1A, 2B).
@@ -30,3 +31,4 @@ description: Draft PRD with scope, stories, acceptance criteria, verification. U
 - Acceptance criteria testable; verification mapped.
 - Stories small, priority ordered.
 - Location matches `docs/AGENTS.md`.
+- If there are multiple PRDs, they are stored in a dedicated subfolder (for example `prds/`) and each has a short slug in the filename.
