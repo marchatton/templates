@@ -10,6 +10,7 @@
 - `ask-questions-if-underspecified`: Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.
 - `beautiful-mermaid`: Render Mermaid diagrams to SVG or ASCII/Unicode with beautiful-mermaid (Node/Bun/Deno/browser, no DOM). Use when you need Mermaid render without DOM.
 - `brand-dna-extractor`: This skill should be used when users want to scrape multiple websites (Firecrawl, Parallel, or hybrid), extract brand guideline signals (including CSS variables + computed styles via browser probing), generate per-site prompt packs, and blend sources into a composite brand direction with exactly three outputs: brand_guidelines.md, prompt_library.json, design_tokens.json.
+- `browser-use`: Fast, persistent browser automation via `browser-use` CLI (sessions persist across commands). Use for multi-step web workflows: open -> state -> click/input -> verify -> repeat. Supports chromium/headed, real Chrome (logged-in), and remote browser.
 - `create-cli`: Design command-line interface parameters and UX: arguments, flags, subcommands, help text, output formats, error messages, exit codes, prompts, config/env precedence, and safe/dry-run behavior. Use when you’re designing a CLI spec (before implementation) or refactoring an existing CLI’s surface area for consistency, composability, and discoverability.
 - `docs-list`: Run `scripts/docs-list.ts` to list `docs/` markdown + frontmatter summary/read_when. Use when auditing docs coverage.
 - `engineering-tutor`: Teach engineering concepts for real understanding using the Feynman technique, strong metaphors, and diagrams (render via beautiful-mermaid). Use when users ask to explain/teach/break down engineering concepts, build intuition/mental models, understand trade-offs/failure modes/design choices, or want a visual diagram.
@@ -17,14 +18,14 @@
 - `file-todos`: Manage file-based todos stored alongside a dossier. Create, triage, and track dependencies. Use when work is tracked in docs/*/todos.
 - `firecrawl`: Web search/scrape/crawl via Firecrawl CLI (prefer for live internet lookups).
 - `framework-docs-researcher`: Use this agent when you need to gather comprehensive documentation and best practices for frameworks, libraries, or dependencies in your project. This includes fetching official documentation, exploring source code, identifying version-specific constraints, and understanding implementation patterns.
-- `handoff`: This skill should be used when preparing a handoff checklist for agents and persisting it as a local-only handoff note that can be picked up in a fresh thread.
+- `handoff`: This skill should be used when preparing a handoff checklist for agents and persisting it as a handoff note that can be picked up in a fresh thread.
 - `landpr`: This skill should be used when preparing a /landpr prompt/checklist to land a PR.
 - `markdown-converter`: Convert documents and files to Markdown using markitdown. Use when converting PDF, Word (.docx), PowerPoint (.pptx), Excel (.xlsx, .xls), HTML, CSV, JSON, XML, images (with EXIF/OCR), audio (with transcription), ZIP archives, YouTube URLs, or EPubs to Markdown format for LLM processing or text analysis.
 - `nano-banana-pro`: Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image). Use for image creation or modification incl logos, stickers, mockups, style transfer, multi-image composition, and multi-turn refinement.
 - `openai-image-gen`: Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery. Use when you need prompt variants or batches.
 - `oracle`: Use the @steipete/oracle CLI to bundle a prompt plus the right files and get a second-model review (API or browser) for debugging, refactors, design checks, or cross-validation.
 - `parallel-web-tools`: This skill should be used when users want a Firecrawl-like capability for web discovery and clean markdown extraction using Parallel Search and Parallel Extract (including objective-led excerpts and full content).
-- `pickup`: This skill should be used when preparing a pickup checklist when starting a task, rehydrating context from the latest local handoff note if available.
+- `pickup`: This skill should be used when preparing a pickup checklist when starting a task, rehydrating context from the latest handoff note if available.
 - `video-transcript-downloader`: Download videos, audio, subtitles, and clean paragraph-style transcripts from YouTube and any other yt-dlp supported site. Use when asked to “download this video”, “save this clip”, “rip audio”, “get subtitles”, “get transcript”, or to troubleshoot yt-dlp/ffmpeg and formats/playlists.
 
 ### 01-research-brainstorm

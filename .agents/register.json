@@ -657,6 +657,20 @@
         "useWhen": "need a project or feature brief, a 1-2 pager, or to turn rough inputs into goals, non-goals, scope, risks, and open questions"
       },
       {
+        "location": ".agents/skills/00-utilities/browser-use/SKILL.md",
+        "name": "browser-use",
+        "outputs": [],
+        "ownerModule": "browser-use",
+        "provenance": "forked",
+        "purpose": "Persistent browser automation via browser-use CLI",
+        "tier": "core",
+        "upstream": {
+          "path": "browser-use/browser-use/browser-use",
+          "repo": "skills.sh"
+        },
+        "useWhen": "need multi-step browser automation with persistent sessions and index-based element selection (chromium/real/remote)"
+      },
+      {
         "location": ".agents/skills/03-plan/bug-reproduction-validator/SKILL.md",
         "name": "bug-reproduction-validator",
         "originGroup": "workflow",
