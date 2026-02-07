@@ -283,7 +283,10 @@ Run:
   - dark mode captured if requested, else record limitation
   - at least one hover or focus diff captured if requested, else record limitation
 
-Use `scripts/validate_outputs.py` as a baseline validator.
+Validate outputs (baseline):
+```bash
+python3 .agents/skills/00-utilities/brand-dna-extractor/scripts/validate_outputs.py --dir docs/02-guidelines/inspiration
+```
 
 ## What not to do
 

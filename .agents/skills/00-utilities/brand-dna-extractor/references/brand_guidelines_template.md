@@ -1,8 +1,15 @@
 # Overview
 
-- What was analysed (sites, counts, coverage)
-- What this composite direction is meant for
-- Key limitations upfront
+Note: this file is the canonical "latest" Brand DNA output for the current run.
+Archived snapshot copies live under `docs/02-guidelines/inspiration/brand-dna-YYYY-MM-DD/`.
+
+- Run: `brand-dna-YYYY-MM-DD`
+- Timestamp (UTC): `YYYY-MM-DDTHH:MM:SSZ`
+- Inspiration input: `<path>` (optional)
+- Sites analysed: <comma-separated ids>
+- Coverage: <scrape/extract/probe summary>
+- Key limitations: <bullets>
+- Web app implementation notes: `<file>` (optional)
 
 # Composite Brand DNA
 
