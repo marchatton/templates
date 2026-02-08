@@ -1,7 +1,7 @@
 # Cheatsheet
 
 ## Commands
-- None yet.
+- `rams`: Purpose not documented. (verify: See command.)
 
 ## Skills
 ### 00-utilities
@@ -36,8 +36,9 @@
 ### 02-shape
 - `breadboarding`: This skill should be used when shaping a software change and needing to breadboard the solution at the right level of abstraction (places, affordances, connections), including mapping an existing system via UI + code affordances, producing a wiring diagram, a parts/BOM plan, a fit check, and (when relevant) an extract-vs-duplicate analysis.
 - `brief`: Write or update `brief.md` for shaping. Use when asked to create a project or feature brief, a 1-2 pager, or to turn rough inputs into goals, non-goals, scope, risks, and open questions.
-- `create-json-prd`: Convert `prd.md` or `prd-<slug>.md` into a Ralph-compatible PRD JSON (`qualityGates[]`, `stories[]`) for deterministic loops.
+- `create-json-prd`: Generate a Product Requirements Document (PRD) as JSON for Ralph by converting an existing PRD markdown file. Triggers on: create a prd, write prd for, plan this feature, requirements for, spec out.
 - `create-prd`: Draft PRD with scope, stories, acceptance criteria, verification. Use when shaping a new feature or spec.
+- `demo-runbook`: This skill should be used when a user needs a demo package that starts with a live demo (not slides) and produces both a demo script and a navigable single-file HTML runbook, including caveats, respectful competitive comparison, and LLM architecture details (RAG, evals, observability).
 - `prd`: Generate a Product Requirements Document (PRD) as JSON for Ralph. Triggers on: create a prd, write prd for, plan this feature, requirements for, spec out.
 - `spike-investigation`: This skill should be used when shaping work and needing to de-risk rabbit holes (technical unknowns, design gaps, interdependencies) by running timeboxed spikes, documenting proof, and updating the shaped concept with patches, cuts, and out-of-bounds so the work stays thin-tailed within the appetite.
 - `wf-shape`: This skill should only be used when the user uses the word workflow and asks to shape a project from messy inputs into a de-risked, de-scoped shaped packet (brief, breadboard, risks, spikes) ready for wf-plan, with handoff/pickup boundaries to avoid context rot.
