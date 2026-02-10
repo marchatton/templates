@@ -4,3 +4,48 @@
 .firecrawl/
 .parallel/
 .probe/
+
+# Local-only scratch
+/throwaway/
+docs/97-throwaway/
+docs/04-projects/**/throwaway/
+**.firecrawl/
+**.parallel/
+**.probe/
+
+# Onboarding defaults
+/node_modules/
+**/node_modules/
+
+# Build outputs
+.next/
+**/.next/
+dist/
+**/dist/
+coverage/
+*.tsbuildinfo
+
+# Env files (never commit secrets)
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Local-only scratch
+/throwaway/
+docs/97-throwaway/
+docs/04-projects/**/throwaway/
+**.firecrawl/
+**.parallel/
+**.probe/
+tmp/fixture-seed/
+tmp/object-store/
+
+# Ralph agent run artefacts
+.ralph
+/.ralph/
+/.ralph.bad*/
+
+# macOS
+.DS_Store
+**/.DS_Store

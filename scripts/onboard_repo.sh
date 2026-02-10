@@ -85,34 +85,64 @@ is_placeholder_path() {
 
 ensure_gitignore() {
   local gitignore_path="$TARGET_DIR/.gitignore"
-  local added=0
+  local -a desired_lines=(
+    "# Local-only scratch"
+    "/throwaway/"
+    "docs/97-throwaway/"
+    "docs/04-projects/**/throwaway/"
+    "**.firecrawl/"
+    "**.parallel/"
+    "**.probe/"
+    ""
+    "# Onboarding defaults"
+    "/node_modules/"
+    "**/node_modules/"
+    ""
+    "# Build outputs"
+    ".next/"
+    "**/.next/"
+    "dist/"
+    "**/dist/"
+    "coverage/"
+    "*.tsbuildinfo"
+    ""
+    "# Env files (never commit secrets)"
+    ".env"
+    ".env.*"
+    "!.env.example"
+    "!.env.template"
+    ""
+    "# Local-only scratch"
+    "tmp/fixture-seed/"
+    "tmp/object-store/"
+    ""
+    "# Ralph agent run artefacts"
+    ".ralph"
+    "/.ralph/"
+    "/.ralph.bad*/"
+    ""
+    "# macOS"
+    ".DS_Store"
+    "**/.DS_Store"
+  )
 
   if [[ ! -f "$gitignore_path" ]]; then
-    cat > "$gitignore_path" <<'EOF'
-# Onboarding defaults
-/node_modules/
-*throwaway*/
-/.env
-EOF
+    printf "%s\n" "${desired_lines[@]}" > "$gitignore_path"
     return 0
   fi
 
-  if ! grep -Fxq "/node_modules/" "$gitignore_path"; then
-    echo "/node_modules/" >> "$gitignore_path"
-    added=1
-  fi
-
-  # Ignore any directory whose name contains "throwaway" anywhere in the repo.
-  if ! grep -Fxq "*throwaway*/" "$gitignore_path"; then
-    echo "*throwaway*/" >> "$gitignore_path"
-    added=1
-  fi
-
-  # Common local secrets/config
-  if ! grep -Fxq "/.env" "$gitignore_path" && ! grep -Fxq ".env" "$gitignore_path"; then
-    echo "/.env" >> "$gitignore_path"
-    added=1
-  fi
+  local added=0
+  local line=""
+  for line in "${desired_lines[@]}"; do
+    # Avoid injecting blank lines into existing gitignores; keep them for the new-file case above.
+    if [[ -z "$line" ]]; then
+      continue
+    fi
+    if ! grep -Fxq -- "$line" "$gitignore_path"; then
+      printf "%s\n" "$line" >> "$gitignore_path"
+      added=1
+    fi
+  done
 
   if [[ "$added" -eq 1 ]]; then
     # Ensure trailing newline for clean diffs
