@@ -34,6 +34,7 @@ Make questions easy to answer:
 - Include a fast-path response (e.g., reply `defaults` to accept all recommended/default choices)
 - Include a low-friction "not sure" option when helpful (e.g., "Not sure - use default")
 - Separate "Need to know" from "Nice to know" if that reduces friction
+- Justify your choices (e.g., explain why a particular option is recommended in plain English)
 - Structure options so the user can respond with compact decisions (e.g., `1b 2a 3c`); restate the chosen options in plain language to confirm
 
 ### 3) Pause before acting
