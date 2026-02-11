@@ -110,7 +110,19 @@ Keep it legible:
 - Collapse deep internals into a single node when they aren’t central to the shaped behaviour.
 - If it becomes a hairball, split into sub-diagrams per place or per flow.
 
-Optional: emit Mermaid code via template `references/templates/wiring-diagram-mermaid-template.md` (render via `beautiful-mermaid`)
+Required output format (both, not either/or):
+
+1) **Source code**: include Mermaid source in a fenced ```mermaid block in the Markdown artefact.
+2) **Static render**: generate and save a rendered diagram asset (SVG preferred) via `beautiful-mermaid`, and embed it in the Markdown artefact.
+3) **Fallback**: also generate a terminal-safe ASCII/Unicode render (`.txt`) when practical.
+
+Naming convention (recommended):
+
+- `<doc-base>-wiring.svg`
+- `<doc-base>-wiring.txt`
+
+Place static assets adjacent to the breadboard Markdown file so links stay portable.
+Use template `references/templates/wiring-diagram-mermaid-template.md`.
 
 ### 6) Produce a parts list (BOM)
 
@@ -173,7 +185,10 @@ Output a “Breadboard Pack” as Markdown:
 - Proposed Breadboard (places, affordances, connections)
 - UI Affordances table
 - Code Affordances table
-- Wiring diagram
+- Wiring diagram:
+  - embedded static image link (`.svg`)
+  - Mermaid code block (source of truth)
+  - optional `.txt` fallback path
 - Parts/BOM
 - Fit check + unsolved questions
 - Rabbit holes / out-of-bounds / cuts
@@ -186,6 +201,7 @@ Use `references/templates/breadboard-pack-template.md`.
 - Stay rough, but solved: enough detail to unblock building, not enough to constrain visual design.
 - Keep a consistent numbering scheme (U*, N*, R*, F*).
 - Make every edge in the wiring diagram traceable back to an affordance row.
+- Ensure diagram portability: a reader without Mermaid support must still see the static diagram.
 - Prefer small, explicit trade-offs over implied complexity.
 
 ## Bundled resources
