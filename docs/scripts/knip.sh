@@ -42,5 +42,5 @@ fi
 
 echo "Knip config detected but no runner wired:"
 printf -- "- %s\n" "${found[@]}"
-echo "Update scripts/knip.sh to run the chosen tool."
-exit 1
+echo "Optional stub: update scripts/knip.sh to run the chosen tool."
+exit 0

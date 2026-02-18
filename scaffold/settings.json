@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "defaultProfile": "minimal",
+  "profiles": {
+    "minimal": {
+      "surfaces": {
+        "docs": true,
+        "skills": true,
+        "agents": true
+      },
+      "docsProfile": "minimal",
+      "agentsProfile": "minimal",
+      "skillsPack": "core"
+    },
+    "full": {
+      "surfaces": {
+        "docs": true,
+        "skills": true,
+        "agents": true
+      },
+      "docsProfile": "full",
+      "agentsProfile": "full",
+      "skillsPack": "extended"
+    }
+  },
+  "agentsProfiles": {
+    "minimal": [
+      "AGENTS.root",
+      "AGENTS.docs"
+    ],
+    "full": [
+      "AGENTS.root",
+      "AGENTS.docs",
+      "AGENTS.web-apps",
+      "AGENTS.guidelines",
+      "AGENTS.architecture",
+      "AGENTS.delivery",
+      "AGENTS.release"
+    ]
+  },
+  "skillsPacks": {
+    "core": {
+      "description": "Curated operating pack: utilities, shape, plan, develop, review, release, and skill maintenance categories.",
+      "copyMode": "directories",
+      "directories": [
+        ".agents/skills/00-utilities",
+        ".agents/skills/02-shape",
+        ".agents/skills/03-plan",
+        ".agents/skills/04-develop",
+        ".agents/skills/05-review",
+        ".agents/skills/06-release",
+        ".agents/skills/98-skill-maintenance"
+      ]
+    },
+    "extended": {
+      "description": "Full catalog (all local skills).",
+      "copyMode": "all",
+      "directories": []
+    }
+  }
+}

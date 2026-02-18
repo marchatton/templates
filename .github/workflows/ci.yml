@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: "25.x"
+  NODE_VERSION: "lts/*"
 
 jobs:
   test:
@@ -40,3 +40,6 @@ jobs:
           pnpm -s run --if-present typecheck
           pnpm -s run --if-present ast-grep
           pnpm -s run --if-present knip
+
+      - name: Scaffold smoke tests
+        run: pnpm -s run smoke

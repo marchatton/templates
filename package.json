@@ -2,6 +2,10 @@
   "name": "templates",
   "private": true,
   "scripts": {
+    "new": "bash scripts/onboard_repo.sh",
+    "bootstrap": "pnpm install && bash scripts/install_git_hooks.sh",
+    "doctor": "bash scripts/doctor.sh",
+    "smoke": "bash scripts/scaffold_smoke_test.sh",
     "verify": "bash scripts/verify_repo.sh"
   }
 }

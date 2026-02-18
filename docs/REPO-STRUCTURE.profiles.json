@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "minimal": {
+      "paths": [
+        "docs/",
+        "docs/README.md",
+        "docs/learnings.md",
+        "docs/03-architecture/",
+        "docs/03-architecture/high-level-design.md",
+        "docs/04-projects/",
+        "docs/04-projects/README.md",
+        "docs/04-projects/02-features/",
+        "docs/04-projects/03-fixes/",
+        "docs/04-projects/_templates/",
+        "docs/06-release/",
+        "docs/06-release/CHANGELOG.md",
+        "docs/98-tmp/",
+        "docs/98-tmp/oracle/",
+        "docs/98-tmp/handoffs/",
+        "docs/99-archive/"
+      ]
+    }
+  }
+}

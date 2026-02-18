@@ -44,6 +44,13 @@ done
 
 required_templates=(
   "${root_dir}/docs/doc-templates/learnings.md"
+  "${root_dir}/docs/doc-templates/docs-readme.md"
+  "${root_dir}/docs/doc-templates/architecture-high-level-design.md"
+  "${root_dir}/docs/doc-templates/release-changelog.md"
+  "${root_dir}/docs/doc-templates/projects-readme.md"
+  "${root_dir}/docs/doc-templates/dossier-starter.md"
+  "${root_dir}/docs/REPO-STRUCTURE.profiles.json"
+  "${root_dir}/scaffold/settings.json"
 )
 
 for file in "${required_templates[@]}"; do

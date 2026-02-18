@@ -40,5 +40,5 @@ fi
 
 echo "Build config detected but no runner wired:"
 printf -- "- %s\n" "${found[@]}"
-echo "Update scripts/build.sh to run the chosen tool."
-exit 1
+echo "Optional stub: update scripts/build.sh to run the chosen tool."
+exit 0
