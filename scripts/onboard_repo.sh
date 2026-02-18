@@ -416,20 +416,51 @@ PY
 
 skills_pack_dirs() {
   local pack_name="$1"
-  python3 - "$SETTINGS_FILE" "$pack_name" <<'PY'
+  python3 - "$SETTINGS_FILE" "$pack_name" "$ROOT_DIR/.agents/register.json" <<'PY'
 import json
+from pathlib import Path
 import sys
 
 settings = json.load(open(sys.argv[1], encoding="utf-8"))
 packs = settings.get("skillsPacks", {})
 pack = sys.argv[2]
+register_path = Path(sys.argv[3])
 if pack not in packs:
     raise SystemExit(f"Unknown skills pack: {pack}")
 entry = packs[pack]
 mode = entry.get("copyMode", "directories")
 print(f"MODE={mode}")
-for item in entry.get("directories", []):
-    print(item)
+
+if mode == "directories":
+    for item in entry.get("directories", []):
+        print(item)
+elif mode == "register_tag":
+    tag = entry.get("registerTag")
+    if not tag:
+        raise SystemExit(f"skillsPacks.{pack}.registerTag is required for copyMode=register_tag")
+    if not register_path.exists():
+        raise SystemExit(f"Missing register file: {register_path}")
+
+    register = json.loads(register_path.read_text(encoding="utf-8"))
+    skills = register.get("entries", {}).get("skills", [])
+
+    paths = set()
+    for skill in skills:
+        location = skill.get("location")
+        if not location:
+            continue
+        tags = skill.get("tags", [])
+        if isinstance(tags, str):
+            tags = [tags]
+        if tag in tags:
+            paths.add(str(Path(location).parent))
+
+    for item in sorted(paths):
+        print(item)
+elif mode == "all":
+    pass
+else:
+    raise SystemExit(f"Unknown copyMode for skills pack '{pack}': {mode}")
 PY
 }
 

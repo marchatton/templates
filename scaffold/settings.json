@@ -41,35 +41,9 @@
   "skillsPacks": {
     "core": {
       "description": "Curated onboarding core pack.",
-      "copyMode": "directories",
-      "directories": [
-        ".agents/skills/00-utilities/agent-browser",
-        ".agents/skills/00-utilities/ask-questions-if-underspecified",
-        ".agents/skills/00-utilities/commit",
-        ".agents/skills/00-utilities/dev-browser",
-        ".agents/skills/00-utilities/handoff",
-        ".agents/skills/00-utilities/landpr",
-        ".agents/skills/00-utilities/oracle",
-        ".agents/skills/00-utilities/pickup",
-        ".agents/skills/02-shape/create-prd",
-        ".agents/skills/02-shape/create-json-prd",
-        ".agents/skills/03-plan/deepen-plan",
-        ".agents/skills/03-plan/plan-review",
-        ".agents/skills/03-plan/triage",
-        ".agents/skills/04-develop/wf-ralph",
-        ".agents/skills/04-develop/00-frontend-general/frontend-design",
-        ".agents/skills/04-develop/00-frontend-general/react-best-practices",
-        ".agents/skills/04-develop/01-ui-skills-dot-com/tailwind-css-patterns",
-        ".agents/skills/04-develop/01-ui-skills-dot-com/interaction-design",
-        ".agents/skills/05-review/architecture-strategist",
-        ".agents/skills/05-review/code-simplicity-reviewer",
-        ".agents/skills/05-review/data-integrity-guardian",
-        ".agents/skills/05-review/security",
-        ".agents/skills/05-review/performance-oracle",
-        ".agents/skills/06-release/deployment-verification-agent",
-        ".agents/skills/06-release/changelog",
-        ".agents/skills/98-skill-maintenance"
-      ]
+      "copyMode": "register_tag",
+      "registerTag": "onboarding-core",
+      "directories": []
     },
     "extended": {
       "description": "Full catalog (all local skills).",
