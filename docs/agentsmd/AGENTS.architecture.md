@@ -13,6 +13,12 @@
 - Validate at boundaries with Zod.
 - Never leak internal errors/details to clients.
 
+## Data + orchestration defaults
+- Use Postgres 17 + pgvector with `postgres` (postgres.js tagged-template queries).
+- Don’t introduce `pg`, ORMs, or string-built SQL unless explicitly requested.
+- Use the Postgres-backed WDK run/step queue + worker loop.
+- Keep steps idempotent; don’t add queue tech like Redis/Temporal unless explicitly requested.
+
 ## Proxy / API security shape (typical)
 - Pipeline is usually: rateLimit → cors → sanitise → auth → logging (confirm actual order in code).
 - Webhooks: verify signatures before parsing/acting.

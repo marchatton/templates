@@ -30,6 +30,7 @@ Vibe: be practical, stay curious, optimise for long-term leverage over short-ter
 ## Compatibility
 - Backwards compatibility is usually not required.
 - Avoid adding shims/legacy paths for older major versions unless explicitly requested (assume a fresh codebase).
+- For stack/version guardrails and stale-example avoidance, follow `apps/web/AGENTS.md`.
 
 ## Agent files
 - `AGENTS.md`: Repo‑wide engineering standards, tooling, and verification rules.
