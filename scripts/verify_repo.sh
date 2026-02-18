@@ -61,9 +61,73 @@ for file in "${required_templates[@]}"; do
 done
 
 if ! command -v python3 >/dev/null 2>&1; then
-  echo "python3 is required for frontmatter checks"
+  echo "python3 is required for metadata/frontmatter checks"
   errors=1
 else
+  if ! python3 - "${root_dir}/.agents/register.json" "${root_dir}/scaffold/settings.json" "${root_dir}" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+register_path = Path(sys.argv[1])
+settings_path = Path(sys.argv[2])
+root_dir = Path(sys.argv[3])
+
+errors = 0
+
+register = json.loads(register_path.read_text(encoding="utf-8"))
+settings = json.loads(settings_path.read_text(encoding="utf-8"))
+
+core_pack = settings.get("skillsPacks", {}).get("core")
+if not isinstance(core_pack, dict):
+    print("Missing skillsPacks.core in scaffold/settings.json")
+    errors += 1
+else:
+    mode = core_pack.get("copyMode")
+    tag = core_pack.get("registerTag")
+    if mode != "register_tag":
+        print(f"skillsPacks.core.copyMode must be 'register_tag' (found: {mode})")
+        errors += 1
+    if not tag:
+        print("skillsPacks.core.registerTag is required when copyMode=register_tag")
+        errors += 1
+
+    if mode == "register_tag" and tag:
+        skills = register.get("entries", {}).get("skills", [])
+        tagged_locations = []
+        for skill in skills:
+            location = skill.get("location")
+            tags = skill.get("tags", [])
+            if isinstance(tags, str):
+                tags = [tags]
+            elif not isinstance(tags, list):
+                tags = []
+            if location and tag in tags:
+                tagged_locations.append(location)
+
+        if not tagged_locations:
+            print(f"No skills tagged '{tag}' in .agents/register.json")
+            errors += 1
+        else:
+            skill_dirs = set()
+            for location in tagged_locations:
+                skill_path = root_dir / location
+                if not skill_path.exists():
+                    print(f"Tagged skill missing on disk: {location}")
+                    errors += 1
+                    continue
+                skill_dirs.add(str(Path(location).parent))
+            if not skill_dirs:
+                print(f"Tag '{tag}' resolved no skill directories")
+                errors += 1
+
+if errors:
+    sys.exit(1)
+PY
+  then
+    errors=1
+  fi
+
   if ! python3 - "${root_dir}/.agents/skills" <<'PY'
 import os
 import sys
