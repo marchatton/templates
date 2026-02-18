@@ -2,10 +2,17 @@
 Next.js App Router web application.
 
 ## Stack
-- Next.js App Router + TypeScript
-- Tailwind + shadcn/ui + Radix (icons: `lucide-react`)
+- Next.js v16+ App Router + TypeScript
+- Tailwind CSS v4 + shadcn/ui + Radix (icons: `lucide-react`)
 - Forms: React Hook Form + Zod
 - Tests: Vitest + Testing Library (MSW for mocks)
+
+## Version guardrails (avoid outdated examples)
+- Next.js v16+ uses `proxy.ts` (NOT `middleware.ts`) for request-level routing/auth gates.
+- App Router only: don’t suggest Pages Router APIs (`getServerSideProps`, `getStaticProps`, `next/router`, `pages/api`, `next/head`).
+- Tailwind CSS v4 (NOT v3): prefer `@import "tailwindcss";`, PostCSS plugin `@tailwindcss/postcss`, and CSS-first configuration via `@theme`.
+- shadcn/ui + Tailwind v4: prefer `tw-animate-css` (NOT `tailwindcss-animate`) and `@import "tw-animate-css";` for animations.
+- Fresh codebase: don’t add compatibility shims for older major versions unless explicitly requested.
 
 ## Guardrails (high leverage)
 - Server-first: fetch on the server (RSC / route handlers / server actions). Avoid client-side data fetching effects.

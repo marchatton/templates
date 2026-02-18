@@ -19,6 +19,8 @@ Expected generated outputs for app + marketing Tailwind setups:
 - `docs/02-guidelines/inspiration/tailwind/component-recipes.md`
 - `docs/02-guidelines/inspiration/tailwind/integration.md` (optional; snippets may live in `component-recipes.md` instead)
 
+Assume Tailwind CSS v4+ (CSS-first configuration via `@theme` where possible).
+
 Use the `generating-tailwind-brand-config` skill to regenerate these consistently.
 
 Regenerate (defaults):
